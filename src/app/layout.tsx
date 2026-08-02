@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 const defaultDescription =
-  "Chamber of Praveen Kumar Gupta — Advocates, Allahabad High Court and District Courts, Uttar Pradesh. Established 1991.";
+  "Chamber of Praveen Kumar Gupta — Advocates, Hon'ble Supreme Court of India, Allahabad High Court, and District Courts, Uttar Pradesh. Established 1991.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,7 +51,7 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-ivory text-charcoal">
+      <body className="min-h-full flex flex-col bg-ink text-charcoal">
         <DisclaimerGate />
         <Header />
         <main className="flex-1">{children}</main>

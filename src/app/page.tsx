@@ -12,26 +12,26 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(attorneyJsonLd()) }}
       />
-      <section className="border-b border-line bg-ivory">
+      <section className="border-b border-line bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-20 text-center">
           <Seal className="mx-auto h-24 w-24 text-gold-primary" />
-          <h1 className="mx-auto mt-6 max-w-[30ch] font-serif text-3xl font-semibold leading-tight text-ink md:text-5xl">
+          <h1 className="mx-auto mt-6 max-w-[30ch] font-serif text-3xl font-semibold leading-tight text-ivory md:text-5xl">
             Chamber of Praveen Kumar Gupta
           </h1>
           <p className="mx-auto mt-4 max-w-[55ch] text-base text-charcoal md:text-lg">
-            Advocates, Allahabad High Court and District Courts, Uttar Pradesh.
-            Established 1991.
+            Advocates, Hon&rsquo;ble Supreme Court of India, Allahabad High Court,
+            and District Courts, Uttar Pradesh. Established 1991.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm">
             <Link
               href="/practice-areas"
-              className="rounded border border-line px-5 py-2.5 text-ink hover:border-gold-primary hover:text-gold-text"
+              className="rounded border border-line px-5 py-2.5 text-ivory hover:border-gold-primary hover:text-gold-text"
             >
               View Practice Areas
             </Link>
             <Link
               href="/contact"
-              className="rounded bg-ink px-5 py-2.5 text-ivory hover:bg-charcoal"
+              className="rounded bg-cherry-red px-5 py-2.5 text-ivory hover:bg-cherry-red-deep"
             >
               Contact the Chamber
             </Link>
@@ -48,26 +48,26 @@ export default function Home() {
           </p>
           <Link
             href="/about"
-            className="mt-4 inline-block text-sm font-medium text-gold-text hover:underline"
+            className="mt-4 inline-block text-sm font-medium text-gold-text underline hover:text-gold-primary"
           >
             Read the Chamber&rsquo;s history →
           </Link>
         </div>
       </section>
 
-      <section className="border-b border-line bg-ivory">
+      <section className="border-b border-line bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-16">
-          <h2 className="text-center font-serif text-2xl font-semibold text-ink">
+          <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
             Areas of Practice
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {practiceAreas.map((area) => (
               <Link
                 key={area.slug}
                 href="/practice-areas"
                 className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
               >
-                <h3 className="font-serif text-lg font-semibold text-ink group-hover:text-gold-text">
+                <h3 className="font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
                   {area.title}
                 </h3>
                 <p className="mt-2 text-sm text-charcoal">{area.summary}</p>
@@ -79,7 +79,7 @@ export default function Home() {
 
       <section className="bg-paper">
         <div className="mx-auto max-w-[1200px] px-6 py-16">
-          <h2 className="text-center font-serif text-2xl font-semibold text-ink">
+          <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
             The Chamber
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -87,11 +87,11 @@ export default function Home() {
               <Link
                 key={member.slug}
                 href="/team"
-                className="group overflow-hidden rounded border border-line bg-ivory transition-colors hover:border-gold-primary"
+                className="group overflow-hidden rounded border border-line bg-ink transition-colors hover:border-gold-primary"
               >
                 <PhotoPlaceholder className="aspect-[4/5] w-full" />
                 <div className="p-4">
-                  <p className="font-serif text-base font-semibold text-ink group-hover:text-gold-text">
+                  <p className="font-serif text-base font-semibold text-ivory group-hover:text-gold-text">
                     {member.name}
                   </p>
                   <p className="mt-1 text-xs text-charcoal">{member.title}</p>

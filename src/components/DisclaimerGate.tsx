@@ -61,11 +61,11 @@ export function DisclaimerGate() {
       onKeyDown={handleKeyDown}
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4"
     >
-      <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded border border-line bg-ivory p-8">
+      <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded border border-line bg-paper p-8">
         <Seal className="mx-auto h-16 w-16 text-gold-primary" />
         <h2
           id="disclaimer-heading"
-          className="mt-4 text-center font-serif text-xl font-semibold text-ink"
+          className="mt-4 text-center font-serif text-xl font-semibold text-ivory"
         >
           Disclaimer
         </h2>
@@ -79,7 +79,7 @@ export function DisclaimerGate() {
             ref={disagreeRef}
             type="button"
             onClick={disagree}
-            className="rounded border border-line px-5 py-2.5 text-sm text-charcoal hover:bg-paper focus:outline-none focus:ring-1 focus:ring-gold-deep"
+            className="rounded border border-line px-5 py-2.5 text-sm text-charcoal hover:bg-ink focus:outline-none focus:ring-1 focus:ring-gold-deep"
           >
             Disagree — Exit
           </button>

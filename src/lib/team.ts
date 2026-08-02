@@ -12,7 +12,7 @@ export const team: TeamMember[] = [
     name: "Eshan Kumar Gupta",
     title: "Proprietor",
     practiceNote:
-      "Criminal law (bail, FIR quashing, trial), Constitutional & Writ jurisdiction, and Civil litigation.",
+      "Litigation across the Chamber's areas of practice, before the Allahabad High Court and the district judiciary of Uttar Pradesh.",
     courts: [
       "Allahabad High Court, Lucknow Bench",
       "District & Sessions Court, Lucknow",

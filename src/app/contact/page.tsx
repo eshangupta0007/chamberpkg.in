@@ -21,7 +21,7 @@ export default function ContactPage() {
       <p className="text-xs uppercase tracking-wide text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ink md:text-4xl">
+      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         Contact
       </h1>
       <p className="mt-4 max-w-[65ch] text-base leading-relaxed text-charcoal">
@@ -31,7 +31,7 @@ export default function ContactPage() {
 
       <div className="mt-12 grid gap-12 lg:grid-cols-2">
         <div>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Send a Message
           </h2>
           <div className="mt-5">
@@ -41,7 +41,7 @@ export default function ContactPage() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="font-serif text-xl font-semibold text-ink">
+            <h2 className="font-serif text-xl font-semibold text-ivory">
               Phone &amp; WhatsApp
             </h2>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -64,19 +64,19 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="font-serif text-xl font-semibold text-ink">
+            <h2 className="font-serif text-xl font-semibold text-ivory">
               Email
             </h2>
             <a
               href={`mailto:${email}`}
-              className="mt-2 inline-block text-sm text-gold-text hover:underline"
+              className="mt-2 inline-block text-sm text-gold-text underline hover:text-gold-primary"
             >
               {email}
             </a>
           </div>
 
           <div>
-            <h2 className="font-serif text-xl font-semibold text-ink">
+            <h2 className="font-serif text-xl font-semibold text-ivory">
               Office Hours
             </h2>
             <p className="mt-2 text-sm text-charcoal">{officeHours}</p>
@@ -88,7 +88,7 @@ export default function ContactPage() {
       </div>
 
       <section className="mt-16">
-        <h2 className="font-serif text-xl font-semibold text-ink">
+        <h2 className="font-serif text-xl font-semibold text-ivory">
           Chamber Addresses
         </h2>
         <div className="mt-6 grid gap-8 lg:grid-cols-3">

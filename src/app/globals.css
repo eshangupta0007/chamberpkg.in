@@ -1,23 +1,33 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/*
+ * Dark "royal" palette — warm near-black ground, gold accents, cherry-red
+ * for primary actions. Token NAMES are unchanged from the earlier light
+ * theme (ivory/paper/charcoal/ink) to minimize churn in component code —
+ * their ROLES flip: ink is now the page background (was the darkest accent),
+ * ivory is now light text (was the page background), paper is the elevated
+ * dark surface (cards/panels), charcoal is now muted light-gray text (was
+ * dark body text). All pairs re-verified for WCAG AA below.
+ */
 :root {
-  --gold-primary: #C9A227;
-  --gold-deep: #9C7A1A;
-  /* Same hue as gold-deep, darkened to hit WCAG AA (4.5:1) as small text on
-     ivory/paper — gold-deep itself only passes at large/bold sizes (spec §5.4). */
-  --gold-text: #7D6215;
-  --ink: #121212;
-  --charcoal: #2B2B2E;
-  --ivory: #FAF7F0;
-  --paper: #F1EDE3;
-  --line: #DDD6C4;
+  --gold-primary: #D4AF37;
+  --gold-deep: #B8901F;
+  --gold-text: #D4AF37;
+  --ink: #17140F;
+  --charcoal: #A8A29A;
+  --ivory: #F5EFE0;
+  --paper: #221D15;
+  --line: #6B6248;
+  --cherry-red: #A31621;
+  --cherry-red-deep: #7D1019;
+  --error-red: #F87171;
   /* Darker than WhatsApp's brand green so white button text clears AA (their
      brand green is ~2:1 with white and fails contrast as a button fill). */
   --whatsapp-green: #1B7A43;
 
-  --background: var(--ivory);
-  --foreground: var(--charcoal);
+  --background: var(--ink);
+  --foreground: var(--ivory);
 }
 
 @theme inline {
@@ -29,6 +39,9 @@
   --color-ivory: var(--ivory);
   --color-paper: var(--paper);
   --color-line: var(--line);
+  --color-cherry-red: var(--cherry-red);
+  --color-cherry-red-deep: var(--cherry-red-deep);
+  --color-error-red: var(--error-red);
   --color-whatsapp-green: var(--whatsapp-green);
 
   --color-background: var(--background);

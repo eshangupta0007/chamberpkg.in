@@ -31,12 +31,14 @@ export const addresses = [
   },
 ] as const;
 
+// Ascending order of hierarchy, styled per Indian legal drafting convention:
+// "Hon'ble" for the Supreme Court and High Court, "Learned" for the district judiciary.
 export const courts = [
-  "Supreme Court of India",
-  "Allahabad High Court (Principal Seat, Allahabad)",
-  "Allahabad High Court, Lucknow Bench",
-  "District & Sessions Court, Lucknow",
-  "District Courts, Noida, and other courts across Uttar Pradesh",
+  "Hon'ble Supreme Court of India",
+  "Hon'ble Allahabad High Court, Principal Bench, Allahabad",
+  "Hon'ble Allahabad High Court, Lucknow Bench",
+  "Learned District & Sessions Court, Lucknow",
+  "Learned District Courts, Noida, and other courts across Uttar Pradesh",
   "Tribunals situated in Lucknow",
 ] as const;
 

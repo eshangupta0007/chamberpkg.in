@@ -1,26 +1,77 @@
 export const practiceAreas = [
   {
+    slug: "matrimonial-disputes",
+    title: "Matrimonial Disputes",
+    summary: "Marriage, divorce, and maintenance matters.",
+    description:
+      "Matters arising from marriage, including divorce proceedings, maintenance applications, and related matrimonial disputes.",
+    covers: ["Divorce", "Maintenance", "Matrimonial disputes"],
+  },
+  {
+    slug: "inter-faith-marriages",
+    title: "Inter-Faith Marriages & Relationship Protection",
+    summary: "Special Marriage Act matters and protection petitions for couples.",
+    description:
+      "Marriages solemnized under the Special Marriage Act, 1954, including inter-faith marriages, and petitions seeking protection for couples facing opposition to their relationship.",
+    covers: ["Special Marriage Act", "Inter-faith marriages", "Protection petitions"],
+  },
+  {
+    slug: "adr-mediation",
+    title: "ADR & Mediation",
+    summary: "Dispute resolution through mediation and settlement.",
+    description:
+      "Resolution of disputes through mediation and other alternative dispute resolution mechanisms, outside formal litigation.",
+    covers: ["Mediation", "Negotiated settlement"],
+  },
+  {
+    slug: "personality-rights",
+    title: "Personality Rights",
+    summary: "Protection of an individual's name, image, and likeness.",
+    description:
+      "Matters concerning an individual's right to control the commercial use of their name, image, voice, and likeness.",
+    covers: ["Right to publicity", "Image & likeness"],
+  },
+  {
+    slug: "defamation",
+    title: "Defamation & Malicious Prosecution",
+    summary: "Civil and criminal defamation, and malicious prosecution claims.",
+    description:
+      "Civil and criminal defamation matters, and claims arising from malicious or unfounded prosecution.",
+    covers: ["Defamation", "Malicious prosecution"],
+  },
+  {
+    slug: "property-disputes",
+    title: "Property Disputes",
+    summary: "Ownership, possession, and title disputes.",
+    description:
+      "Disputes concerning ownership, possession, partition, and title of immovable property.",
+    covers: ["Ownership disputes", "Partition", "Title disputes"],
+  },
+  {
     slug: "criminal-law",
-    title: "Criminal Law",
-    summary: "Bail, FIR quashing, and trial defence.",
+    title: "Criminal Law — Bail, Trial & Appeal",
+    summary: "Bail, trial defence, and appeals across major criminal statutes.",
     description:
-      "Matters before the trial courts and the High Court arising under criminal law, including bail applications, petitions for quashing of First Information Reports, and defence at trial.",
-    covers: ["Bail applications", "FIR quashing petitions", "Trial defence"],
+      "Bail applications, trial defence, and appeals in matters under the Indian Penal Code, the Protection of Children from Sexual Offences (POCSO) Act, the Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, the National Security Act, the Narcotic Drugs and Psychotropic Substances (NDPS) Act, the Prevention of Money Laundering Act (PMLA), and the Prevention of Corruption Act — including matters of murder and rape, including cases involving allegations of marriage on false pretext.",
+    covers: [
+      "Bail",
+      "Trial defence",
+      "Appeals",
+      "IPC offences",
+      "POCSO Act",
+      "SC/ST Act",
+      "NSA",
+      "NDPS Act",
+      "PMLA",
+      "Prevention of Corruption Act",
+    ],
   },
   {
-    slug: "constitutional-writ",
-    title: "Constitutional & Writ Jurisdiction",
-    summary: "Article 226/227 matters before the High Court.",
+    slug: "registration-conveyance",
+    title: "Registration & Conveyance",
+    summary: "Document registration and conveyancing.",
     description:
-      "Writ petitions and related proceedings before the High Court under Articles 226 and 227 of the Constitution of India, including matters concerning service, administrative action, and supervisory jurisdiction over subordinate courts and tribunals.",
-    covers: ["Writ petitions under Article 226", "Supervisory petitions under Article 227"],
-  },
-  {
-    slug: "civil-litigation",
-    title: "Civil Litigation",
-    summary: "Property disputes, injunctions, and civil trial work.",
-    description:
-      "Civil disputes before the district judiciary, including property matters, applications for injunction, and civil trial work generally.",
-    covers: ["Property disputes", "Injunction applications", "Civil trial work"],
+      "Registration of documents and conveyancing work, including sale deeds, gift deeds, and other instruments of transfer.",
+    covers: ["Sale deeds", "Gift deeds", "Conveyancing"],
   },
 ] as const;

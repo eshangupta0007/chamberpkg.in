@@ -23,7 +23,7 @@ export default async function BlogPage({
       <p className="text-xs uppercase tracking-wide text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ink md:text-4xl">
+      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         Blog
       </h1>
 
@@ -32,7 +32,7 @@ export default async function BlogPage({
           href="/blog"
           className={
             !category
-              ? "rounded-full bg-ink px-3 py-1 text-ivory"
+              ? "rounded-full bg-gold-primary px-3 py-1 text-ink"
               : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
           }
         >
@@ -44,7 +44,7 @@ export default async function BlogPage({
             href={`/blog?category=${encodeURIComponent(cat)}`}
             className={
               category === cat
-                ? "rounded-full bg-ink px-3 py-1 text-ivory"
+                ? "rounded-full bg-gold-primary px-3 py-1 text-ink"
                 : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
             }
           >
@@ -54,7 +54,7 @@ export default async function BlogPage({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-16 text-base text-charcoal/70">
+        <p className="mt-16 text-base text-charcoal/80">
           No posts published yet. Check back soon.
         </p>
       ) : (
@@ -68,11 +68,11 @@ export default async function BlogPage({
               <p className="text-xs uppercase tracking-wide text-gold-text">
                 {post.category}
               </p>
-              <h2 className="mt-2 font-serif text-lg font-semibold text-ink group-hover:text-gold-text">
+              <h2 className="mt-2 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
                 {post.title}
               </h2>
               {post.date && (
-                <p className="mt-1 text-xs text-charcoal/70">
+                <p className="mt-1 text-xs text-charcoal/80">
                   {new Date(post.date).toLocaleDateString("en-IN", {
                     year: "numeric",
                     month: "long",

@@ -40,10 +40,10 @@ export default async function BlogPostPage({ params }: Props) {
       <p className="text-xs uppercase tracking-wide text-gold-text">
         {post.category}
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ink md:text-4xl">
+      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         {post.title}
       </h1>
-      <p className="mt-3 text-sm text-charcoal/70">
+      <p className="mt-3 text-sm text-charcoal/80">
         {post.date &&
           new Date(post.date).toLocaleDateString("en-IN", {
             year: "numeric",
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.readingTimeMinutes} min read
       </p>
 
-      <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-ink prose-a:text-gold-text">
+      <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-ivory prose-a:text-gold-text">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </div>
     </article>

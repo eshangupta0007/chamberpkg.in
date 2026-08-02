@@ -93,7 +93,7 @@ export function InternshipForm() {
       />
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-ink">
+        <label htmlFor="name" className="block text-sm font-medium text-ivory">
           Full Name
         </label>
         <input
@@ -101,12 +101,12 @@ export function InternshipForm() {
           name="name"
           type="text"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-ink">
+        <label htmlFor="email" className="block text-sm font-medium text-ivory">
           Email
         </label>
         <input
@@ -114,12 +114,12 @@ export function InternshipForm() {
           name="email"
           type="email"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-ink">
+        <label htmlFor="phone" className="block text-sm font-medium text-ivory">
           Phone
         </label>
         <input
@@ -127,12 +127,12 @@ export function InternshipForm() {
           name="phone"
           type="tel"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="lawCollege" className="block text-sm font-medium text-ink">
+        <label htmlFor="lawCollege" className="block text-sm font-medium text-ivory">
           Law College / University
         </label>
         <input
@@ -140,13 +140,13 @@ export function InternshipForm() {
           name="lawCollege"
           type="text"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="resume" className="block text-sm font-medium text-ink">
-          Resume / CV <span className="text-charcoal/70">(PDF, max 5MB)</span>
+        <label htmlFor="resume" className="block text-sm font-medium text-ivory">
+          Resume / CV <span className="text-charcoal/80">(PDF, max 5MB)</span>
         </label>
         <input
           ref={fileInputRef}
@@ -155,18 +155,18 @@ export function InternshipForm() {
           type="file"
           accept="application/pdf"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal file:mr-3 file:rounded file:border-0 file:bg-paper file:px-3 file:py-1.5 file:text-sm file:text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory file:mr-3 file:rounded file:border-0 file:bg-ink file:px-3 file:py-1.5 file:text-sm file:text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-700">{errorMessage}</p>
+        <p className="text-sm text-error-red">{errorMessage}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded bg-ink px-6 py-2.5 text-sm text-ivory hover:bg-charcoal disabled:opacity-50"
+        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-ivory hover:bg-cherry-red-deep disabled:opacity-50"
       >
         {status === "submitting" ? "Submitting…" : "Submit Application"}
       </button>

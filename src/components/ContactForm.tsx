@@ -58,7 +58,7 @@ export function ContactForm() {
       />
 
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-ink">
+        <label htmlFor="name" className="block text-sm font-medium text-ivory">
           Name
         </label>
         <input
@@ -66,12 +66,12 @@ export function ContactForm() {
           name="name"
           type="text"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-ink">
+        <label htmlFor="email" className="block text-sm font-medium text-ivory">
           Email
         </label>
         <input
@@ -79,24 +79,24 @@ export function ContactForm() {
           name="email"
           type="email"
           required
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-ink">
-          Phone <span className="text-charcoal/70">(optional)</span>
+        <label htmlFor="phone" className="block text-sm font-medium text-ivory">
+          Phone <span className="text-charcoal/80">(optional)</span>
         </label>
         <input
           id="phone"
           name="phone"
           type="tel"
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-ink">
+        <label htmlFor="message" className="block text-sm font-medium text-ivory">
           Message
         </label>
         <textarea
@@ -104,18 +104,18 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-1.5 w-full rounded border border-line bg-ivory px-3 py-2 text-sm text-charcoal focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-red-700">{errorMessage}</p>
+        <p className="text-sm text-error-red">{errorMessage}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded bg-ink px-6 py-2.5 text-sm text-ivory hover:bg-charcoal disabled:opacity-50"
+        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-ivory hover:bg-cherry-red-deep disabled:opacity-50"
       >
         {status === "submitting" ? "Sending…" : "Send Message"}
       </button>

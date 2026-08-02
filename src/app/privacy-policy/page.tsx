@@ -9,10 +9,10 @@ export const metadata = pageMetadata(
 export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-[75ch] px-6 py-16">
-      <h1 className="font-serif text-3xl font-semibold text-ink">
+      <h1 className="font-serif text-3xl font-semibold text-ivory">
         Privacy Policy
       </h1>
-      <p className="mt-2 text-sm text-charcoal/70">Last updated: 30 July 2026</p>
+      <p className="mt-2 text-sm text-charcoal/80">Last updated: 30 July 2026</p>
 
       <div className="mt-8 space-y-8 text-base leading-relaxed text-charcoal">
         <p>
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
         </p>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Information we collect
           </h2>
           <p className="mt-3">
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             How we use this information
           </h2>
           <p className="mt-3">
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Retention
           </h2>
           <p className="mt-3">
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Sharing
           </h2>
           <p className="mt-3">
@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Security
           </h2>
           <p className="mt-3">
@@ -97,14 +97,14 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-xl font-semibold text-ink">
+          <h2 className="font-serif text-xl font-semibold text-ivory">
             Your rights and queries
           </h2>
           <p className="mt-3">
             For any question about the information you have submitted,
             including a request for its correction or deletion, you may
             write to us at{" "}
-            <a href={`mailto:${email}`} className="text-gold-text hover:underline">
+            <a href={`mailto:${email}`} className="text-gold-text underline hover:text-gold-primary">
               {email}
             </a>
             .
