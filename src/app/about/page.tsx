@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Seal } from "@/components/Seal";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
@@ -14,8 +13,12 @@ const legacyParagraph = `The Chamber of Praveen Kumar Gupta was established in 1
 export default function AboutPage() {
   return (
     <div className="relative overflow-hidden">
-      <Seal
-        className="pointer-events-none absolute -right-32 -top-32 h-[560px] w-[560px] text-gold-primary opacity-[0.08] md:h-[720px] md:w-[720px]"
+      <Image
+        src="/images/logo-seal.png"
+        alt=""
+        width={600}
+        height={600}
+        className="pointer-events-none absolute -right-32 -top-32 h-[560px] w-[560px] opacity-[0.12] md:h-[720px] md:w-[720px]"
         aria-hidden="true"
       />
 
@@ -36,11 +39,12 @@ export default function AboutPage() {
             src="/images/allahabad-high-court.jpg"
             alt="The Allahabad High Court building"
             width={2400}
-            height={1170}
+            height={1172}
+            sizes="(max-width: 900px) 100vw, 750px"
             className="w-full rounded border border-line object-cover"
-            priority={false}
+            priority
           />
-          <figcaption className="mt-2 text-xs text-charcoal/80">
+          <figcaption className="mt-2 text-xs text-charcoal/90">
             The Allahabad High Court. Photo by Subhashish Panigrahi, licensed
             under{" "}
             <a

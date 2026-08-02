@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: Props) {
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         {post.title}
       </h1>
-      <p className="mt-3 text-sm text-charcoal/80">
+      <p className="mt-3 text-sm text-charcoal/90">
         {post.date &&
           new Date(post.date).toLocaleDateString("en-IN", {
             year: "numeric",

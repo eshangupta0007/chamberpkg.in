@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Seal } from "@/components/Seal";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { practiceAreas } from "@/lib/practice-areas";
 import { team } from "@/lib/team";
@@ -14,7 +14,14 @@ export default function Home() {
       />
       <section className="border-b border-line bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-20 text-center">
-          <Seal className="mx-auto h-24 w-24 text-gold-primary" />
+          <Image
+            src="/images/logo-seal.png"
+            alt="Chamber of Praveen Kumar Gupta seal"
+            width={96}
+            height={96}
+            className="mx-auto h-24 w-24"
+            priority
+          />
           <h1 className="mx-auto mt-6 max-w-[30ch] font-serif text-3xl font-semibold leading-tight text-ivory md:text-5xl">
             Chamber of Praveen Kumar Gupta
           </h1>
@@ -31,7 +38,7 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="rounded bg-cherry-red px-5 py-2.5 text-ivory hover:bg-cherry-red-deep"
+              className="rounded bg-cherry-red px-5 py-2.5 text-deep-text hover:bg-cherry-red-deep"
             >
               Contact the Chamber
             </Link>

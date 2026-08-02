@@ -146,7 +146,7 @@ export function InternshipForm() {
 
       <div>
         <label htmlFor="resume" className="block text-sm font-medium text-ivory">
-          Resume / CV <span className="text-charcoal/80">(PDF, max 5MB)</span>
+          Resume / CV <span className="text-charcoal/90">(PDF, max 5MB)</span>
         </label>
         <input
           ref={fileInputRef}
@@ -166,7 +166,7 @@ export function InternshipForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-ivory hover:bg-cherry-red-deep disabled:opacity-50"
+        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-deep-text hover:bg-cherry-red-deep disabled:opacity-50"
       >
         {status === "submitting" ? "Submitting…" : "Submit Application"}
       </button>

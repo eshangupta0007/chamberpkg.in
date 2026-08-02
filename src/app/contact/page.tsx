@@ -80,7 +80,7 @@ export default function ContactPage() {
               Office Hours
             </h2>
             <p className="mt-2 text-sm text-charcoal">{officeHours}</p>
-            <p className="mt-2 max-w-[55ch] text-sm text-charcoal/80">
+            <p className="mt-2 max-w-[55ch] text-sm text-charcoal/90">
               {officeHoursNote}
             </p>
           </div>

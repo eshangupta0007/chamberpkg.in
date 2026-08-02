@@ -2,29 +2,35 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Dark "royal" palette — warm near-black ground, gold accents, cherry-red
- * for primary actions. Token NAMES are unchanged from the earlier light
- * theme (ivory/paper/charcoal/ink) to minimize churn in component code —
- * their ROLES flip: ink is now the page background (was the darkest accent),
- * ivory is now light text (was the page background), paper is the elevated
- * dark surface (cards/panels), charcoal is now muted light-gray text (was
- * dark body text). All pairs re-verified for WCAG AA below.
+ * Light "premium" palette — rich warm cream body (not dull beige: deeper,
+ * more saturated tones + near-black text for real contrast), gold accents,
+ * cherry-red for primary actions. Header/Footer stay a dark "chrome" bookend
+ * (--deep/--deep-text/--deep-line) so the gold seal keeps its glow and the
+ * page reads as book-ended rather than flat. Token NAMES are unchanged from
+ * earlier passes to minimize churn — ink/paper/ivory/charcoal keep their
+ * ROLES (page bg / card bg / primary text / secondary text) but flip
+ * light-dark direction. All pairs re-verified for WCAG AA below.
  */
 :root {
-  --gold-primary: #D4AF37;
-  --gold-deep: #B8901F;
-  --gold-text: #D4AF37;
-  --ink: #17140F;
-  --charcoal: #A8A29A;
-  --ivory: #F5EFE0;
-  --paper: #221D15;
-  --line: #6B6248;
+  --gold-primary: #B8860B;
+  --gold-deep: #AB7D0C;
+  --gold-text: #7A5A0A;
+  --ink: #FBF6E9;
+  --charcoal: #5C4E3B;
+  --ivory: #201A12;
+  --paper: #F1E2BE;
+  --line: #9C7A2E;
   --cherry-red: #A31621;
   --cherry-red-deep: #7D1019;
-  --error-red: #F87171;
+  --error-red: #B91C1C;
   /* Darker than WhatsApp's brand green so white button text clears AA (their
      brand green is ~2:1 with white and fails contrast as a button fill). */
   --whatsapp-green: #1B7A43;
+
+  /* Dark chrome bookend — header, footer, and the disclaimer backdrop. */
+  --deep: #17140F;
+  --deep-text: #F5EFE0;
+  --deep-line: #6B6248;
 
   --background: var(--ink);
   --foreground: var(--ivory);
@@ -43,6 +49,9 @@
   --color-cherry-red-deep: var(--cherry-red-deep);
   --color-error-red: var(--error-red);
   --color-whatsapp-green: var(--whatsapp-green);
+  --color-deep: var(--deep);
+  --color-deep-text: var(--deep-text);
+  --color-deep-line: var(--deep-line);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

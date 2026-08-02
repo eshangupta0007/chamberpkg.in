@@ -32,7 +32,7 @@ export default async function BlogPage({
           href="/blog"
           className={
             !category
-              ? "rounded-full bg-gold-primary px-3 py-1 text-ink"
+              ? "rounded-full bg-gold-primary px-3 py-1 text-ivory"
               : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
           }
         >
@@ -44,7 +44,7 @@ export default async function BlogPage({
             href={`/blog?category=${encodeURIComponent(cat)}`}
             className={
               category === cat
-                ? "rounded-full bg-gold-primary px-3 py-1 text-ink"
+                ? "rounded-full bg-gold-primary px-3 py-1 text-ivory"
                 : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
             }
           >
@@ -54,7 +54,7 @@ export default async function BlogPage({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-16 text-base text-charcoal/80">
+        <p className="mt-16 text-base text-charcoal/90">
           No posts published yet. Check back soon.
         </p>
       ) : (
@@ -72,7 +72,7 @@ export default async function BlogPage({
                 {post.title}
               </h2>
               {post.date && (
-                <p className="mt-1 text-xs text-charcoal/80">
+                <p className="mt-1 text-xs text-charcoal/90">
                   {new Date(post.date).toLocaleDateString("en-IN", {
                     year: "numeric",
                     month: "long",

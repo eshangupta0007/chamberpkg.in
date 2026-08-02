@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import { Seal } from "./Seal";
 import { disclaimerParagraphs } from "@/lib/disclaimer-text";
 
 const STORAGE_KEY = "cpkg-disclaimer-agreed";
@@ -59,10 +59,16 @@ export function DisclaimerGate() {
       aria-modal="true"
       aria-labelledby="disclaimer-heading"
       onKeyDown={handleKeyDown}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-deep/90 p-4"
     >
       <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded border border-line bg-paper p-8">
-        <Seal className="mx-auto h-16 w-16 text-gold-primary" />
+        <Image
+          src="/images/logo-seal.png"
+          alt="Chamber of Praveen Kumar Gupta seal"
+          width={64}
+          height={64}
+          className="mx-auto h-16 w-16"
+        />
         <h2
           id="disclaimer-heading"
           className="mt-4 text-center font-serif text-xl font-semibold text-ivory"
@@ -87,7 +93,7 @@ export function DisclaimerGate() {
             ref={agreeRef}
             type="button"
             onClick={agree}
-            className="rounded bg-gold-primary px-5 py-2.5 text-sm font-medium text-ink hover:bg-gold-deep focus:outline-none focus:ring-1 focus:ring-ink"
+            className="rounded bg-gold-primary px-5 py-2.5 text-sm font-medium text-ivory hover:bg-gold-deep focus:outline-none focus:ring-1 focus:ring-ivory"
           >
             I Agree — Enter Site
           </button>

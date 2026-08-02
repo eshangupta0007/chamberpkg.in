@@ -1,9 +1,16 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const logoBuffer = await readFile(
+    path.join(process.cwd(), "public/images/logo-seal.png"),
+  );
+  const logoSrc = `data:image/png;base64,${logoBuffer.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -14,37 +21,22 @@ export default function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FAF7F0",
+          backgroundColor: "#17140F",
           fontFamily: "serif",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            width: 140,
-            height: 140,
-            borderRadius: "50%",
-            border: "3px solid #C9A227",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "#C9A227",
-            fontSize: 20,
-            letterSpacing: 2,
-          }}
-        >
-          CPKG
-        </div>
+        <img src={logoSrc} width={160} height={158} alt="" />
         <div
           style={{
             marginTop: 32,
             fontSize: 56,
             fontWeight: 700,
-            color: "#121212",
+            color: "#F5EFE0",
           }}
         >
           Chamber of Praveen Kumar Gupta
         </div>
-        <div style={{ marginTop: 16, fontSize: 28, color: "#2B2B2E" }}>
+        <div style={{ marginTop: 16, fontSize: 28, color: "#B8860B" }}>
           Advocates · Since 1991
         </div>
       </div>

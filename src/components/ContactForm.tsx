@@ -85,7 +85,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-ivory">
-          Phone <span className="text-charcoal/80">(optional)</span>
+          Phone <span className="text-charcoal/90">(optional)</span>
         </label>
         <input
           id="phone"
@@ -115,7 +115,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-ivory hover:bg-cherry-red-deep disabled:opacity-50"
+        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-deep-text hover:bg-cherry-red-deep disabled:opacity-50"
       >
         {status === "submitting" ? "Sending…" : "Send Message"}
       </button>

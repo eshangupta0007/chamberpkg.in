@@ -43,7 +43,7 @@ export default function TeamPage() {
                 {member.practiceNote}
               </p>
               {member.courts && (
-                <ul className="mt-3 space-y-1 border-t border-line pt-3 text-xs text-charcoal/80">
+                <ul className="mt-3 space-y-1 border-t border-line pt-3 text-xs text-charcoal/90">
                   {member.courts.map((court) => (
                     <li key={court}>{court}</li>
                   ))}
