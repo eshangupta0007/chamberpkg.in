@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { categories, getPublishedPosts } from "@/lib/notion";
+import { categories, getPublishedPosts } from "@/lib/blog";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
   "Blog",
   "Writing on law & policy, Jyotish, political philosophy, and Chamber notes from the Chamber of Praveen Kumar Gupta.",
 );
-
-export const revalidate = 3600;
 
 export default async function BlogPage({
   searchParams,

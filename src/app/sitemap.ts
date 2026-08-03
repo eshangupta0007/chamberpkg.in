@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getPublishedPosts } from "@/lib/notion";
+import { getPublishedPosts } from "@/lib/blog";
 import { siteUrl } from "@/lib/site-url";
 
 const staticRoutes = [
