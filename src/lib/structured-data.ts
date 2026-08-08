@@ -1,11 +1,12 @@
 import { addresses, email, phones, siteName } from "./site-data";
 import { siteUrl } from "./site-url";
+import { practiceAreas } from "./practice-areas";
 import type { TeamMember } from "./team";
 
 export function attorneyJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Attorney",
+    "@type": ["Attorney", "LegalService", "Organization"],
     name: siteName,
     url: siteUrl,
     email,
@@ -22,6 +23,7 @@ export function attorneyJsonLd() {
       "@type": "State",
       name: "Uttar Pradesh",
     },
+    knowsAbout: practiceAreas.map((area) => area.title),
   };
 }
 

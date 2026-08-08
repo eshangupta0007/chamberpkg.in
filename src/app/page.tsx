@@ -1,11 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { LanguageToggle, type Lang } from "@/components/LanguageToggle";
 import { practiceAreas } from "@/lib/practice-areas";
 import { team } from "@/lib/team";
 import { attorneyJsonLd } from "@/lib/structured-data";
+import { hiHome, hiPracticeAreas } from "@/lib/i18n-hi";
 
 export default function Home() {
+  const [lang, setLang] = useState<Lang>("en");
+  const isHi = lang === "hi";
+
   return (
     <div>
       <script
@@ -14,33 +22,43 @@ export default function Home() {
       />
       <section className="border-b border-line bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-20 text-center">
+          <div className="flex justify-center">
+            <LanguageToggle lang={lang} onChange={setLang} />
+          </div>
           <Image
             src="/images/logo-seal.png"
             alt="Chamber of Praveen Kumar Gupta seal"
             width={96}
             height={96}
-            className="mx-auto h-24 w-24"
+            className="mx-auto mt-6 h-24 w-24"
             priority
           />
           <h1 className="mx-auto mt-6 max-w-[30ch] font-serif text-3xl font-semibold leading-tight text-ivory md:text-5xl">
             Chamber of Praveen Kumar Gupta
           </h1>
           <p className="mx-auto mt-4 max-w-[55ch] text-base text-charcoal md:text-lg">
-            Advocates, Hon&rsquo;ble Supreme Court of India, Allahabad High Court,
-            and District Courts, Uttar Pradesh. Established 1991.
+            {isHi ? (
+              hiHome.heroLine
+            ) : (
+              <>
+                Advocates, Hon&rsquo;ble Supreme Court of India, Allahabad
+                High Court, and District Courts, Uttar Pradesh. Established
+                1991.
+              </>
+            )}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm">
             <Link
               href="/practice-areas"
               className="rounded border border-line px-5 py-2.5 text-ivory hover:border-gold-primary hover:text-gold-text"
             >
-              View Practice Areas
+              {isHi ? hiHome.ctaPractice : "View Practice Areas"}
             </Link>
             <Link
               href="/contact"
               className="rounded bg-cherry-red px-5 py-2.5 text-deep-text hover:bg-cherry-red-deep"
             >
-              Contact the Chamber
+              {isHi ? hiHome.ctaContact : "Contact the Chamber"}
             </Link>
           </div>
         </div>
@@ -49,15 +67,22 @@ export default function Home() {
       <section className="border-b border-line bg-paper">
         <div className="mx-auto max-w-[1200px] px-6 py-16 text-center">
           <p className="mx-auto max-w-[70ch] text-base leading-relaxed text-charcoal md:text-lg">
-            Established in 1991, the Chamber has practiced continuously across
-            the district judiciary of Lucknow and the Allahabad High Court —
-            today under the stewardship of Eshan Kumar Gupta, Proprietor.
+            {isHi ? (
+              hiHome.legacyLine
+            ) : (
+              <>
+                Established in 1991, the Chamber has practiced continuously
+                across the district judiciary of Lucknow and the Allahabad
+                High Court — today under the stewardship of Eshan Kumar
+                Gupta, Proprietor.
+              </>
+            )}
           </p>
           <Link
             href="/about"
             className="mt-4 inline-block text-sm font-medium text-gold-text underline hover:text-gold-primary"
           >
-            Read the Chamber&rsquo;s history →
+            {isHi ? hiHome.historyLink : "Read the Chamber’s history →"}
           </Link>
         </div>
       </section>
@@ -65,7 +90,7 @@ export default function Home() {
       <section className="border-b border-line bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-16">
           <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
-            Areas of Practice
+            {isHi ? hiHome.practiceHeading : "Areas of Practice"}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {practiceAreas.map((area) => (
@@ -75,9 +100,11 @@ export default function Home() {
                 className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
               >
                 <h3 className="font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
-                  {area.title}
+                  {isHi ? hiPracticeAreas[area.slug].title : area.title}
                 </h3>
-                <p className="mt-2 text-sm text-charcoal">{area.summary}</p>
+                <p className="mt-2 text-sm text-charcoal">
+                  {isHi ? hiPracticeAreas[area.slug].summary : area.summary}
+                </p>
               </Link>
             ))}
           </div>
@@ -87,7 +114,7 @@ export default function Home() {
       <section className="bg-paper">
         <div className="mx-auto max-w-[1200px] px-6 py-16">
           <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
-            The Chamber
+            {isHi ? hiHome.teamHeading : "The Chamber"}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (

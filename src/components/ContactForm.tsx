@@ -1,12 +1,16 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import type { Lang } from "./LanguageToggle";
+import { hiContactForm } from "@/lib/i18n-hi";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({ lang = "en" }: { lang?: Lang }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const isHi = lang === "hi";
+  const t = hiContactForm;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +29,9 @@ export function ContactForm() {
       const json = await res.json();
 
       if (!res.ok) {
-        setErrorMessage(json.error ?? "Something went wrong. Please try again.");
+        setErrorMessage(
+          json.error ?? (isHi ? t.genericError : "Something went wrong. Please try again."),
+        );
         setStatus("error");
         return;
       }
@@ -33,7 +39,7 @@ export function ContactForm() {
       setStatus("success");
       form.reset();
     } catch {
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage(isHi ? t.genericError : "Something went wrong. Please try again.");
       setStatus("error");
     }
   }
@@ -41,7 +47,9 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded border border-line bg-paper p-6 text-sm text-charcoal">
-        Your message has been sent. The Chamber will respond in due course.
+        {isHi
+          ? t.success
+          : "Your message has been sent. The Chamber will respond in due course."}
       </div>
     );
   }
@@ -59,7 +67,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-ivory">
-          Name
+          {isHi ? t.name : "Name"}
         </label>
         <input
           id="name"
@@ -72,7 +80,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-ivory">
-          Email
+          {isHi ? t.email : "Email"}
         </label>
         <input
           id="email"
@@ -85,7 +93,10 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-ivory">
-          Phone <span className="text-charcoal/90">(optional)</span>
+          {isHi ? t.phone : "Phone"}{" "}
+          <span className="text-charcoal/90">
+            {isHi ? t.optional : "(optional)"}
+          </span>
         </label>
         <input
           id="phone"
@@ -97,7 +108,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-ivory">
-          Message
+          {isHi ? t.message : "Message"}
         </label>
         <textarea
           id="message"
@@ -117,7 +128,13 @@ export function ContactForm() {
         disabled={status === "submitting"}
         className="rounded bg-cherry-red px-6 py-2.5 text-sm text-deep-text hover:bg-cherry-red-deep disabled:opacity-50"
       >
-        {status === "submitting" ? "Sending…" : "Send Message"}
+        {status === "submitting"
+          ? isHi
+            ? t.sending
+            : "Sending…"
+          : isHi
+            ? t.send
+            : "Send Message"}
       </button>
     </form>
   );
