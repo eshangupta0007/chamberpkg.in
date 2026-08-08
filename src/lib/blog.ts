@@ -22,11 +22,15 @@ export type BlogPostSummary = {
 export type BlogPost = BlogPostSummary & {
   content: string;
   readingTimeMinutes: number;
+  /** Slug of a practice area this post is genuinely relevant to, if any. */
+  relatedPracticeArea?: string;
 };
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
-async function readAllPosts(): Promise<(BlogPostSummary & { content: string })[]> {
+async function readAllPosts(): Promise<
+  (BlogPostSummary & { content: string; relatedPracticeArea?: string })[]
+> {
   let files: string[];
   try {
     files = await readdir(BLOG_DIR);
@@ -46,6 +50,7 @@ async function readAllPosts(): Promise<(BlogPostSummary & { content: string })[]
           excerpt: data.excerpt ?? "",
           category: data.category ?? "Chamber Notes",
           date: data.date ?? "",
+          relatedPracticeArea: data.relatedPracticeArea,
           content: content.trim(),
         };
       }),

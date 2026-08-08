@@ -31,6 +31,7 @@ export default function TeamPage() {
         {team.map((member) => (
           <div
             key={member.slug}
+            id={member.slug}
             className="overflow-hidden rounded border border-line bg-paper"
           >
             <PhotoPlaceholder className="aspect-[4/5] w-full" />

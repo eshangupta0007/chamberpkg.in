@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SocialIcons } from "./SocialIcons";
 import { addresses, email, phones, siteName } from "@/lib/site-data";
 
 export function Footer() {
@@ -17,6 +18,7 @@ export function Footer() {
             />
             <p className="mt-3 font-serif text-base">{siteName}</p>
             <p className="mt-1 text-xs text-deep-text/60">Advocates &middot; Since 1991</p>
+            <SocialIcons className="mt-4 flex items-center gap-4" />
           </div>
 
           <div className="md:col-span-2 grid gap-6 sm:grid-cols-3">

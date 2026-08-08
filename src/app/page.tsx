@@ -71,7 +71,7 @@ export default function Home() {
             {practiceAreas.map((area) => (
               <Link
                 key={area.slug}
-                href="/practice-areas"
+                href={`/practice-areas#${area.slug}`}
                 className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
               >
                 <h3 className="font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
@@ -93,7 +93,7 @@ export default function Home() {
             {team.map((member) => (
               <Link
                 key={member.slug}
-                href="/team"
+                href={`/team#${member.slug}`}
                 className="group overflow-hidden rounded border border-line bg-ink transition-colors hover:border-gold-primary"
               >
                 <PhotoPlaceholder className="aspect-[4/5] w-full" />

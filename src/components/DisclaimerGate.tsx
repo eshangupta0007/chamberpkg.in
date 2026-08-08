@@ -12,9 +12,9 @@ export function DisclaimerGate() {
   const agreeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const agreed = window.localStorage.getItem(STORAGE_KEY);
+    const agreed = window.sessionStorage.getItem(STORAGE_KEY);
     if (agreed !== "true") {
-      // Reading localStorage (an external system) requires an effect; SSR has no window.
+      // Reading sessionStorage (an external system) requires an effect; SSR has no window.
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setOpen(true);
     }
@@ -33,7 +33,7 @@ export function DisclaimerGate() {
   if (!open) return null;
 
   function agree() {
-    window.localStorage.setItem(STORAGE_KEY, "true");
+    window.sessionStorage.setItem(STORAGE_KEY, "true");
     setOpen(false);
   }
 

@@ -20,6 +20,7 @@ export default function PracticeAreasPage() {
         {practiceAreas.map((area) => (
           <section
             key={area.slug}
+            id={area.slug}
             className="border-b border-line pb-12 last:border-b-0"
           >
             <h2 className="font-serif text-2xl font-semibold text-ivory">

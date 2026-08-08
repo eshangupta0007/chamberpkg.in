@@ -6,6 +6,7 @@ export const nav = [
   { href: "/practice-areas", label: "Practice Areas" },
   { href: "/where-we-practice", label: "Where We Practice" },
   { href: "/blog", label: "Blog" },
+  { href: "/publications", label: "Publications" },
   { href: "/internships", label: "Internships" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -52,6 +53,12 @@ export const phones = [
 ] as const;
 
 export const email = "eshangupta0007@gmail.com";
+
+export const socialLinks = [
+  { name: "Facebook", href: "https://www.facebook.com/eshan.gupta.963434" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/eshan-gupta-3b3a90258/" },
+  { name: "Instagram", href: "https://www.instagram.com/eshangupta0007/" },
+] as const;
 
 export const officeHours = "Monday – Saturday, 10:30 AM – 6:30 PM";
 export const officeHoursNote =

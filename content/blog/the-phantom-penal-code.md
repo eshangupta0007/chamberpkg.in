@@ -3,6 +3,7 @@ title: "The Phantom Penal Code: How the 2005 'Armed Drill' Amendments Collapsed 
 excerpt: "Sections 144A CrPC and 153AA IPC passed Parliament in 2005 and received Presidential assent, then sat un-notified for 18 years before vanishing entirely from the new BNS/BNSS. Why a politically-targeted criminal law was constitutionally unworkable from the start."
 category: "Law & Policy"
 date: "2026-08-02"
+relatedPracticeArea: "criminal-law"
 ---
 
 Legislative history is occasionally defined not by the laws that are actively enforced, but by those that the State quietly abandons. The Code of Criminal Procedure (Amendment) Act, 2005, which passed both houses of Parliament and received Presidential assent, introduced two highly controversial provisions. Section 144A of the CrPC granted District Magistrates the power to ban armed processions and mass drills with weapons (including lathis) for up to six months to preserve public order. Simultaneously, Section 153AA of the IPC was added as the corresponding penal provision, making participation in a banned armed drill a cognizable, non-bailable offense punishable by up to six months imprisonment.
