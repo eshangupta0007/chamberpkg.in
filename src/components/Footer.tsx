@@ -24,7 +24,7 @@ export function Footer() {
           <div className="md:col-span-2 grid gap-6 sm:grid-cols-3">
             {addresses.map((addr) => (
               <div key={addr.label}>
-                <p className="text-xs uppercase tracking-wide text-gold-primary">
+                <p className="label-caps text-xs text-gold-primary">
                   {addr.label}
                 </p>
                 <p className="mt-1.5 text-sm text-deep-text/80">
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <p className="text-xs uppercase tracking-wide text-gold-primary">Reach the Chamber</p>
+            <p className="label-caps text-xs text-gold-primary">Reach the Chamber</p>
             <ul className="mt-1.5 space-y-1 text-sm text-deep-text/80">
               {phones.map((p) => (
                 <li key={p.number}>{p.display}</li>

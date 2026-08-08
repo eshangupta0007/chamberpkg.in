@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SealDivider } from "@/components/SealDivider";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
@@ -23,7 +24,7 @@ const chapters = [
 export default function PublicationsPage() {
   return (
     <div className="mx-auto max-w-[1200px] px-6 py-16">
-      <p className="text-xs uppercase tracking-wide text-gold-text">
+      <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
@@ -60,7 +61,11 @@ export default function PublicationsPage() {
         </p>
       </div>
 
-      <div className="mt-12 max-w-[75ch]">
+      <div className="mt-14 max-w-[480px]">
+        <SealDivider />
+      </div>
+
+      <div className="mt-10 max-w-[75ch]">
         <h3 className="font-serif text-xl font-semibold text-ivory">
           Structure
         </h3>
@@ -78,7 +83,11 @@ export default function PublicationsPage() {
         </dl>
       </div>
 
-      <div className="mt-12 max-w-[75ch]">
+      <div className="mt-14 max-w-[480px]">
+        <SealDivider />
+      </div>
+
+      <div className="mt-10 max-w-[75ch]">
         <h3 className="font-serif text-xl font-semibold text-ivory">
           Status
         </h3>

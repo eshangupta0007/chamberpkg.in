@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug, getPublishedPosts } from "@/lib/blog";
 import { practiceAreas } from "@/lib/practice-areas";
+import { SealDivider } from "@/components/SealDivider";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -47,7 +48,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-[75ch] px-6 py-16">
-      <p className="text-xs uppercase tracking-wide text-gold-text">
+      <p className="label-caps text-xs text-gold-text">
         {post.category}
       </p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
@@ -69,8 +70,13 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {(relatedArea || showPublicationsLink) && (
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-line pt-6 text-sm">
-          <span className="text-charcoal/90">Related:</span>
+        <div className="mt-10">
+          <SealDivider className="max-w-[320px]" />
+        </div>
+      )}
+      {(relatedArea || showPublicationsLink) && (
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <span className="label-caps text-charcoal/90">Related:</span>
           {relatedArea && (
             <Link
               href={`/practice-areas#${relatedArea.slug}`}

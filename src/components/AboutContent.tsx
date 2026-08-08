@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { LanguageToggle, type Lang } from "./LanguageToggle";
+import { SealDivider } from "./SealDivider";
 import { hiAbout } from "@/lib/i18n-hi";
 
 // Legacy paragraph per build spec §4.2 — drafted for Eshan's review; confirm
@@ -19,7 +20,7 @@ export function AboutContent() {
       lang={isHi ? "hi" : undefined}
     >
       <div className="flex justify-between gap-4">
-        <p className="text-xs uppercase tracking-wide text-gold-text">
+        <p className="label-caps text-xs text-gold-text">
           Chamber of Praveen Kumar Gupta
         </p>
         <LanguageToggle lang={lang} onChange={setLang} />
@@ -63,7 +64,10 @@ export function AboutContent() {
         </figcaption>
       </figure>
 
-      <div className="mt-12 border-t border-line pt-8">
+      <div className="mt-12">
+        <SealDivider className="max-w-[320px]" />
+      </div>
+      <div className="mt-8">
         <p className="font-serif text-lg font-semibold text-ivory">
           {isHi ? hiAbout.name : "Eshan Kumar Gupta"}
         </p>

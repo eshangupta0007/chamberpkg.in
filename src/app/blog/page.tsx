@@ -18,7 +18,7 @@ export default async function BlogPage({
 
   return (
     <div className="mx-auto max-w-[1200px] px-6 py-16">
-      <p className="text-xs uppercase tracking-wide text-gold-text">
+      <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
@@ -30,8 +30,8 @@ export default async function BlogPage({
           href="/blog"
           className={
             !category
-              ? "rounded-full bg-gold-primary px-3 py-1 text-ivory"
-              : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
+              ? "label-caps rounded-full bg-gold-primary px-3 py-1 text-ivory"
+              : "label-caps rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
           }
         >
           All
@@ -42,8 +42,8 @@ export default async function BlogPage({
             href={`/blog?category=${encodeURIComponent(cat)}`}
             className={
               category === cat
-                ? "rounded-full bg-gold-primary px-3 py-1 text-ivory"
-                : "rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
+                ? "label-caps rounded-full bg-gold-primary px-3 py-1 text-ivory"
+                : "label-caps rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
             }
           >
             {cat}
@@ -63,7 +63,7 @@ export default async function BlogPage({
               href={`/blog/${post.slug}`}
               className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
             >
-              <p className="text-xs uppercase tracking-wide text-gold-text">
+              <p className="label-caps text-xs text-gold-text">
                 {post.category}
               </p>
               <h2 className="mt-2 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">

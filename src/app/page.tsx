@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
+import { SealDivider } from "@/components/SealDivider";
 import { LanguageToggle, type Lang } from "@/components/LanguageToggle";
 import { practiceAreas } from "@/lib/practice-areas";
 import { team } from "@/lib/team";
@@ -20,7 +21,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(attorneyJsonLd()) }}
       />
-      <section className="border-b border-line bg-ink">
+      <section className="bg-ink">
         <div className="mx-auto max-w-[1200px] px-6 py-20 text-center">
           <div className="flex justify-center">
             <LanguageToggle lang={lang} onChange={setLang} />
@@ -64,8 +65,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-line bg-paper">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 text-center">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1200px] px-6 pt-10">
+          <SealDivider className="mx-auto max-w-[480px]" />
+        </div>
+        <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-6 text-center">
           <p className="mx-auto max-w-[70ch] text-base leading-relaxed text-charcoal md:text-lg">
             {isHi ? (
               hiHome.legacyLine
@@ -87,19 +91,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-line bg-ink">
-        <div className="mx-auto max-w-[1200px] px-6 py-16">
+      <section className="bg-ink">
+        <div className="mx-auto max-w-[1200px] px-6 pt-10">
+          <SealDivider className="mx-auto max-w-[480px]" />
+        </div>
+        <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-6">
           <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
             {isHi ? hiHome.practiceHeading : "Areas of Practice"}
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {practiceAreas.map((area) => (
+            {practiceAreas.map((area, i) => (
               <Link
                 key={area.slug}
                 href={`/practice-areas#${area.slug}`}
                 className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
               >
-                <h3 className="font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
+                <p className="label-caps text-xs text-gold-text">
+                  §{String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-1.5 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
                   {isHi ? hiPracticeAreas[area.slug].title : area.title}
                 </h3>
                 <p className="mt-2 text-sm text-charcoal">
@@ -112,7 +122,10 @@ export default function Home() {
       </section>
 
       <section className="bg-paper">
-        <div className="mx-auto max-w-[1200px] px-6 py-16">
+        <div className="mx-auto max-w-[1200px] px-6 pt-10">
+          <SealDivider className="mx-auto max-w-[480px]" />
+        </div>
+        <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-6">
           <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
             {isHi ? hiHome.teamHeading : "The Chamber"}
           </h2>

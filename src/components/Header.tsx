@@ -25,7 +25,7 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-deep-text/80 hover:text-gold-primary transition-colors"
+              className="label-caps text-deep-text/80 hover:text-gold-primary transition-colors"
             >
               {item.label}
             </Link>
@@ -33,7 +33,7 @@ export function Header() {
         </nav>
 
         <details className="lg:hidden relative">
-          <summary className="list-none cursor-pointer text-sm text-deep-text border border-deep-line rounded px-3 py-1.5">
+          <summary className="label-caps list-none cursor-pointer text-sm text-deep-text border border-deep-line rounded px-3 py-1.5">
             Menu
           </summary>
           <nav className="absolute right-0 z-20 mt-2 flex w-56 flex-col gap-1 rounded border border-deep-line bg-deep p-3 shadow-md">
@@ -41,7 +41,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded px-2 py-1.5 text-sm text-deep-text/80 hover:text-gold-primary"
+                className="label-caps rounded px-2 py-1.5 text-sm text-deep-text/80 hover:text-gold-primary"
               >
                 {item.label}
               </Link>

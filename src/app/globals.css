@@ -2,35 +2,41 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Light "premium" palette — rich warm cream body (not dull beige: deeper,
- * more saturated tones + near-black text for real contrast), gold accents,
- * cherry-red for primary actions. Header/Footer stay a dark "chrome" bookend
- * (--deep/--deep-text/--deep-line) so the gold seal keeps its glow and the
- * page reads as book-ended rather than flat. Token NAMES are unchanged from
- * earlier passes to minimize churn — ink/paper/ivory/charcoal keep their
- * ROLES (page bg / card bg / primary text / secondary text) but flip
- * light-dark direction. All pairs re-verified for WCAG AA below.
+ * Chamber palette, built on five brand colours: Ink #1B2A22, Parchment
+ * #F3ECD8, Brass #9C7A3C, Oxblood #6B2028, Ledger Green #223D2E. Token
+ * NAMES are unchanged from earlier passes to minimize churn — ink, paper,
+ * ivory, charcoal, gold-family, cherry-red, and deep keep their ROLES
+ * (page bg, card bg, primary text, secondary text, brass accent, primary
+ * CTA, dark chrome) but now map onto the five brand colours below:
+ *   --ink            → Parchment  (page background)
+ *   --ivory          → Ink        (primary/heading text)
+ *   --paper          → Parchment, deepened (card/section background)
+ *   --charcoal       → Ink, softened (secondary/body text)
+ *   --gold-primary/deep/text → Brass, at three depths (accents, links)
+ *   --cherry-red / -deep     → Oxblood, at two depths (primary CTA)
+ *   --deep / -text / -line   → Ledger Green (header/footer chrome)
+ * All pairs re-verified for WCAG AA below.
  */
 :root {
-  --gold-primary: #B8860B;
-  --gold-deep: #AB7D0C;
-  --gold-text: #7A5A0A;
-  --ink: #FBF6E9;
-  --charcoal: #5C4E3B;
-  --ivory: #201A12;
-  --paper: #F1E2BE;
-  --line: #9C7A2E;
-  --cherry-red: #A31621;
-  --cherry-red-deep: #7D1019;
-  --error-red: #B91C1C;
+  --gold-primary: #9C7A3C;
+  --gold-deep: #7C6230;
+  --gold-text: #5E4A22;
+  --ink: #F3ECD8;
+  --charcoal: #3C4C40;
+  --ivory: #1B2A22;
+  --paper: #E8DCB8;
+  --line: #9C7A3C;
+  --cherry-red: #6B2028;
+  --cherry-red-deep: #4C171C;
+  --error-red: #A5333A;
   /* Darker than WhatsApp's brand green so white button text clears AA (their
      brand green is ~2:1 with white and fails contrast as a button fill). */
   --whatsapp-green: #1B7A43;
 
   /* Dark chrome bookend — header, footer, and the disclaimer backdrop. */
-  --deep: #17140F;
-  --deep-text: #F5EFE0;
-  --deep-line: #6B6248;
+  --deep: #223D2E;
+  --deep-text: #F3ECD8;
+  --deep-line: #6B5730;
 
   --background: var(--ink);
   --foreground: var(--ivory);
@@ -56,14 +62,26 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-inter);
+  /* Headings: Fraunces, a high-contrast transitional display serif.
+     Body: Source Serif 4, a separate, more legible text serif. */
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-source-serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), ui-serif, Georgia, serif;
+}
+
+@layer utilities {
+  /* Labels: letterspaced small caps. font-variant-caps degrades gracefully
+     to browser-synthesized small caps where a font lacks true smcp glyphs. */
+  .label-caps {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.09em;
+    font-weight: 600;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
