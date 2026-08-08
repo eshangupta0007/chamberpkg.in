@@ -58,15 +58,6 @@ export default function PublicationsPage() {
           actionable wrongs, and evidence &mdash; with the residuary power
           invoked narrowly for its regulatory tier alone.
         </p>
-
-        <a
-          href="/documents/the-artificial-intelligence-code-2026.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 inline-block rounded border border-line px-5 py-2.5 text-sm text-ivory hover:border-gold-primary hover:text-gold-text"
-        >
-          Download the full text (PDF)
-        </a>
       </div>
 
       <div className="mt-12 max-w-[75ch]">
