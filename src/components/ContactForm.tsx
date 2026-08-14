@@ -46,7 +46,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
 
   if (status === "success") {
     return (
-      <div className="rounded border border-line bg-paper p-6 text-sm text-charcoal">
+      <div className="border border-line bg-paper p-6 text-sm text-charcoal">
         {isHi
           ? t.success
           : "Your message has been sent. The Chamber will respond in due course."}
@@ -74,7 +74,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
           name="name"
           type="text"
           required
-          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full border border-line-strong bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
@@ -87,7 +87,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
           name="email"
           type="email"
           required
-          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full border border-line-strong bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
@@ -102,7 +102,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
           id="phone"
           name="phone"
           type="tel"
-          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full border border-line-strong bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
@@ -115,7 +115,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
           name="message"
           required
           rows={5}
-          className="mt-1.5 w-full rounded border border-line bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
+          className="mt-1.5 w-full border border-line-strong bg-paper px-3 py-2 text-sm text-ivory focus:border-gold-deep focus:outline-none focus:ring-1 focus:ring-gold-deep"
         />
       </div>
 
@@ -126,7 +126,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded bg-cherry-red px-6 py-2.5 text-sm text-deep-text hover:bg-cherry-red-deep disabled:opacity-50"
+        className="bg-cherry-red px-6 py-2.5 text-sm text-deep-text hover:bg-cherry-red-deep disabled:opacity-50"
       >
         {status === "submitting"
           ? isHi

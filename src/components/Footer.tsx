@@ -24,7 +24,7 @@ export function Footer() {
           <div className="md:col-span-2 grid gap-6 sm:grid-cols-3">
             {addresses.map((addr) => (
               <div key={addr.label}>
-                <p className="label-caps text-xs text-gold-primary">
+                <p className="label-caps text-xs text-gold-on-dark">
                   {addr.label}
                 </p>
                 <p className="mt-1.5 text-sm text-deep-text/80">
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-1">
-            <p className="label-caps text-xs text-gold-primary">Reach the Chamber</p>
+            <p className="label-caps text-xs text-gold-on-dark">Reach the Chamber</p>
             <ul className="mt-1.5 space-y-1 text-sm text-deep-text/80">
               {phones.map((p) => (
                 <li key={p.number}>{p.display}</li>
@@ -52,10 +52,10 @@ export function Footer() {
         <div className="mt-10 flex flex-col gap-3 border-t border-deep-text/15 pt-6 text-xs text-deep-text/60 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/disclaimer" className="hover:text-gold-primary">
+            <Link href="/disclaimer" className="hover:text-gold-on-dark">
               Disclaimer
             </Link>
-            <Link href="/privacy-policy" className="hover:text-gold-primary">
+            <Link href="/privacy-policy" className="hover:text-gold-on-dark">
               Privacy Policy
             </Link>
           </div>

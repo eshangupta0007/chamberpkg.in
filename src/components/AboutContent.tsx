@@ -25,12 +25,16 @@ export function AboutContent() {
         </p>
         <LanguageToggle lang={lang} onChange={setLang} />
       </div>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         {isHi ? hiAbout.heading : "About the Chamber"}
       </h1>
 
       <div className="mt-8 space-y-4 text-base leading-relaxed text-charcoal">
-        <p>{isHi ? hiAbout.legacyParagraph : legacyParagraph}</p>
+        {/* Drop cap on the Latin text only — a Devanagari initial carries
+            matras above and below the line and does not set as a drop cap. */}
+        <p className={isHi ? undefined : "drop-cap"}>
+          {isHi ? hiAbout.legacyParagraph : legacyParagraph}
+        </p>
       </div>
 
       <figure className="mt-10">
@@ -40,7 +44,7 @@ export function AboutContent() {
           width={2400}
           height={1172}
           sizes="(max-width: 900px) 100vw, 750px"
-          className="w-full rounded border border-line object-cover"
+          className="w-full border border-line object-cover"
           priority
         />
         <figcaption className="mt-2 text-xs text-charcoal/90">

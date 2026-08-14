@@ -10,7 +10,7 @@ export const metadata = pageMetadata(
 export default function InternshipsPage() {
   return (
     <div className="mx-auto max-w-[65ch] px-6 py-16">
-      <p className="text-xs uppercase tracking-wide text-gold-text">
+      <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
       <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
@@ -25,7 +25,7 @@ export default function InternshipsPage() {
         <InternshipForm />
       </div>
 
-      <div className="mt-10 rounded border border-line bg-paper p-6">
+      <div className="mt-10 border border-line bg-paper p-6">
         <p className="text-sm leading-relaxed text-charcoal">
           Alternatively, this information &mdash; full name, email, phone
           number, law college/university, and a copy of your resume/CV

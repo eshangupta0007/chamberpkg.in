@@ -22,19 +22,20 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(attorneyJsonLd()) }}
       />
       <section className="bg-ink">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 text-center">
-          <div className="flex justify-center">
+        <div className="mx-auto max-w-[1200px] px-6 pb-20 pt-8">
+          <div className="flex justify-end">
             <LanguageToggle lang={lang} onChange={setLang} />
           </div>
+          <div className="text-center">
           <Image
             src="/images/logo-seal.png"
             alt="Chamber of Praveen Kumar Gupta seal"
-            width={96}
-            height={96}
-            className="mx-auto mt-6 h-24 w-24"
+            width={128}
+            height={128}
+            className="mx-auto mt-4 h-28 w-28 md:h-32 md:w-32"
             priority
           />
-          <h1 className="mx-auto mt-6 max-w-[30ch] font-serif text-3xl font-semibold leading-tight text-ivory md:text-5xl">
+          <h1 className="display-tight mx-auto mt-7 max-w-[30ch] font-serif text-3xl font-semibold leading-[1.08] text-ivory md:text-5xl">
             Chamber of Praveen Kumar Gupta
           </h1>
           <p className="mx-auto mt-4 max-w-[55ch] text-base text-charcoal md:text-lg">
@@ -51,16 +52,17 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm">
             <Link
               href="/practice-areas"
-              className="rounded border border-line px-5 py-2.5 text-ivory hover:border-gold-primary hover:text-gold-text"
+              className="border border-line px-5 py-2.5 text-ivory hover:border-gold-primary hover:text-gold-text"
             >
               {isHi ? hiHome.ctaPractice : "View Practice Areas"}
             </Link>
             <Link
               href="/contact"
-              className="rounded bg-cherry-red px-5 py-2.5 text-deep-text hover:bg-cherry-red-deep"
+              className="bg-cherry-red px-5 py-2.5 text-deep-text hover:bg-cherry-red-deep"
             >
               {isHi ? hiHome.ctaContact : "Contact the Chamber"}
             </Link>
+          </div>
           </div>
         </div>
       </section>
@@ -96,23 +98,31 @@ export default function Home() {
           <SealDivider className="mx-auto max-w-[480px]" />
         </div>
         <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-6">
-          <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
+          <h2 className="display-tight text-center font-serif text-2xl font-semibold text-ivory">
             {isHi ? hiHome.practiceHeading : "Areas of Practice"}
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Nine areas: three columns divide evenly, so the block closes as a
+              square rather than stranding a ninth card alone on a fourth row. */}
+          <div className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {practiceAreas.map((area, i) => (
               <Link
                 key={area.slug}
                 href={`/practice-areas#${area.slug}`}
-                className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
+                className="group relative overflow-hidden bg-paper p-7 transition-colors hover:bg-ink"
               >
-                <p className="label-caps text-xs text-gold-text">
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-3 -top-5 font-serif text-[5.5rem] font-semibold leading-none text-gold-primary/[0.09] transition-colors group-hover:text-gold-primary/[0.16]"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="label-caps relative text-xs text-gold-text">
                   §{String(i + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-1.5 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
+                <h3 className="relative mt-2 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
                   {isHi ? hiPracticeAreas[area.slug].title : area.title}
                 </h3>
-                <p className="mt-2 text-sm text-charcoal">
+                <p className="relative mt-2 text-sm leading-relaxed text-charcoal">
                   {isHi ? hiPracticeAreas[area.slug].summary : area.summary}
                 </p>
               </Link>
@@ -126,34 +136,36 @@ export default function Home() {
           <SealDivider className="mx-auto max-w-[480px]" />
         </div>
         <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-6">
-          <h2 className="text-center font-serif text-2xl font-semibold text-ivory">
+          <h2 className="display-tight text-center font-serif text-2xl font-semibold text-ivory">
             {isHi ? hiHome.teamHeading : "The Chamber"}
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <Link
                 key={member.slug}
                 href={`/team#${member.slug}`}
-                className="group overflow-hidden rounded border border-line bg-ink transition-colors hover:border-gold-primary"
+                className="group block"
               >
-                {member.photo ? (
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    width={600}
-                    height={750}
-                    sizes="(max-width: 640px) 100vw, 280px"
-                    className="aspect-[4/5] w-full object-cover"
-                  />
-                ) : (
-                  <PhotoPlaceholder className="aspect-[4/5] w-full" />
-                )}
-                <div className="p-4">
-                  <p className="font-serif text-base font-semibold text-ivory group-hover:text-gold-text">
-                    {member.name}
-                  </p>
-                  <p className="mt-1 text-xs text-charcoal">{member.title}</p>
+                <div className="overflow-hidden border border-line bg-ink transition-colors group-hover:border-gold-primary">
+                  {member.photo ? (
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={600}
+                      height={750}
+                      sizes="(max-width: 640px) 100vw, 280px"
+                      className="portrait-tone aspect-[4/5] w-full object-cover"
+                    />
+                  ) : (
+                    <PhotoPlaceholder className="aspect-[4/5] w-full" />
+                  )}
                 </div>
+                <p className="mt-3 font-serif text-base font-semibold text-ivory group-hover:text-gold-text">
+                  {member.name}
+                </p>
+                <p className="label-caps mt-0.5 text-xs text-gold-text">
+                  {member.title}
+                </p>
               </Link>
             ))}
           </div>

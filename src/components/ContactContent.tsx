@@ -23,7 +23,7 @@ export function ContactContent() {
     <div lang={isHi ? "hi" : undefined}>
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs uppercase tracking-wide text-gold-text">
+          <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
           <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
@@ -62,8 +62,8 @@ export function ContactContent() {
                   rel="noopener noreferrer"
                   className={
                     p.primary
-                      ? "rounded bg-whatsapp-green px-4 py-2.5 text-sm font-medium text-white hover:opacity-90"
-                      : "rounded border border-line px-4 py-2.5 text-sm text-charcoal hover:border-gold-primary"
+                      ? "bg-whatsapp-green px-4 py-2.5 text-sm font-medium text-white hover:opacity-90"
+                      : "border border-line px-4 py-2.5 text-sm text-charcoal hover:border-gold-primary"
                   }
                 >
                   {isHi ? t.whatsappPrefix : "WhatsApp"} {p.display}
@@ -106,7 +106,7 @@ export function ContactContent() {
           {addresses.map((addr) => (
             <div
               key={addr.label}
-              className="overflow-hidden rounded border border-line bg-paper"
+              className="overflow-hidden border border-line bg-paper"
             >
               <iframe
                 title={addr.label}
@@ -116,7 +116,7 @@ export function ContactContent() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="p-5">
-                <p className="text-xs uppercase tracking-wide text-gold-text">
+                <p className="label-caps text-xs text-gold-text">
                   {isHi ? t.addressLabels[addr.label] : addr.label}
                 </p>
                 <p className="mt-1.5 text-sm text-charcoal">

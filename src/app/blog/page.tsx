@@ -30,8 +30,8 @@ export default async function BlogPage({
           href="/blog"
           className={
             !category
-              ? "label-caps rounded-full bg-gold-primary px-3 py-1 text-ivory"
-              : "label-caps rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
+              ? "label-caps bg-gold-primary px-3 py-1 text-ivory"
+              : "label-caps border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
           }
         >
           All
@@ -42,8 +42,8 @@ export default async function BlogPage({
             href={`/blog?category=${encodeURIComponent(cat)}`}
             className={
               category === cat
-                ? "label-caps rounded-full bg-gold-primary px-3 py-1 text-ivory"
-                : "label-caps rounded-full border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
+                ? "label-caps bg-gold-primary px-3 py-1 text-ivory"
+                : "label-caps border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
             }
           >
             {cat}
@@ -61,7 +61,7 @@ export default async function BlogPage({
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group rounded border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
+              className="group border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
             >
               <p className="label-caps text-xs text-gold-text">
                 {post.category}

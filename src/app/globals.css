@@ -2,30 +2,34 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Chamber palette, built on five brand colours: Ink #1B2A22, Parchment
- * #F3ECD8, Brass #9C7A3C, Oxblood #6B2028, Ledger Green #223D2E. Token
- * NAMES are unchanged from earlier passes to minimize churn — ink, paper,
- * ivory, charcoal, gold-family, cherry-red, and deep keep their ROLES
- * (page bg, card bg, primary text, secondary text, brass accent, primary
- * CTA, dark chrome) but now map onto the five brand colours below:
- *   --ink            → Parchment  (page background)
- *   --ivory          → Ink        (primary/heading text)
- *   --paper          → Parchment, deepened (card/section background)
- *   --charcoal       → Ink, softened (secondary/body text)
- *   --gold-primary/deep/text → Brass, at three depths (accents, links)
- *   --cherry-red / -deep     → Oxblood, at two depths (primary CTA)
- *   --deep / -text / -line   → Ledger Green (header/footer chrome)
- * All pairs re-verified for WCAG AA below.
+ * Chamber palette. Identity colours: Ink #1B2A22, Parchment, Brass #9C7A3C,
+ * Oxblood #6B2028, Ledger Green. Token NAMES keep their ROLES from earlier
+ * passes (page bg, card bg, primary text, secondary text, brass accent,
+ * primary CTA, dark chrome).
+ *
+ * Parchment is split into a two-tone stock rather than one flat colour:
+ * the page is the DEEPER ground (--ink) and the card is the LIFTED cream
+ * (--paper). An earlier pass had this inverted — cards were a darker,
+ * more saturated khaki than the page, which read as manila cardboard.
+ * Lifting the card makes it read as a sheet laid on a desk. The two sit
+ * 1.11:1 apart: the separation is carried by the hairline and the shadow,
+ * not by a colour step.
+ *
+ * Borders are likewise split. --line is a soft parchment-brass hairline for
+ * decorative edges; --line-strong is full Brass, reserved for form controls,
+ * where the border is the only thing identifying the field and so must hold
+ * 3:1 (it measures 3.54:1). All text pairs verified for WCAG AA.
  */
 :root {
   --gold-primary: #9C7A3C;
   --gold-deep: #7C6230;
   --gold-text: #5E4A22;
-  --ink: #F3ECD8;
-  --charcoal: #3C4C40;
-  --ivory: #1B2A22;
-  --paper: #E8DCB8;
-  --line: #9C7A3C;
+  --ink: #EDE5D0;
+  --charcoal: #3A4A3E;
+  --ivory: #16241C;
+  --paper: #F7F1E1;
+  --line: #D9CBA8;
+  --line-strong: #9C7A3C;
   --cherry-red: #6B2028;
   --cherry-red-deep: #4C171C;
   --error-red: #A5333A;
@@ -34,9 +38,13 @@
   --whatsapp-green: #1B7A43;
 
   /* Dark chrome bookend — header, footer, and the disclaimer backdrop. */
-  --deep: #223D2E;
+  --deep: #1F3629;
   --deep-text: #F3ECD8;
-  --deep-line: #6B5730;
+  --deep-line: #4A5F4F;
+  /* Brass lifted for use ON the Ledger Green chrome. The body Brass
+     (#9C7A3C) only reaches 2.96:1 there and fails AA for small text;
+     this tone clears it at 5.49:1 while reading as the same metal. */
+  --gold-on-dark: #C6A461;
 
   --background: var(--ink);
   --foreground: var(--ivory);
@@ -58,6 +66,8 @@
   --color-deep: var(--deep);
   --color-deep-text: var(--deep-text);
   --color-deep-line: var(--deep-line);
+  --color-gold-on-dark: var(--gold-on-dark);
+  --color-line-strong: var(--line-strong);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -81,6 +91,39 @@ body {
     font-variant-caps: all-small-caps;
     letter-spacing: 0.09em;
     font-weight: 600;
+  }
+
+  /* Large display headings: negative tracking. Fraunces is drawn loose for
+     text sizes, so it needs tightening once it is set large. */
+  .display-tight {
+    letter-spacing: -0.021em;
+  }
+
+  /* The classical section rule — a heavy line over a hairline, the
+     compositor's mark for the head of a section. */
+  .double-rule {
+    border-top: 2px solid var(--line-strong);
+    box-shadow: 0 3px 0 -2px var(--line);
+  }
+
+  /* Drop cap for the opening paragraph of a set text. Apply .drop-cap to a
+     paragraph directly, or .drop-cap-first to a wrapper (the rendered
+     markdown body) to cap its first paragraph. */
+  .drop-cap::first-letter,
+  .drop-cap-first > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+    font-weight: 700;
+    font-size: 3.35em;
+    line-height: 0.82;
+    margin: 0.06em 0.09em 0 0;
+    color: var(--gold-text);
+  }
+
+  /* Team portraits are shot in different places, light and seasons. A shared
+     warm cast pulls them into one commissioned set instead of three snapshots. */
+  .portrait-tone {
+    filter: sepia(0.34) saturate(0.86) contrast(1.06) brightness(1.02);
   }
 }
 

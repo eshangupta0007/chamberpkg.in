@@ -20,7 +20,7 @@ export default function AboutPage() {
         alt=""
         width={600}
         height={600}
-        className="pointer-events-none absolute -right-32 -top-32 h-[560px] w-[560px] opacity-[0.12] md:h-[720px] md:w-[720px]"
+        className="pointer-events-none absolute -right-40 top-24 hidden h-[560px] w-[560px] opacity-[0.055] lg:block"
         aria-hidden="true"
       />
       <AboutContent />

@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: Props) {
       <p className="label-caps text-xs text-gold-text">
         {post.category}
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold leading-[1.14] text-ivory md:text-4xl">
         {post.title}
       </h1>
       <p className="mt-3 text-sm text-charcoal/90">
@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: Props) {
         {post.readingTimeMinutes} min read
       </p>
 
-      <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-ivory prose-a:text-gold-text">
+      <div className="drop-cap-first prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-ivory prose-a:text-gold-text">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </div>
 

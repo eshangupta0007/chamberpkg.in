@@ -24,35 +24,53 @@ export function PracticeAreasContent() {
         <LanguageToggle lang={lang} onChange={setLang} />
       </div>
 
-      <div className="mt-12">
+      {/* Set as an indexed document: the section numeral sits in its own rail
+          in the margin, the way a printed statute carries its numbering, and
+          the prose keeps a single readable measure beside it. */}
+      <div className="mt-12 max-w-[52rem]">
         {practiceAreas.map((area, i) => {
           const hi = hiPracticeAreas[area.slug];
+          const numeral = String(i + 1).padStart(2, "0");
           return (
             <div key={area.slug}>
-              <section id={area.slug}>
-                <p className="label-caps text-sm text-gold-text">
-                  §{String(i + 1).padStart(2, "0")}
-                </p>
-                <h2 className="mt-1.5 font-serif text-2xl font-semibold text-ivory">
-                  {isHi ? hi.title : area.title}
-                </h2>
-                <p className="mt-3 max-w-[70ch] text-base leading-relaxed text-charcoal">
-                  {isHi ? hi.description : area.description}
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {(isHi ? hi.covers : area.covers).map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-line bg-paper px-3 py-1 text-xs text-charcoal"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <section
+                id={area.slug}
+                className="scroll-mt-24 md:grid md:grid-cols-[5.5rem_1fr] md:gap-8"
+              >
+                <div className="md:pt-1">
+                  <span
+                    aria-hidden="true"
+                    className="hidden font-serif text-[3.75rem] font-semibold leading-none text-gold-primary/25 md:block"
+                  >
+                    {numeral}
+                  </span>
+                  <p className="label-caps text-sm text-gold-text md:hidden">
+                    §{numeral}
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="display-tight font-serif text-2xl font-semibold text-ivory">
+                    {isHi ? hi.title : area.title}
+                  </h2>
+                  <p className="mt-3 text-base leading-relaxed text-charcoal">
+                    {isHi ? hi.description : area.description}
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {(isHi ? hi.covers : area.covers).map((item) => (
+                      <li
+                        key={item}
+                        className="border border-line bg-paper px-3 py-1 text-xs text-charcoal"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </section>
               {i < practiceAreas.length - 1 && (
                 <div className="py-12">
-                  <SealDivider className="max-w-[480px]" />
+                  <SealDivider />
                 </div>
               )}
             </div>

@@ -61,7 +61,7 @@ export function DisclaimerGate() {
       onKeyDown={handleKeyDown}
       className="fixed inset-0 z-50 flex items-center justify-center bg-deep/90 p-4"
     >
-      <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto rounded border border-line bg-paper p-8">
+      <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto border border-line bg-paper p-8">
         <Image
           src="/images/logo-seal.png"
           alt="Chamber of Praveen Kumar Gupta seal"
@@ -85,7 +85,7 @@ export function DisclaimerGate() {
             ref={disagreeRef}
             type="button"
             onClick={disagree}
-            className="rounded border border-line px-5 py-2.5 text-sm text-charcoal hover:bg-ink focus:outline-none focus:ring-1 focus:ring-gold-deep"
+            className="border border-line px-5 py-2.5 text-sm text-charcoal hover:bg-ink focus:outline-none focus:ring-1 focus:ring-gold-deep"
           >
             Disagree — Exit
           </button>
@@ -93,7 +93,7 @@ export function DisclaimerGate() {
             ref={agreeRef}
             type="button"
             onClick={agree}
-            className="rounded bg-gold-primary px-5 py-2.5 text-sm font-medium text-ivory hover:bg-gold-deep focus:outline-none focus:ring-1 focus:ring-ivory"
+            className="bg-gold-primary px-5 py-2.5 text-sm font-medium text-ivory hover:bg-gold-deep focus:outline-none focus:ring-1 focus:ring-ivory"
           >
             I Agree — Enter Site
           </button>

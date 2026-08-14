@@ -38,7 +38,7 @@ export default function TeamPage() {
           <div
             key={member.slug}
             id={member.slug}
-            className="overflow-hidden rounded border border-line bg-paper"
+            className="overflow-hidden border border-line bg-paper"
           >
             {member.photo ? (
               <Image
@@ -47,7 +47,7 @@ export default function TeamPage() {
                 width={600}
                 height={750}
                 sizes="(max-width: 640px) 100vw, 280px"
-                className="aspect-[4/5] w-full object-cover"
+                className="portrait-tone aspect-[4/5] w-full object-cover"
               />
             ) : (
               <PhotoPlaceholder className="aspect-[4/5] w-full" />

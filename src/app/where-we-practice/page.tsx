@@ -1,3 +1,4 @@
+import { SealDivider } from "@/components/SealDivider";
 import { addresses, courts, mapEmbedSrc } from "@/lib/site-data";
 import { pageMetadata } from "@/lib/page-metadata";
 
@@ -9,10 +10,10 @@ export const metadata = pageMetadata(
 export default function WhereWePracticePage() {
   return (
     <div className="mx-auto max-w-[1200px] px-6 py-16">
-      <p className="text-xs uppercase tracking-wide text-gold-text">
+      <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         Where We Practice
       </h1>
       <p className="mt-4 max-w-[70ch] text-base leading-relaxed text-charcoal">
@@ -20,9 +21,13 @@ export default function WhereWePracticePage() {
         following courts and tribunals.
       </p>
 
-      <section className="mt-12">
-        <h2 className="font-serif text-xl font-semibold text-ivory">
-          Courts & Jurisdiction
+      <div className="mt-10">
+        <SealDivider className="max-w-[480px]" />
+      </div>
+
+      <section className="mt-10">
+        <h2 className="display-tight font-serif text-xl font-semibold text-ivory">
+          Courts &amp; Jurisdiction
         </h2>
         <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
           {courts.map((court) => (
@@ -36,15 +41,19 @@ export default function WhereWePracticePage() {
         </ul>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-serif text-xl font-semibold text-ivory">
+      <div className="mt-14">
+        <SealDivider className="max-w-[480px]" />
+      </div>
+
+      <section className="mt-10">
+        <h2 className="display-tight font-serif text-xl font-semibold text-ivory">
           Chamber Addresses
         </h2>
         <div className="mt-6 grid gap-8 lg:grid-cols-3">
           {addresses.map((addr) => (
             <div
               key={addr.label}
-              className="overflow-hidden rounded border border-line bg-paper"
+              className="overflow-hidden border border-line bg-paper"
             >
               <iframe
                 title={addr.label}
@@ -54,7 +63,7 @@ export default function WhereWePracticePage() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="p-5">
-                <p className="text-xs uppercase tracking-wide text-gold-text">
+                <p className="label-caps text-xs text-gold-text">
                   {addr.label}
                 </p>
                 <p className="mt-1.5 text-sm text-charcoal">
