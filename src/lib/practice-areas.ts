@@ -74,4 +74,12 @@ export const practiceAreas = [
       "Registration of documents and conveyancing work, including sale deeds, gift deeds, and other instruments of transfer.",
     covers: ["Sale deeds", "Gift deeds", "Conveyancing"],
   },
+  {
+    slug: "service-law",
+    title: "Service Law",
+    summary: "Recruitment, promotion, disciplinary, and pension matters for government employees.",
+    description:
+      "Matters concerning the service conditions of government employees, including recruitment, promotion, seniority, disciplinary proceedings, and pension and retiral benefits, before the Allahabad High Court and the district judiciary of Uttar Pradesh.",
+    covers: ["Recruitment disputes", "Promotion & seniority", "Disciplinary proceedings", "Pension & retiral benefits"],
+  },
 ] as const;
