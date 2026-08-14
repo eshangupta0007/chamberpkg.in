@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { categories, getPublishedPosts } from "@/lib/blog";
+import { getActiveCategories, getPublishedPosts } from "@/lib/blog";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
@@ -13,7 +13,10 @@ export default async function BlogPage({
   searchParams: Promise<{ category?: string }>;
 }) {
   const { category } = await searchParams;
-  const posts = await getPublishedPosts();
+  const [posts, activeCategories] = await Promise.all([
+    getPublishedPosts(),
+    getActiveCategories(),
+  ]);
   const filtered = category ? posts.filter((p) => p.category === category) : posts;
 
   return (
@@ -36,7 +39,7 @@ export default async function BlogPage({
         >
           All
         </Link>
-        {categories.map((cat) => (
+        {activeCategories.map((cat) => (
           <Link
             key={cat}
             href={`/blog?category=${encodeURIComponent(cat)}`}
@@ -52,9 +55,27 @@ export default async function BlogPage({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="mt-16 text-base text-charcoal/90">
-          No posts published yet. Check back soon.
-        </p>
+        /* Two different empty states. A category with nothing in it is not the
+           same as an empty blog, and saying so would be inaccurate wherever an
+           old category link is still in circulation. */
+        <div className="mt-16">
+          {category && posts.length > 0 ? (
+            <p className="text-base text-charcoal/90">
+              There are no posts under {category}.{" "}
+              <Link
+                href="/blog"
+                className="text-gold-text underline hover:text-gold-primary"
+              >
+                View all posts
+              </Link>
+              .
+            </p>
+          ) : (
+            <p className="text-base text-charcoal/90">
+              No posts published yet. Check back soon.
+            </p>
+          )}
+        </div>
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((post) => (

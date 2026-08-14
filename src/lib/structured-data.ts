@@ -23,6 +23,22 @@ export function attorneyJsonLd() {
       "@type": "State",
       name: "Uttar Pradesh",
     },
+    // Same hours every day, so one specification covers the week. This is
+    // what search results read to show opening hours.
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "08:00",
+      closes: "22:00",
+    },
     knowsAbout: practiceAreas.map((area) => area.title),
   };
 }

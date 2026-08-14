@@ -60,9 +60,9 @@ export const socialLinks = [
   { name: "Instagram", href: "https://www.instagram.com/eshangupta0007/" },
 ] as const;
 
-export const officeHours = "Monday – Saturday, 10:30 AM – 6:30 PM";
+export const officeHours = "Monday – Sunday, 8:00 AM – 10:00 PM";
 export const officeHoursNote =
-  "Closed Sundays and court holidays. As litigation work involves regular court appearances, phone or WhatsApp is generally the fastest way to reach the Chamber during the day; the contact form is best for non-urgent inquiries.";
+  "As litigation work involves regular court appearances, phone or WhatsApp is generally the fastest way to reach the Chamber during the day; the contact form is best for non-urgent inquiries.";
 
 export function whatsappHref(number: string) {
   return `https://wa.me/91${number}`;

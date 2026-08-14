@@ -2,9 +2,14 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
 
+/**
+ * Canonical category order. This is the ORDER the filter chips appear in,
+ * not the list that is rendered — the blog index shows only those with at
+ * least one published post, so a category can never present the reader with
+ * an empty result.
+ */
 export const categories = [
   "Law & Policy",
-  "Jyotish",
   "Political Philosophy",
   "Chamber Notes",
 ] as const;
@@ -68,6 +73,21 @@ export async function getPublishedPosts(): Promise<BlogPostSummary[]> {
     category,
     date,
   }));
+}
+
+/**
+ * Categories that actually carry a published post, in canonical order, with
+ * any category found only in frontmatter appended. Drives the filter chips
+ * so none of them can lead to an empty page.
+ */
+export async function getActiveCategories(): Promise<string[]> {
+  const posts = await readAllPosts();
+  const present = new Set(posts.map((p) => p.category).filter(Boolean));
+  const known = categories.filter((c) => present.has(c));
+  const extra = [...present].filter(
+    (c) => !categories.includes(c as (typeof categories)[number]),
+  );
+  return [...known, ...extra.sort()];
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
