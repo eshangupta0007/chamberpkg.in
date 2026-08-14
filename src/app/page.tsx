@@ -136,7 +136,18 @@ export default function Home() {
                 href={`/team#${member.slug}`}
                 className="group overflow-hidden rounded border border-line bg-ink transition-colors hover:border-gold-primary"
               >
-                <PhotoPlaceholder className="aspect-[4/5] w-full" />
+                {member.photo ? (
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    width={600}
+                    height={750}
+                    sizes="(max-width: 640px) 100vw, 280px"
+                    className="aspect-[4/5] w-full object-cover"
+                  />
+                ) : (
+                  <PhotoPlaceholder className="aspect-[4/5] w-full" />
+                )}
                 <div className="p-4">
                   <p className="font-serif text-base font-semibold text-ivory group-hover:text-gold-text">
                     {member.name}

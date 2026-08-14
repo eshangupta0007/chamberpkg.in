@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { SealDivider } from "@/components/SealDivider";
 import { team } from "@/lib/team";
@@ -39,7 +40,18 @@ export default function TeamPage() {
             id={member.slug}
             className="overflow-hidden rounded border border-line bg-paper"
           >
-            <PhotoPlaceholder className="aspect-[4/5] w-full" />
+            {member.photo ? (
+              <Image
+                src={member.photo}
+                alt={member.name}
+                width={600}
+                height={750}
+                sizes="(max-width: 640px) 100vw, 280px"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            ) : (
+              <PhotoPlaceholder className="aspect-[4/5] w-full" />
+            )}
             <div className="p-5">
               <h2 className="font-serif text-lg font-semibold text-ivory">
                 {member.name}
