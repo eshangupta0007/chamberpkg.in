@@ -21,7 +21,7 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1F3629",
+          backgroundColor: "#222A2F",
           fontFamily: "serif",
         }}
       >
@@ -32,7 +32,7 @@ export default async function OpengraphImage() {
             fontSize: 56,
             fontWeight: 700,
             letterSpacing: "-0.021em",
-            color: "#F3ECD8",
+            color: "#EDEBE4",
           }}
         >
           Chamber of Praveen Kumar Gupta
@@ -45,7 +45,7 @@ export default async function OpengraphImage() {
             marginTop: 28,
             width: 220,
             height: 2,
-            backgroundColor: "#C6A461",
+            backgroundColor: "#D2A048",
           }}
         />
         <div
@@ -53,7 +53,7 @@ export default async function OpengraphImage() {
             marginTop: 22,
             fontSize: 26,
             letterSpacing: "0.14em",
-            color: "#C6A461",
+            color: "#D2A048",
           }}
         >
           ADVOCATES · SINCE 1991

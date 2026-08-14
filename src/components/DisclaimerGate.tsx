@@ -93,7 +93,7 @@ export function DisclaimerGate() {
             ref={agreeRef}
             type="button"
             onClick={agree}
-            className="bg-gold-primary px-5 py-2.5 text-sm font-medium text-ivory hover:bg-gold-deep focus:outline-none focus:ring-1 focus:ring-ivory"
+            className="bg-gold-deep px-5 py-2.5 text-sm font-medium text-paper hover:bg-gold-text focus:outline-none focus:ring-1 focus:ring-ivory"
           >
             I Agree — Enter Site
           </button>

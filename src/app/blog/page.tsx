@@ -33,7 +33,7 @@ export default async function BlogPage({
           href="/blog"
           className={
             !category
-              ? "label-caps bg-gold-primary px-3 py-1 text-ivory"
+              ? "label-caps bg-gold-deep px-3 py-1 text-paper"
               : "label-caps border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
           }
         >
@@ -45,7 +45,7 @@ export default async function BlogPage({
             href={`/blog?category=${encodeURIComponent(cat)}`}
             className={
               category === cat
-                ? "label-caps bg-gold-primary px-3 py-1 text-ivory"
+                ? "label-caps bg-gold-deep px-3 py-1 text-paper"
                 : "label-caps border border-line px-3 py-1 text-charcoal hover:border-gold-primary"
             }
           >

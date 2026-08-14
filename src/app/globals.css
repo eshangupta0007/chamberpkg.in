@@ -2,49 +2,52 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Chamber palette. Identity colours: Ink #1B2A22, Parchment, Brass #9C7A3C,
- * Oxblood #6B2028, Ledger Green. Token NAMES keep their ROLES from earlier
- * passes (page bg, card bg, primary text, secondary text, brass accent,
- * primary CTA, dark chrome).
+ * Chamber palette — Slate & Ochre. Cool slate chrome, a warm ochre accent,
+ * and an oxide red for primary actions. Token NAMES keep their ROLES from
+ * earlier passes (page bg, card bg, primary text, secondary text, metal
+ * accent, primary CTA, dark chrome).
  *
- * Parchment is split into a two-tone stock rather than one flat colour:
- * the page is the DEEPER ground (--ink) and the card is the LIFTED cream
- * (--paper). An earlier pass had this inverted — cards were a darker,
- * more saturated khaki than the page, which read as manila cardboard.
- * Lifting the card makes it read as a sheet laid on a desk. The two sit
- * 1.11:1 apart: the separation is carried by the hairline and the shadow,
- * not by a colour step.
+ * The ground is split into a two-tone stock rather than one flat colour:
+ * the page is the DEEPER ground (--ink) and the card is the LIFTED near-white
+ * (--paper). An earlier pass had this inverted — cards were darker and more
+ * saturated than the page, which read as cardboard. Lifting the card makes it
+ * read as a sheet laid on a desk. The two sit 1.11:1 apart: the separation is
+ * carried by the hairline, not by a colour step.
  *
- * Borders are likewise split. --line is a soft parchment-brass hairline for
- * decorative edges; --line-strong is full Brass, reserved for form controls,
- * where the border is the only thing identifying the field and so must hold
- * 3:1 (it measures 3.54:1). All text pairs verified for WCAG AA.
+ * Borders are likewise split. --line is a soft hairline for decorative edges;
+ * --line-strong is the mid ochre, reserved for form controls, where the border
+ * is the only thing identifying the field and so must hold 3:1 (it measures
+ * 3.67:1). All text pairs verified for WCAG AA.
  */
 :root {
-  --gold-primary: #9C7A3C;
-  --gold-deep: #7C6230;
-  --gold-text: #5E4A22;
-  --ink: #EDE5D0;
-  --charcoal: #3A4A3E;
-  --ivory: #16241C;
-  --paper: #F7F1E1;
-  --line: #D9CBA8;
-  --line-strong: #9C7A3C;
-  --cherry-red: #6B2028;
-  --cherry-red-deep: #4C171C;
+  /* Ochre at three depths. --gold-primary is the mid tone for rules, hover
+     borders and the ghosted numerals; --gold-deep is the FILL for solid
+     controls, dark enough to carry light text (5.09:1) where the mid tone
+     could not; --gold-text is for labels and links on the light grounds. */
+  --gold-primary: #A8762C;
+  --gold-deep: #8A6122;
+  --gold-text: #7A5518;
+  --ink: #ECEAE3;
+  --charcoal: #3F474C;
+  --ivory: #1C2226;
+  --paper: #F7F6F1;
+  --line: #D7D4CA;
+  --line-strong: #A8762C;
+  --cherry-red: #7A2E20;
+  --cherry-red-deep: #5E2218;
   --error-red: #A5333A;
   /* Darker than WhatsApp's brand green so white button text clears AA (their
      brand green is ~2:1 with white and fails contrast as a button fill). */
   --whatsapp-green: #1B7A43;
 
   /* Dark chrome bookend — header, footer, and the disclaimer backdrop. */
-  --deep: #1F3629;
-  --deep-text: #F3ECD8;
-  --deep-line: #4A5F4F;
-  /* Brass lifted for use ON the Ledger Green chrome. The body Brass
-     (#9C7A3C) only reaches 2.96:1 there and fails AA for small text;
-     this tone clears it at 5.49:1 while reading as the same metal. */
-  --gold-on-dark: #C6A461;
+  --deep: #222A2F;
+  --deep-text: #EDEBE4;
+  --deep-line: #4A5359;
+  /* Ochre lifted for use ON the slate chrome. The body ochre is too dark
+     against it for small text; this tone clears AA at 6.15:1 while reading
+     as the same metal. */
+  --gold-on-dark: #D2A048;
 
   --background: var(--ink);
   --foreground: var(--ivory);
@@ -121,9 +124,11 @@ body {
   }
 
   /* Team portraits are shot in different places, light and seasons. A shared
-     warm cast pulls them into one commissioned set instead of three snapshots. */
+     cast pulls them into one commissioned set instead of three snapshots. Kept
+     cool and mostly desaturated to sit with the slate chrome — a warmer sepia
+     fought the palette. */
   .portrait-tone {
-    filter: sepia(0.34) saturate(0.86) contrast(1.06) brightness(1.02);
+    filter: saturate(0.62) contrast(1.07) brightness(1.02) sepia(0.12);
   }
 }
 
