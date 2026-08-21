@@ -44,7 +44,6 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedArea = post.relatedPracticeArea
     ? practiceAreas.find((a) => a.slug === post.relatedPracticeArea)
     : undefined;
-  const showPublicationsLink = post.category === "Law & Policy";
 
   return (
     <article className="mx-auto max-w-[75ch] px-6 py-16">
@@ -69,32 +68,26 @@ export default async function BlogPostPage({ params }: Props) {
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </div>
 
-      {(relatedArea || showPublicationsLink) && (
-        <div className="mt-10">
-          <SealDivider className="max-w-[320px]" />
-        </div>
-      )}
-      {(relatedArea || showPublicationsLink) && (
-        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <span className="label-caps text-charcoal/90">Related:</span>
-          {relatedArea && (
-            <Link
-              href={`/practice-areas#${relatedArea.slug}`}
-              className="text-gold-text underline hover:text-gold-primary"
-            >
-              {relatedArea.title}
-            </Link>
-          )}
-          {showPublicationsLink && (
-            <Link
-              href="/publications"
-              className="text-gold-text underline hover:text-gold-primary"
-            >
-              Publications
-            </Link>
-          )}
-        </div>
-      )}
+      <div className="mt-10">
+        <SealDivider className="max-w-[320px]" />
+      </div>
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <span className="label-caps text-charcoal/90">Related:</span>
+        {relatedArea && (
+          <Link
+            href={`/practice-areas#${relatedArea.slug}`}
+            className="text-gold-text underline hover:text-gold-primary"
+          >
+            {relatedArea.title}
+          </Link>
+        )}
+        <Link
+          href="/publications"
+          className="text-gold-text underline hover:text-gold-primary"
+        >
+          Publications
+        </Link>
+      </div>
     </article>
   );
 }

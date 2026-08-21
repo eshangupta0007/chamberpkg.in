@@ -78,3 +78,7 @@ The Governor is not a smaller version of that. The Governor is a joint — the p
 This is the part that the language of the Constitution conceals rather than reveals. Article 163 is written in the vocabulary of individual judgment — "his discretion", "the decision of the Governor" — and that vocabulary carries a strong implication of personal independence which the surrounding architecture does not support. Read on its own, the clause looks like a grant of autonomy. Read together with Article 156, it looks like a mechanism.
 
 Neither reading is a criticism of the design. A federation in which the Union has responsibilities inside the States needs somewhere for that responsibility to be exercised, and putting it in a named office with a discretion is more candid than leaving it to informal channels. But the design should be described accurately. Articles 74 and 163 are not the same rule at two altitudes. One creates a head of state who cannot decide anything. The other creates an officer who can, and whose ability to decide is held by someone else.
+
+---
+
+*Authored by Eshan Kumar Gupta, Advocate, Hon'ble Allahabad High Court, Lucknow Bench.*
