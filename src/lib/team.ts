@@ -4,6 +4,11 @@ export type TeamMember = {
   title: string;
   practiceNote: string;
   courts?: string[];
+  /**
+   * Portrait path. Filenames carry a short content hash: replacing a photo
+   * under the same name can be masked by the image cache, so the URL has to
+   * change whenever the image does.
+   */
   photo?: string;
 };
 
@@ -18,7 +23,7 @@ export const team: TeamMember[] = [
       "Allahabad High Court, Lucknow Bench",
       "District & Sessions Court, Lucknow",
     ],
-    photo: "/images/team/eshan-kumar-gupta.png",
+    photo: "/images/team/eshan-kumar-gupta.87453032.png",
   },
   {
     slug: "sunil-kumar",
@@ -31,13 +36,13 @@ export const team: TeamMember[] = [
     name: "Piyush Gupta",
     title: "Associate Advocate",
     practiceNote: "3+ years of practice.",
-    photo: "/images/team/piyush-gupta.png",
+    photo: "/images/team/piyush-gupta.14bb3267.png",
   },
   {
     slug: "hamza-dilshad",
     name: "Hamza Dilshad",
     title: "Associate",
     practiceNote: "Client counselling and case coordination.",
-    photo: "/images/team/hamza-dilshad.png",
+    photo: "/images/team/hamza-dilshad.1914ecb9.png",
   },
 ];
