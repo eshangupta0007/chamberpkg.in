@@ -8,6 +8,7 @@ import { pageMetadata } from "@/lib/page-metadata";
 export const metadata = pageMetadata(
   "Team",
   "The advocates and associates of the Chamber of Praveen Kumar Gupta.",
+  "/team",
 );
 
 export default function TeamPage() {

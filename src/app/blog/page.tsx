@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { getActiveCategories, getPublishedPosts } from "@/lib/blog";
+import { blogJsonLd } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
   "Blog",
-  "Writing on law & policy, Jyotish, political philosophy, and Chamber notes from the Chamber of Praveen Kumar Gupta.",
+  "Writing on law & policy, political philosophy, and Chamber notes from the Chamber of Praveen Kumar Gupta.",
+  "/blog",
 );
 
 export default async function BlogPage({
@@ -21,6 +23,10 @@ export default async function BlogPage({
 
   return (
     <div className="mx-auto max-w-[1200px] px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd(posts)) }}
+      />
       <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
@@ -78,16 +84,30 @@ export default async function BlogPage({
         </div>
       ) : (
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((post) => (
+          {/* The most recent post is set wide and larger. An index of a dozen
+              identical cards reads as a list; giving the lead its own weight
+              makes the page read as edited. Only when nothing is filtered —
+              a filtered view has no "latest" worth privileging. */}
+          {filtered.map((post, i) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
+              className={
+                i === 0 && !category
+                  ? "group border border-line bg-paper p-8 transition-colors hover:border-gold-primary sm:col-span-2 lg:col-span-3"
+                  : "group border border-line bg-paper p-6 transition-colors hover:border-gold-primary"
+              }
             >
               <p className="label-caps text-xs text-gold-text">
                 {post.category}
               </p>
-              <h2 className="mt-2 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text">
+              <h2
+                className={
+                  i === 0 && !category
+                    ? "display-tight mt-2 max-w-[24ch] font-serif text-2xl font-semibold leading-[1.15] text-ivory group-hover:text-gold-text md:text-3xl"
+                    : "mt-2 font-serif text-lg font-semibold text-ivory group-hover:text-gold-text"
+                }
+              >
                 {post.title}
               </h2>
               {post.date && (
@@ -99,7 +119,13 @@ export default async function BlogPage({
                   })}
                 </p>
               )}
-              <p className="mt-3 text-sm leading-relaxed text-charcoal">
+              <p
+                className={
+                  i === 0 && !category
+                    ? "mt-3 max-w-[68ch] text-base leading-relaxed text-charcoal"
+                    : "mt-3 text-sm leading-relaxed text-charcoal"
+                }
+              >
                 {post.excerpt}
               </p>
             </Link>

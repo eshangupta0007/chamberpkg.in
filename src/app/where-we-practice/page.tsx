@@ -5,6 +5,7 @@ import { pageMetadata } from "@/lib/page-metadata";
 export const metadata = pageMetadata(
   "Where We Practice",
   "Courts and jurisdiction where the Chamber of Praveen Kumar Gupta appears, and its chamber addresses.",
+  "/where-we-practice",
 );
 
 export default function WhereWePracticePage() {

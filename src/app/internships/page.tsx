@@ -5,6 +5,7 @@ import { email, phones, whatsappHref } from "@/lib/site-data";
 export const metadata = pageMetadata(
   "Internships",
   "Apply for an internship with the Chamber of Praveen Kumar Gupta.",
+  "/internships",
 );
 
 export default function InternshipsPage() {

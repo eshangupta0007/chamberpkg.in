@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import { getPostBySlug, getPublishedPosts } from "@/lib/blog";
 import { practiceAreas } from "@/lib/practice-areas";
 import { SealDivider } from "@/components/SealDivider";
+import { blogPostingJsonLd } from "@/lib/structured-data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -22,10 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `/blog/${slug}`,
       publishedTime: post.date,
     },
     twitter: {
@@ -47,6 +50,10 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-[75ch] px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd(post)) }}
+      />
       <p className="label-caps text-xs text-gold-text">
         {post.category}
       </p>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
@@ -10,13 +10,15 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["600", "700"],
-  style: ["normal", "italic"],
 });
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  // Blog prose italicises case names, which legal citation requires; without
+  // this the browser synthesises a slant instead of using a drawn italic.
+  style: ["normal", "italic"],
 });
 
 const defaultDescription =
@@ -24,6 +26,7 @@ const defaultDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: {
     default: "Chamber of Praveen Kumar Gupta",
     template: "%s | Chamber of Praveen Kumar Gupta",
@@ -40,6 +43,11 @@ export const metadata: Metadata = {
     title: "Chamber of Praveen Kumar Gupta",
     description: defaultDescription,
   },
+};
+
+// Paints the mobile browser chrome to match the site's own chrome bar.
+export const viewport: Viewport = {
+  themeColor: "#222A2F",
 };
 
 export default function RootLayout({

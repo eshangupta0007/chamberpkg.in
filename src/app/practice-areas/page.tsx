@@ -5,6 +5,7 @@ import { PracticeAreasContent } from "@/components/PracticeAreasContent";
 export const metadata = pageMetadata(
   "Practice Areas",
   "The areas of law practised by the Chamber of Praveen Kumar Gupta, before the Supreme Court, the Allahabad High Court, and the district judiciary of Uttar Pradesh.",
+  "/practice-areas",
 );
 
 export default function PracticeAreasPage() {

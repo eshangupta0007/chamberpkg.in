@@ -1,10 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SealDivider } from "@/components/SealDivider";
+import { publicationJsonLd } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
   "Publications",
   "The Artificial Intelligence (Regulation of Use and Prevention of Misuse) Act, 2026 — a draft legislative proposal by Eshan Kumar Gupta, Advocate.",
+  "/publications",
 );
 
 const chapters = [
@@ -24,15 +27,35 @@ const chapters = [
 export default function PublicationsPage() {
   return (
     <div className="mx-auto max-w-[1200px] px-6 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(publicationJsonLd()) }}
+      />
       <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
         Publications
       </h1>
 
+      {/* The volume itself, before any description of it. */}
+      <figure className="mt-10">
+        <Image
+          src="/images/publications/ai-code-cover.jpg"
+          alt="The Artificial Intelligence Code, 2026, bound in black boards with gilt lettering, on a desk beside a volume of the Supreme Court Cases reports."
+          width={1800}
+          height={1349}
+          sizes="(max-width: 1200px) 100vw, 1150px"
+          className="w-full border border-line object-cover"
+          priority
+        />
+        <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+          Author&rsquo;s Edition, 2026 &middot; Naman Prakashan
+        </figcaption>
+      </figure>
+
       <div className="mt-12 max-w-[75ch]">
-        <h2 className="font-serif text-2xl font-semibold text-ivory">
+        <h2 className="display-tight font-serif text-2xl font-semibold text-ivory">
           The Artificial Intelligence Code, 2026
         </h2>
         <p className="mt-1 text-sm text-charcoal/90">
@@ -61,12 +84,41 @@ export default function PublicationsPage() {
         </p>
       </div>
 
+      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <figure>
+          <Image
+            src="/images/publications/ai-code-title-page.jpg"
+            alt="The title page, naming the author as Eshan Kumar Gupta, Advocate, High Court of Judicature at Allahabad, Lucknow Bench."
+            width={1100}
+            height={825}
+            sizes="(max-width: 640px) 100vw, 560px"
+            className="w-full border border-line object-cover"
+          />
+          <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+            Title page
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src="/images/publications/ai-code-contents.jpg"
+            alt="The table of contents, listing the preliminary note, executive summary, statement of objects and reasons, and the arrangement of chapters."
+            width={1100}
+            height={825}
+            sizes="(max-width: 640px) 100vw, 560px"
+            className="w-full border border-line object-cover"
+          />
+          <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+            Table of contents
+          </figcaption>
+        </figure>
+      </div>
+
       <div className="mt-14 max-w-[480px]">
         <SealDivider />
       </div>
 
       <div className="mt-10 max-w-[75ch]">
-        <h3 className="font-serif text-xl font-semibold text-ivory">
+        <h3 className="display-tight font-serif text-xl font-semibold text-ivory">
           Structure
         </h3>
         <dl className="mt-4 space-y-4">
@@ -88,7 +140,7 @@ export default function PublicationsPage() {
       </div>
 
       <div className="mt-10 max-w-[75ch]">
-        <h3 className="font-serif text-xl font-semibold text-ivory">
+        <h3 className="display-tight font-serif text-xl font-semibold text-ivory">
           Status
         </h3>
         <p className="mt-4 text-base leading-relaxed text-charcoal">

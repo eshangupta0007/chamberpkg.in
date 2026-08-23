@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/page-metadata";
 export const metadata = pageMetadata(
   "Disclaimer",
   "Disclaimer governing use of the Chamber of Praveen Kumar Gupta website.",
+  "/disclaimer",
 );
 
 export default function DisclaimerPage() {

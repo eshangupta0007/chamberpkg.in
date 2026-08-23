@@ -6,6 +6,7 @@ import { AboutContent } from "@/components/AboutContent";
 export const metadata = pageMetadata(
   "About",
   "The history of the Chamber of Praveen Kumar Gupta, established 1991, and its continuation under Eshan Kumar Gupta, Proprietor.",
+  "/about",
 );
 
 export default function AboutPage() {

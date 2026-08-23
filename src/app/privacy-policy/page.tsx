@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/page-metadata";
 export const metadata = pageMetadata(
   "Privacy Policy",
   "How the Chamber of Praveen Kumar Gupta collects, uses, and retains information submitted through this website.",
+  "/privacy-policy",
 );
 
 export default function PrivacyPolicyPage() {
