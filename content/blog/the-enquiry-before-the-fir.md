@@ -1,0 +1,71 @@
+---
+title: "The Enquiry Before the FIR: What Section 173(3) Asks That Section 154 Did Not"
+excerpt: "Lalita Kumari permitted a preliminary enquiry only where the information did not disclose a cognizable offence, and said in terms that its scope was not to test the truth of the complaint. Section 173(3) of the BNSS permits an enquiry where the information does disclose one, and directs it at whether a prima facie case exists. The discretion is not what changed. The question the enquiry asks is."
+category: "Law & Policy"
+date: "2026-09-05"
+relatedPracticeArea: "criminal-law"
+---
+
+Section 173(3) of the Bharatiya Nagarik Suraksha Sanhita, 2023 allows an officer in charge of a police station who receives information of a cognizable offence "punishable for three years or more but less than seven years" to do one of two things, with the prior permission of an officer not below the rank of Deputy Superintendent of Police, and having regard to the nature and gravity of the offence: he may "proceed to conduct preliminary enquiry to ascertain whether there exists a prima facie case for proceeding in the matter within a period of fourteen days", or he may "proceed with investigation when there exists a prima facie case."
+
+The provision is usually described as codifying the preliminary enquiry that *Lalita Kumari v. Govt. of U.P.*, (2014) 2 SCC 1 had already permitted, with a longer clock. That description is not accurate, and the Supreme Court has said so. In *Imran Pratapgadhi v. State of Gujarat*, 2025 INSC 410, decided on 28 March 2025, Oka and Bhuyan JJ. held that sub-section (3) "makes a significant departure" from Section 154 of the CrPC, because under the CrPC a preliminary inquiry could be made only where the information did not disclose the commission of a cognizable offence but indicated the necessity for an inquiry (para 23).
+
+That is the departure, and it is worth setting out precisely what it consists of, because it is not the departure the provision is usually credited with.
+
+## What the enquiry under the old architecture was for
+
+The Constitution Bench in *Lalita Kumari* was not asked whether a preliminary enquiry was a good idea. It was asked whether an officer receiving information disclosing a cognizable offence had any choice about registering a first information report. It held he did not: registration under Section 154 is mandatory where the information discloses a cognizable offence, "and no preliminary inquiry is permissible in such a situation."
+
+The enquiry survived only in the residual case. Where the information "does not disclose a cognizable offence but indicates the necessity for an inquiry", the Court permitted one — and confined it, in terms, to a single question: "The scope of preliminary inquiry is not to verify the veracity or otherwise of the information received but only to ascertain whether the information reveals any cognizable offence."
+
+That confinement is the whole of the design. The question the enquiry was permitted to ask — does this information, read against the penal code, disclose a cognizable offence? — is a question about the complaint, not about the world. It is answered by reading the paper. It cannot be answered in the complainant's favour and then reopened, because there is nothing further to look into: if the answer is yes, the FIR must be registered, and everything about the truth of the allegation is deferred to the investigation that follows.
+
+The remaining directions follow from that. The categories in which an enquiry might be appropriate — matrimonial and family disputes, commercial offences, medical negligence, corruption, and cases of abnormal delay in initiating prosecution — were expressly "only illustrations and not exhaustive". They are categories in which what the complaint says and what it discloses are commonly two different things, so that the reading exercise is not trivial. The seven-day limit, the requirement that the fact and causes of any delay be entered in the General Diary, and the direction that a complaint closed after enquiry be reported to the informant with brief reasons within one week, all operate on an enquiry that is doing that one narrow thing.
+
+## The question sub-section (3) puts in its place
+
+Section 173(3) does not ask whether the information reveals a cognizable offence. It presupposes that it does — the sub-section is triggered by "information relating to the commission of any cognizable offence" in the specified punishment range. What the enquiry is to ascertain is "whether there exists a prima facie case for proceeding in the matter."
+
+Those are not the same question, and the difference is not one of degree. Whether information discloses a cognizable offence is answered by reading the information. Whether a prima facie case exists for proceeding is answered by looking at something other than the information — at what corroborates it, at what contradicts it, at whether the complainant's account survives contact with the surrounding facts. It is, in substance, the question *Lalita Kumari* placed outside the scope of a preliminary enquiry: whether the information is true.
+
+The Court in *Imran Pratapgadhi* described the consequence at the far end of the enquiry: where the officer concludes after enquiry that a prima facie case exists, "he should immediately register an FIR and proceed to investigate" (para 24). Read with sub-section (3) itself, that means the registration of the first information report — the step *Lalita Kumari* made non-discretionary, and the event that puts the complaint on a record the informant can afterwards point to — is now capable of being postponed, lawfully, for up to fourteen days, on a view formed by the officer about the strength of the allegation rather than about its legal character.
+
+That is a real change in what registration means, and it does not depend on any view about whether it is a desirable one. Under Section 154 as construed in 2014, the FIR marked the point at which the police stopped assessing and started investigating. Under Section 173(3), for one band of offences, the assessment comes first and the FIR records its outcome.
+
+How far that is authority for the general proposition is worth stating carefully, because *Imran Pratapgadhi* was not a case about the architecture of Chapter XIII. It concerned an FIR arising out of a poem, and the operative holding on this point was directed at speech: where the allegation is of an offence covered by a law referred to in Article 19(2) and sub-section (3) applies, the Court held that "it is always appropriate to conduct a preliminary inquiry to ascertain whether a prima facie case is made out to proceed against the accused" (para 29). That is a direction about how the discretion should be exercised in one class of case. The description in paras 23 and 24 is of the discretion itself, and does not turn on the subject-matter of the first information report the Court happened to be looking at.
+
+## The filter changed shape as well
+
+The *Lalita Kumari* categories were defined by the kind of dispute. Section 173(3)'s bracket is defined by the maximum sentence. These do not describe the same set of cases, and the mismatch is not marginal.
+
+Taking the bracket as fixed by the maximum punishment prescribed for the offence — the Sanhita uses the same construction in Section 176(3), which is triggered by an offence "made punishable for seven years or more", though the phrase is not free from difficulty where an offence carries no minimum — the position under the Bharatiya Nyaya Sanhita itself is this. Cruelty by a husband or his relative under Section 85 carries up to three years, and sits at the lower edge of the bracket. Criminal breach of trust in its general form under Section 316(2) carries up to five years, and is within it. But cheating with delivery of property under Section 318(4) carries up to seven years, and is therefore outside a bracket that stops at "less than seven" — which takes out of the sub-section a large part of what the commercial-offences category was concerned with. Criminal breach of trust by a carrier or warehouse-keeper under Section 316(3), also seven years, is outside for the same reason. And causing death by negligence under Section 106(1) carries up to five years, so it is inside the bracket — except where the act is done by a registered medical practitioner performing a medical procedure, where the maximum is two years, which puts it outside. Medical negligence, one of the five categories *Lalita Kumari* named, falls outside Section 173(3) in precisely the case for which the category was created.
+
+The fifth category does not map at all. "Abnormal delay or laches in initiating criminal prosecution" is not a description of an offence; it is a description of when the complaint was brought. No punishment bracket can capture it, because the feature that made those cases worth a second look has nothing to do with what the accused is alleged to have done.
+
+None of this makes the bracket irrational. A legislature drawing a line by sentence length is doing something courts cannot easily do, and doing it in a form that requires no judgment at the police station about which category a complaint falls into. But it is a different line, drawn for a different reason, and it should not be described as the *Lalita Kumari* categories put into statutory form. The categories identified cases where reading the complaint was hard. The bracket identifies cases where the consequences of being wrong are moderate.
+
+## What the enquiry is conducted with
+
+The Sanhita confers no powers for the enquiry. The powers in Chapter XIII are framed by reference to investigation. Section 179 empowers "any police officer making an investigation under this Chapter" to require the attendance of witnesses; Section 180, in the same words, allows such an officer to examine any person orally, and binds that person to answer truly; Section 181 then governs what use may be made of what was said. Section 2(1)(l) defines investigation inclusively, as including "all the proceedings under this Sanhita for the collection of evidence" conducted by a police officer or by a person authorised by a Magistrate.
+
+Whether a preliminary enquiry falls within that definition is unresolved, and each answer costs something. If it does — if an enquiry into whether a prima facie case exists is a proceeding for the collection of evidence — then Section 173(3) authorises an investigation conducted before any first information report exists, which is the state of affairs the insistence on registration in *Lalita Kumari* was directed against. If it does not, then for fourteen days the officer is asked to form a view on the strength of an allegation with no power to summon anyone, and no provision governing what he records or what use may later be made of it.
+
+The second limb of sub-section (3) sharpens this. The officer may instead "proceed with investigation when there exists a prima facie case" — which requires him to have formed the same view before any enquiry has been held. The sub-section thus assumes that a prima facie case can sometimes be seen on the face of the information and sometimes cannot, without saying what distinguishes the two, and leaves the choice between them to the officer with the Deputy Superintendent's permission.
+
+## Where the informant stands during the fourteen days
+
+Sub-section (4) gives a person aggrieved by "a refusal on the part of an officer in charge of a police station to record the information" a route to the Superintendent of Police, and failing that an application to the Magistrate. That remedy is keyed to a refusal. An officer who has taken permission and embarked on an enquiry has not refused to record anything; he has taken a step the statute expressly authorises. On the face of the section, the informant who is told an enquiry is under way is not within sub-section (4) at all, and the fourteen days are a period in which the statute names no forum for him.
+
+Nor does the sub-section say what happens at the end of it. There is no stated consequence of the period expiring, no requirement that the informant be told the outcome, and no counterpart to the direction in *Lalita Kumari* that a complaint closed after enquiry be reported to the informant with brief reasons within a week. The Court in *Imran Pratapgadhi* supplied part of this, holding that an officer who finds no prima facie case must inform the complainant. That the duty had to be supplied, rather than read out of the text, is the point.
+
+## What actually moved
+
+The recodification is often read as having relaxed the rule in *Lalita Kumari* by giving the police a discretion the Constitution Bench had withheld. That reading overstates the change in one respect and understates it in another.
+
+It overstates it because the discretion under sub-section (3) is bounded in ways the enquiry permitted in *Lalita Kumari* was not. It requires the prior permission of a named rank, which the directions did not. It is confined to a closed band of offences, where the *Lalita Kumari* categories were expressly illustrative and not exhaustive. Its outer limit sits on the face of the statute rather than in a set of directions. A structured discretion exercised on a record is not the same thing as an unstructured one.
+
+It understates the change because the discretion is not the change that matters. What changed is the question. The enquiry *Lalita Kumari* permitted asked whether the complaint, taken as true, described a cognizable offence — a question that could only ever delay registration in cases where registration was not owed. The enquiry Section 173(3) permits asks whether the complaint is worth proceeding on — a question that can delay registration in cases where, on the earlier reading of Section 154, it was owed at once. Everything else in the sub-section is a limit on how long, by whom, and in which cases that second question may be asked. Nothing in it addresses the fact that it is a second question, or supplies the informant with a position while it is being asked.
+
+---
+
+*Authored by Eshan Kumar Gupta, Advocate, Hon'ble Allahabad High Court, Lucknow Bench.*
