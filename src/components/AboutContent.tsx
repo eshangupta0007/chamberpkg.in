@@ -16,68 +16,77 @@ export function AboutContent() {
 
   return (
     <div
-      className="relative mx-auto max-w-[75ch] px-6 py-16"
+      className="relative mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-24"
       lang={isHi ? "hi" : undefined}
     >
-      <div className="flex justify-between gap-4">
-        <p className="label-caps text-xs text-gold-text">
-          Chamber of Praveen Kumar Gupta
-        </p>
-        <LanguageToggle lang={lang} onChange={setLang} />
-      </div>
-      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
-        {isHi ? hiAbout.heading : "About the Chamber"}
-      </h1>
+      {/* Two columns: a sticky title column carrying the heading and the
+          signature block, and a reading column for the text and plate. */}
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-28">
+            <div className="flex items-center justify-between gap-4 lg:block">
+              <p className="label-caps text-xs text-gold-text">
+                Chamber of Praveen Kumar Gupta
+              </p>
+              <div className="lg:mt-6">
+                <LanguageToggle lang={lang} onChange={setLang} />
+              </div>
+            </div>
+            <h1 className="display-tight mt-5 font-serif text-[clamp(2.5rem,5.2vw,4.75rem)] font-semibold leading-[0.98] text-ivory">
+              {isHi ? hiAbout.heading : "About the Chamber"}
+            </h1>
+            <SealDivider className="mt-10 max-w-[14rem]" />
+            <div className="mt-8">
+              <p className="display-tight font-serif text-xl font-semibold text-ivory">
+                {isHi ? hiAbout.name : "Eshan Kumar Gupta"}
+              </p>
+              <p className="label-caps mt-1 text-xs text-gold-text">
+                {isHi ? hiAbout.proprietor : "Proprietor"}
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div className="mt-8 space-y-4 text-base leading-relaxed text-charcoal">
-        {/* Drop cap on the Latin text only — a Devanagari initial carries
-            matras above and below the line and does not set as a drop cap. */}
-        <p className={isHi ? undefined : "drop-cap"}>
-          {isHi ? hiAbout.legacyParagraph : legacyParagraph}
-        </p>
-      </div>
+        <div className="lg:col-span-7 lg:col-start-6">
+          {/* Drop cap on the Latin text only — a Devanagari initial carries
+              matras above and below the line and does not set as a drop cap. */}
+          <p
+            className={`${isHi ? "" : "drop-cap "}text-lg leading-[1.75] text-charcoal md:text-xl`}
+          >
+            {isHi ? hiAbout.legacyParagraph : legacyParagraph}
+          </p>
 
-      <figure className="mt-10">
-        <Image
-          src="/images/allahabad-high-court.jpg"
-          alt="The Allahabad High Court building"
-          width={2400}
-          height={1172}
-          sizes="(max-width: 900px) 100vw, 750px"
-          className="w-full border border-line object-cover"
-          priority
-        />
-        <figcaption className="mt-2 text-xs text-charcoal/90">
-          {isHi ? (
-            hiAbout.photoCaption
-          ) : (
-            <>
-              The Allahabad High Court. Photo by Subhashish Panigrahi,
-              licensed under{" "}
-              <a
-                href="https://creativecommons.org/licenses/by-sa/4.0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-gold-text"
-              >
-                CC BY-SA 4.0
-              </a>
-              .
-            </>
-          )}
-        </figcaption>
-      </figure>
-
-      <div className="mt-12">
-        <SealDivider className="max-w-[320px]" />
-      </div>
-      <div className="mt-8">
-        <p className="font-serif text-lg font-semibold text-ivory">
-          {isHi ? hiAbout.name : "Eshan Kumar Gupta"}
-        </p>
-        <p className="mt-1 text-sm text-charcoal">
-          {isHi ? hiAbout.proprietor : "Proprietor"}
-        </p>
+          <figure className="mt-12">
+            <Image
+              src="/images/allahabad-high-court.jpg"
+              alt="The Allahabad High Court building"
+              width={2400}
+              height={1172}
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="w-full border border-line object-cover"
+              priority
+            />
+            <figcaption className="mt-3 text-xs leading-relaxed text-muted">
+              {isHi ? (
+                hiAbout.photoCaption
+              ) : (
+                <>
+                  The Allahabad High Court. Photo by Subhashish Panigrahi,
+                  licensed under{" "}
+                  <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-gold-text"
+                  >
+                    CC BY-SA 4.0
+                  </a>
+                  .
+                </>
+              )}
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   );

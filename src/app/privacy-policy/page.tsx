@@ -9,11 +9,11 @@ export const metadata = pageMetadata(
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="mx-auto max-w-[75ch] px-6 py-16">
+    <div className="mx-auto max-w-[74ch] px-6 py-16 lg:py-24">
       <h1 className="font-serif text-3xl font-semibold text-ivory">
         Privacy Policy
       </h1>
-      <p className="mt-2 text-sm text-charcoal/90">Last updated: 30 July 2026</p>
+      <p className="mt-2 text-sm text-muted">Last updated: 30 July 2026</p>
 
       <div className="mt-8 space-y-8 text-base leading-relaxed text-charcoal">
         <p>

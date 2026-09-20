@@ -9,7 +9,11 @@ import { siteUrl } from "@/lib/site-url";
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  // Variable, with the optical-size axis live: at display sizes the face
+  // sharpens its hairlines and tightens its joins, which is where the royal
+  // quality of a high-contrast serif actually comes from.
+  weight: "variable",
+  axes: ["opsz"],
 });
 
 const sourceSerif = Source_Serif_4({
@@ -47,7 +51,7 @@ export const metadata: Metadata = {
 
 // Paints the mobile browser chrome to match the site's own chrome bar.
 export const viewport: Viewport = {
-  themeColor: "#222A2F",
+  themeColor: "#0E1113",
 };
 
 export default function RootLayout({

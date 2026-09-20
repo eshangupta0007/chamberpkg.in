@@ -26,65 +26,87 @@ const chapters = [
 
 export default function PublicationsPage() {
   return (
-    <div className="mx-auto max-w-[1200px] px-6 py-16">
+    <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(publicationJsonLd()) }}
       />
-      <p className="label-caps text-xs text-gold-text">
-        Chamber of Praveen Kumar Gupta
-      </p>
-      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
-        Publications
-      </h1>
+      <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-7">
+          <p className="label-caps text-xs text-gold-text">
+            Chamber of Praveen Kumar Gupta
+          </p>
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+            Publications
+          </h1>
+        </div>
+        <p className="max-w-[44ch] text-lg leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
+          The Artificial Intelligence (Regulation of Use and Prevention of
+          Misuse) Act, 2026 — a draft legislative proposal
+        </p>
+      </div>
 
       {/* The volume itself, before any description of it. */}
-      <figure className="mt-10">
+      <figure className="mt-12">
         <Image
           src="/images/publications/ai-code-cover.jpg"
           alt="The Artificial Intelligence Code, 2026, bound in black boards with gilt lettering, on a desk beside a volume of the Supreme Court Cases reports."
           width={1800}
           height={1349}
-          sizes="(max-width: 1200px) 100vw, 1150px"
+          sizes="(max-width: 1440px) 100vw, 1350px"
           className="w-full border border-line object-cover"
           priority
         />
-        <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+        <figcaption className="label-caps mt-3 text-xs text-muted">
           Author&rsquo;s Edition, 2026 &middot; Naman Prakashan
         </figcaption>
       </figure>
 
-      <div className="mt-12 max-w-[75ch]">
-        <h2 className="display-tight font-serif text-2xl font-semibold text-ivory">
-          The Artificial Intelligence Code, 2026
-        </h2>
-        <p className="mt-1 text-sm text-charcoal/90">
-          The Artificial Intelligence (Regulation of Use and Prevention of
-          Misuse) Act, 2026 — a draft legislative proposal
-        </p>
+      <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <h2 className="display-tight font-serif text-3xl font-semibold leading-[1.05] text-ivory md:text-4xl">
+            The Artificial Intelligence Code, 2026
+          </h2>
+          <dl className="mt-8 space-y-4 border-t border-line pt-6 text-sm">
+            <div>
+              <dt className="label-caps text-xs text-gold-text">Author</dt>
+              <dd className="mt-1 text-charcoal">Eshan Kumar Gupta, Advocate</dd>
+            </div>
+            <div>
+              <dt className="label-caps text-xs text-gold-text">Extent</dt>
+              <dd className="mt-1 text-charcoal">60 sections · 11 chapters · 3 Schedules</dd>
+            </div>
+            <div>
+              <dt className="label-caps text-xs text-gold-text">Edition</dt>
+              <dd className="mt-1 text-charcoal">Author&rsquo;s Edition, 2026 · Naman Prakashan</dd>
+            </div>
+          </dl>
+        </div>
 
-        <p className="mt-6 text-base leading-relaxed text-charcoal">
-          India has no statute treating artificial intelligence as an
-          independent subject of law. The Information Technology Act, 2000
-          recognises electronic records; the Digital Personal Data Protection
-          Act, 2023 governs personal data; the Bharatiya Nyaya Sanhita,
-          Nagarik Suraksha Sanhita, and Sakshya Adhiniyam, 2023 modernised
-          criminal law, procedure, and evidence. None of them allocates
-          liability along the chain of persons who design, train, deploy, and
-          profit from an AI system.
-        </p>
-        <p className="mt-4 text-base leading-relaxed text-charcoal">
-          The Artificial Intelligence Code, 2026 is a draft statute addressed
-          to that gap, authored by Eshan Kumar Gupta, Advocate, Hon&rsquo;ble
-          High Court of Judicature at Allahabad, Lucknow Bench. It runs to 60
-          sections across 11 chapters and 3 Schedules, and rests on the
-          Concurrent List &mdash; criminal law and procedure, contract and
-          actionable wrongs, and evidence &mdash; with the residuary power
-          invoked narrowly for its regulatory tier alone.
-        </p>
+        <div className="lg:col-span-7 lg:col-start-6">
+          <p className="drop-cap text-lg leading-[1.75] text-charcoal md:text-xl">
+            India has no statute treating artificial intelligence as an
+            independent subject of law. The Information Technology Act, 2000
+            recognises electronic records; the Digital Personal Data Protection
+            Act, 2023 governs personal data; the Bharatiya Nyaya Sanhita,
+            Nagarik Suraksha Sanhita, and Sakshya Adhiniyam, 2023 modernised
+            criminal law, procedure, and evidence. None of them allocates
+            liability along the chain of persons who design, train, deploy, and
+            profit from an AI system.
+          </p>
+          <p className="mt-6 text-lg leading-[1.75] text-charcoal md:text-xl">
+            The Artificial Intelligence Code, 2026 is a draft statute addressed
+            to that gap, authored by Eshan Kumar Gupta, Advocate, Hon&rsquo;ble
+            High Court of Judicature at Allahabad, Lucknow Bench. It runs to 60
+            sections across 11 chapters and 3 Schedules, and rests on the
+            Concurrent List &mdash; criminal law and procedure, contract and
+            actionable wrongs, and evidence &mdash; with the residuary power
+            invoked narrowly for its regulatory tier alone.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+      <div className="mt-16 grid gap-6 sm:grid-cols-2">
         <figure>
           <Image
             src="/images/publications/ai-code-title-page.jpg"
@@ -94,7 +116,7 @@ export default function PublicationsPage() {
             sizes="(max-width: 640px) 100vw, 560px"
             className="w-full border border-line object-cover"
           />
-          <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+          <figcaption className="label-caps mt-3 text-xs text-muted">
             Title page
           </figcaption>
         </figure>
@@ -107,27 +129,28 @@ export default function PublicationsPage() {
             sizes="(max-width: 640px) 100vw, 560px"
             className="w-full border border-line object-cover"
           />
-          <figcaption className="label-caps mt-2 text-xs text-charcoal/90">
+          <figcaption className="label-caps mt-3 text-xs text-muted">
             Table of contents
           </figcaption>
         </figure>
       </div>
 
-      <div className="mt-14 max-w-[480px]">
-        <SealDivider />
+      <div className="mt-20">
+        <SealDivider className="max-w-[30rem]" />
       </div>
 
-      <div className="mt-10 max-w-[75ch]">
-        <h3 className="display-tight font-serif text-xl font-semibold text-ivory">
+      <div className="mt-12">
+        <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
           Structure
         </h3>
-        <dl className="mt-4 space-y-4">
+        <dl className="mt-8 grid gap-x-10 gap-y-6 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
           {chapters.map((chapter, i) => (
             <div key={chapter.name}>
-              <dt className="text-sm font-medium text-ivory">
-                {i + 1}. {chapter.name}
+              <dt className="flex items-baseline gap-3 font-serif text-lg font-semibold text-ivory">
+                <span className="font-serif text-sm text-gold-primary tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+                {chapter.name}
               </dt>
-              <dd className="mt-1 text-sm leading-relaxed text-charcoal">
+              <dd className="mt-1.5 text-sm leading-relaxed text-charcoal">
                 {chapter.note}
               </dd>
             </div>
@@ -135,15 +158,15 @@ export default function PublicationsPage() {
         </dl>
       </div>
 
-      <div className="mt-14 max-w-[480px]">
-        <SealDivider />
+      <div className="mt-20">
+        <SealDivider className="max-w-[30rem]" />
       </div>
 
-      <div className="mt-10 max-w-[75ch]">
-        <h3 className="display-tight font-serif text-xl font-semibold text-ivory">
+      <div className="mt-12 max-w-[72ch]">
+        <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
           Status
         </h3>
-        <p className="mt-4 text-base leading-relaxed text-charcoal">
+        <p className="mt-6 text-lg leading-[1.7] text-charcoal">
           This is an independent legislative proposal, unaffiliated with any
           Government, Ministry, or constitutional authority. It has been
           offered for academic and professional consultation, and comments

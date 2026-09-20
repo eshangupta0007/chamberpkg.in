@@ -59,7 +59,7 @@ export function DisclaimerGate() {
       aria-modal="true"
       aria-labelledby="disclaimer-heading"
       onKeyDown={handleKeyDown}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-deep/90 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-deep/80 p-4 backdrop-blur-sm"
     >
       <div className="max-h-[90vh] w-full max-w-xl overflow-y-auto border border-line bg-paper p-8">
         <Image

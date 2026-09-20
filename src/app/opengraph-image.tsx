@@ -21,39 +21,51 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#222A2F",
+          backgroundColor: "#0E1113",
+          backgroundImage:
+            "radial-gradient(circle at 50% 38%, rgba(201,169,97,0.16), rgba(14,17,19,0) 42%)",
           fontFamily: "serif",
         }}
       >
-        <img src={logoSrc} width={160} height={158} alt="" />
+        {/* Gilt edge along the head, as on the site. */}
         <div
           style={{
-            marginTop: 32,
-            fontSize: 56,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 6,
+            display: "flex",
+            background: "linear-gradient(to right, #B8984F, #E4CA82 50%, #B8984F)",
+          }}
+        />
+        <img src={logoSrc} width={168} height={166} alt="" />
+        <div
+          style={{
+            marginTop: 30,
+            fontSize: 58,
             fontWeight: 700,
-            letterSpacing: "-0.021em",
-            color: "#EDEBE4",
+            letterSpacing: "-0.028em",
+            color: "#EFE9DC",
           }}
         >
           Chamber of Praveen Kumar Gupta
         </div>
-        {/* Rule between the name and the standing line, matching the
-            double-rule used at section heads on the site itself. */}
         <div
           style={{
             display: "flex",
-            marginTop: 28,
+            marginTop: 26,
             width: 220,
             height: 2,
-            backgroundColor: "#D2A048",
+            backgroundColor: "#C9A961",
           }}
         />
         <div
           style={{
-            marginTop: 22,
-            fontSize: 26,
-            letterSpacing: "0.14em",
-            color: "#D2A048",
+            marginTop: 20,
+            fontSize: 25,
+            letterSpacing: "0.16em",
+            color: "#C9A961",
           }}
         >
           ADVOCATES · SINCE 1991

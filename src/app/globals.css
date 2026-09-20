@@ -2,52 +2,56 @@
 @plugin "@tailwindcss/typography";
 
 /*
- * Chamber palette — Slate & Ochre. Cool slate chrome, a warm ochre accent,
- * and an oxide red for primary actions. Token NAMES keep their ROLES from
- * earlier passes (page bg, card bg, primary text, secondary text, metal
- * accent, primary CTA, dark chrome).
+ * Chamber palette — Ink & Gilt.
  *
- * The ground is split into a two-tone stock rather than one flat colour:
- * the page is the DEEPER ground (--ink) and the card is the LIFTED near-white
- * (--paper). An earlier pass had this inverted — cards were darker and more
- * saturated than the page, which read as cardboard. Lifting the card makes it
- * read as a sheet laid on a desk. The two sit 1.11:1 apart: the separation is
- * carried by the hairline, not by a colour step.
+ * A dark ground: the ink of a bound volume, the dark wood of a courtroom, the
+ * High Court after the lamps come on. Ivory type on it; a real metallic gold
+ * for rules, numerals, labels and links; oxblood for the one primary action.
+ * Modern in scale and asymmetry, classical in material, royal in ground.
  *
- * Borders are likewise split. --line is a soft hairline for decorative edges;
- * --line-strong is the mid ochre, reserved for form controls, where the border
- * is the only thing identifying the field and so must hold 3:1 (it measures
- * 3.67:1). All text pairs verified for WCAG AA.
+ * Token NAMES keep their ROLES from every earlier pass — page bg, card bg,
+ * primary text, secondary text, metal accent, primary CTA, chrome — so no
+ * component needed renaming. Only the VALUES invert.
+ *
+ * Two surfaces: --ink is the page ground and --paper the lifted panel, 1.08:1
+ * apart; the step is carried by the hairline, not by a colour jump. Borders
+ * split as before: --line is decorative; --line-strong is reserved for form
+ * controls, where the border alone identifies the field and must hold 3:1
+ * against the panel it sits on (it measures 3.8:1).
+ *
+ * All text pairs verified for WCAG AA on both surfaces.
  */
 :root {
-  /* Ochre at three depths. --gold-primary is the mid tone for rules, hover
-     borders and the ghosted numerals; --gold-deep is the FILL for solid
-     controls, dark enough to carry light text (5.09:1) where the mid tone
-     could not; --gold-text is for labels and links on the light grounds. */
-  --gold-primary: #A8762C;
-  --gold-deep: #8A6122;
-  --gold-text: #7A5518;
-  --ink: #ECEAE3;
-  --charcoal: #3F474C;
-  --ivory: #1C2226;
-  --paper: #F7F6F1;
-  --line: #D7D4CA;
-  --line-strong: #A8762C;
-  --cherry-red: #7A2E20;
-  --cherry-red-deep: #5E2218;
-  --error-red: #A5333A;
-  /* Darker than WhatsApp's brand green so white button text clears AA (their
-     brand green is ~2:1 with white and fails contrast as a button fill). */
+  /* Gilt at three depths. --gold-primary is the metal itself: rules, numerals,
+     hover; --gold-deep is the FILL for solid controls, carrying dark text at
+     6.4:1; --gold-text is for labels and links; --gold-bright is the leaf
+     highlight, used sparingly. */
+  --gold-primary: #C9A961;
+  --gold-deep: #B8984F;
+  --gold-text: #C9A961;
+  --gold-bright: #E4CA82;
+  --gold-on-dark: #D9BD73;
+
+  --ink: #0E1113;
+  --paper: #161A1D;
+  --paper-2: #1E2327;
+  --ivory: #EFE9DC;
+  --charcoal: #C9C2B4;
+  --muted: #8F897D;
+  --line: #262C30;
+  --line-strong: #6C7780;
+
+  --cherry-red: #8A2F35;
+  --cherry-red-deep: #6E252A;
+  --error-red: #D97B7B;
+  /* Darker than WhatsApp's brand green so white button text clears AA. */
   --whatsapp-green: #1B7A43;
 
-  /* Dark chrome bookend — header, footer, and the disclaimer backdrop. */
-  --deep: #222A2F;
-  --deep-text: #EDEBE4;
-  --deep-line: #4A5359;
-  /* Ochre lifted for use ON the slate chrome. The body ochre is too dark
-     against it for small text; this tone clears AA at 6.15:1 while reading
-     as the same metal. */
-  --gold-on-dark: #D2A048;
+  /* Chrome — header, footer band and the disclaimer backdrop. A hair deeper
+     than the page so the bookends read as such. */
+  --deep: #0B0D0F;
+  --deep-text: #EFE9DC;
+  --deep-line: #262C30;
 
   --background: var(--ink);
   --foreground: var(--ivory);
@@ -57,11 +61,16 @@
   --color-gold-primary: var(--gold-primary);
   --color-gold-deep: var(--gold-deep);
   --color-gold-text: var(--gold-text);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-on-dark: var(--gold-on-dark);
   --color-ink: var(--ink);
-  --color-charcoal: var(--charcoal);
-  --color-ivory: var(--ivory);
   --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ivory: var(--ivory);
+  --color-charcoal: var(--charcoal);
+  --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
   --color-cherry-red: var(--cherry-red);
   --color-cherry-red-deep: var(--cherry-red-deep);
   --color-error-red: var(--error-red);
@@ -69,30 +78,39 @@
   --color-deep: var(--deep);
   --color-deep-text: var(--deep-text);
   --color-deep-line: var(--deep-line);
-  --color-gold-on-dark: var(--gold-on-dark);
-  --color-line-strong: var(--line-strong);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Headings: Fraunces, a high-contrast transitional display serif.
+  /* Headings: Fraunces, a high-contrast transitional display serif, with its
+     optical-size axis live so hairlines sharpen as the type grows.
      Body: Source Serif 4, a separate, more legible text serif. */
   --font-serif: var(--font-fraunces);
   --font-sans: var(--font-source-serif);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--gold-primary);
+  color: var(--ink);
 }
 
 /*
- * Paper grain. A fine, tiled fractal-noise field laid over the whole page at
- * very low opacity — it is what separates a flat colour fill from something
- * that reads as stock. Fixed attachment so it does not swim while scrolling,
- * and pointer-events:none so it never intercepts a click. The SVG is inline as
- * a data URI: one tile, no network request.
+ * Film grain. A fine fractal-noise field over the whole page at very low
+ * opacity. On a dark ground it reads as the tooth of a photographic print
+ * rather than a flat digital fill. Fixed so it does not swim while scrolling;
+ * pointer-events:none so it never intercepts a click. Inline SVG, one tile.
  */
 body::before {
   content: "";
@@ -100,13 +118,13 @@ body::before {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
-/* The letterhead rule: a hairline of ochre across the very top of every page,
-   above the chrome, the way a printed letterhead is ruled off. */
+/* The gilt edge: a hairline of gold along the very top of every page, above
+   the chrome, the way a bound volume is gilded along its head. */
 body::after {
   content: "";
   position: fixed;
@@ -119,9 +137,22 @@ body::after {
   background: linear-gradient(
     to right,
     var(--gold-deep),
-    var(--gold-primary) 45%,
-    var(--gold-on-dark) 100%
+    var(--gold-bright) 50%,
+    var(--gold-deep) 100%
   );
+}
+
+/* Hero entrance: each line rises into place, staggered. Disabled wholesale by
+   the reduced-motion block at the foot of this file. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @layer utilities {
@@ -129,20 +160,19 @@ body::after {
      to browser-synthesized small caps where a font lacks true smcp glyphs. */
   .label-caps {
     font-variant-caps: all-small-caps;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.11em;
     font-weight: 600;
   }
 
   /* Large display headings: negative tracking. Fraunces is drawn loose for
      text sizes, so it needs tightening once it is set large. */
   .display-tight {
-    letter-spacing: -0.021em;
+    letter-spacing: -0.028em;
   }
 
-  /* The classical section rule — a heavy line over a hairline, the
-     compositor's mark for the head of a section. */
+  /* The classical section rule — a heavy line over a hairline. */
   .double-rule {
-    border-top: 2px solid var(--line-strong);
+    border-top: 2px solid var(--gold-primary);
     box-shadow: 0 3px 0 -2px var(--line);
   }
 
@@ -154,22 +184,39 @@ body::after {
     float: left;
     font-family: var(--font-fraunces), ui-serif, Georgia, serif;
     font-weight: 700;
-    font-size: 3.35em;
+    font-size: 3.5em;
     line-height: 0.82;
-    margin: 0.06em 0.09em 0 0;
-    color: var(--gold-text);
+    margin: 0.06em 0.1em 0 0;
+    color: var(--gold-primary);
   }
 
   /* Team portraits are shot in different places, light and seasons. A shared
-     cast pulls them into one commissioned set instead of three snapshots. Kept
-     cool and mostly desaturated to sit with the slate chrome — a warmer sepia
-     fought the palette. */
+     cast pulls them into one set. Slightly darkened so the photographs sit
+     into the dark ground instead of floating in front of it. */
   .portrait-tone {
-    filter: saturate(0.62) contrast(1.07) brightness(1.02) sepia(0.12);
+    filter: saturate(0.72) contrast(1.08) brightness(0.94) sepia(0.14);
+  }
+
+  .rise {
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rise-1 { animation-delay: 0.05s; }
+  .rise-2 { animation-delay: 0.16s; }
+  .rise-3 { animation-delay: 0.28s; }
+  .rise-4 { animation-delay: 0.4s; }
+  .rise-5 { animation-delay: 0.58s; }
+
+  /* Soft gold bloom behind the seal in the hero. */
+  .gilt-glow {
+    filter: drop-shadow(0 0 22px rgba(201, 169, 97, 0.32))
+      drop-shadow(0 0 2px rgba(228, 202, 130, 0.35));
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

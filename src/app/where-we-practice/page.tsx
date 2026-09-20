@@ -10,11 +10,11 @@ export const metadata = pageMetadata(
 
 export default function WhereWePracticePage() {
   return (
-    <div className="mx-auto max-w-[1200px] px-6 py-16">
+    <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-24">
       <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
         Where We Practice
       </h1>
       <p className="mt-4 max-w-[70ch] text-base leading-relaxed text-charcoal">

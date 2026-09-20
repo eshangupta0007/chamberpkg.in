@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: Props) {
     : undefined;
 
   return (
-    <article className="mx-auto max-w-[75ch] px-6 py-16">
+    <article className="mx-auto max-w-[74ch] px-6 py-16 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd(post)) }}
@@ -57,10 +57,10 @@ export default async function BlogPostPage({ params }: Props) {
       <p className="label-caps text-xs text-gold-text">
         {post.category}
       </p>
-      <h1 className="display-tight mt-2 font-serif text-3xl font-semibold leading-[1.14] text-ivory md:text-4xl">
+      <h1 className="display-tight mt-4 font-serif text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-[1.05] text-ivory">
         {post.title}
       </h1>
-      <p className="mt-3 text-sm text-charcoal/90">
+      <p className="mt-5 text-sm text-muted">
         {post.date &&
           new Date(post.date).toLocaleDateString("en-IN", {
             year: "numeric",
@@ -71,15 +71,15 @@ export default async function BlogPostPage({ params }: Props) {
         {post.readingTimeMinutes} min read
       </p>
 
-      <div className="drop-cap-first prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-ivory prose-a:text-gold-text">
+      <div className="drop-cap-first prose prose-invert prose-lg mt-12 max-w-none prose-headings:font-serif prose-headings:tracking-tight prose-headings:text-ivory prose-p:text-charcoal prose-li:text-charcoal prose-strong:text-ivory prose-em:text-charcoal prose-a:text-gold-text prose-a:decoration-gold-primary/40 prose-blockquote:border-l-gold-primary prose-blockquote:text-charcoal prose-hr:border-line prose-code:text-ivory prose-th:text-ivory prose-td:text-charcoal">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </div>
 
       <div className="mt-10">
-        <SealDivider className="max-w-[320px]" />
+        <SealDivider className="max-w-[20rem]" />
       </div>
       <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-        <span className="label-caps text-charcoal/90">Related:</span>
+        <span className="label-caps text-muted">Related:</span>
         {relatedArea && (
           <Link
             href={`/practice-areas#${relatedArea.slug}`}

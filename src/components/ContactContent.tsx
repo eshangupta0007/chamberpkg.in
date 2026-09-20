@@ -26,7 +26,7 @@ export function ContactContent() {
           <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
-          <h1 className="mt-2 font-serif text-3xl font-semibold text-ivory md:text-4xl">
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
             {isHi ? t.heading : "Contact"}
           </h1>
         </div>
@@ -91,7 +91,7 @@ export function ContactContent() {
             <p className="mt-2 text-sm text-charcoal">
               {isHi ? t.officeHoursValue : officeHours}
             </p>
-            <p className="mt-2 max-w-[55ch] text-sm text-charcoal/90">
+            <p className="mt-2 max-w-[55ch] text-sm text-muted">
               {isHi ? t.officeHoursNote : officeHoursNote}
             </p>
           </div>

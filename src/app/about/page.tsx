@@ -21,7 +21,7 @@ export default function AboutPage() {
         alt=""
         width={600}
         height={600}
-        className="pointer-events-none absolute -right-40 top-24 hidden h-[560px] w-[560px] opacity-[0.055] lg:block"
+        className="pointer-events-none absolute -right-32 top-32 hidden h-[620px] w-[620px] opacity-[0.07] lg:block"
         aria-hidden="true"
       />
       <AboutContent />

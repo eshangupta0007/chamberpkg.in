@@ -10,7 +10,7 @@ export const metadata = pageMetadata(
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-[1200px] px-6 py-16">
+    <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd()) }}
