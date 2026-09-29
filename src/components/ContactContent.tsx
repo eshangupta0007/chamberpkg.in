@@ -26,7 +26,7 @@ export function ContactContent() {
           <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
-          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
             {isHi ? t.heading : "Contact"}
           </h1>
         </div>
@@ -38,7 +38,7 @@ export function ContactContent() {
           : "For inquiries, the Chamber may be reached at the phone numbers or email below, or via the form for non-urgent matters."}
       </p>
 
-      <div className="mt-12 grid gap-12 lg:grid-cols-2">
+      <div className="mt-12 grid gap-12 lg:grid-cols-2" data-reveal>
         <div>
           <h2 className="font-serif text-xl font-semibold text-ivory">
             {isHi ? t.sendMessage : "Send a Message"}
@@ -98,7 +98,7 @@ export function ContactContent() {
         </div>
       </div>
 
-      <section className="mt-16">
+      <section className="mt-16" data-reveal>
         <h2 className="font-serif text-xl font-semibold text-ivory">
           {isHi ? t.addresses : "Chamber Addresses"}
         </h2>

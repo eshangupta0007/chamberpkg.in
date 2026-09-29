@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-deep-line bg-deep text-deep-text">
       <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-12 lg:grid-cols-12" data-reveal>
           <div className="lg:col-span-4">
             <Image
               src="/images/logo-seal.png"
@@ -16,7 +16,7 @@ export function Footer() {
               height={64}
               className="h-16 w-16"
             />
-            <p className="display-tight mt-5 max-w-[14ch] font-serif text-2xl font-semibold leading-tight">
+            <p className="display-tight mt-5 max-w-[14ch] font-serif text-xl font-semibold leading-tight">
               {siteName}
             </p>
             <p className="label-caps mt-3 text-xs text-gold-on-dark">

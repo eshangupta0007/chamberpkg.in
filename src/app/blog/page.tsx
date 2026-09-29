@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { getActiveCategories, getPublishedPosts } from "@/lib/blog";
 import { blogJsonLd } from "@/lib/structured-data";
@@ -51,7 +52,7 @@ export default async function BlogPage({
           <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
-          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
             Blog
           </h1>
         </div>
@@ -77,7 +78,7 @@ export default async function BlogPage({
            old category link is still in circulation. */
         <div className="mt-16">
           {category && posts.length > 0 ? (
-            <p className="text-lg text-charcoal">
+            <p className="text-base text-charcoal">
               There are no posts under {category}.{" "}
               <Link
                 href="/blog"
@@ -88,7 +89,7 @@ export default async function BlogPage({
               .
             </p>
           ) : (
-            <p className="text-lg text-charcoal">
+            <p className="text-base text-charcoal">
               No posts published yet. Check back soon.
             </p>
           )}
@@ -99,10 +100,11 @@ export default async function BlogPage({
             <Link
               href={`/blog/${lead.slug}`}
               className="group mt-14 grid gap-8 border-y border-line py-12 lg:grid-cols-12 lg:gap-12"
+              data-reveal
             >
               <div className="lg:col-span-7">
                 <p className="label-caps text-xs text-gold-text">{lead.category}</p>
-                <h2 className="display-tight mt-4 font-serif text-[clamp(2rem,4.6vw,3.9rem)] font-semibold leading-[1.02] text-ivory transition-colors group-hover:text-gold-text">
+                <h2 className="display-tight mt-4 font-serif text-[clamp(1.6rem,3vw,2.5rem)] font-semibold leading-[1.02] text-ivory transition-colors group-hover:text-gold-text">
                   {lead.title}
                 </h2>
               </div>
@@ -110,7 +112,7 @@ export default async function BlogPage({
                 {lead.date && (
                   <p className="text-sm text-muted">{formatDate(lead.date)}</p>
                 )}
-                <p className="mt-4 text-lg leading-[1.7] text-charcoal">
+                <p className="mt-4 text-base leading-[1.7] text-charcoal">
                   {lead.excerpt}
                 </p>
                 <span className="label-caps mt-6 inline-block text-xs text-gold-text transition-colors group-hover:text-gold-bright">
@@ -121,14 +123,16 @@ export default async function BlogPage({
           )}
 
           <div className={`grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 ${lead ? "mt-14" : "mt-14 border-t border-line pt-12"}`}>
-            {rest.map((post) => (
+            {rest.map((post, i) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group border-t border-line pt-6"
+                data-reveal
+                style={{ "--reveal-delay": `${Math.min(i, 6) * 55}ms` } as CSSProperties}
               >
                 <p className="label-caps text-xs text-gold-text">{post.category}</p>
-                <h2 className="display-tight mt-3 font-serif text-2xl font-semibold leading-[1.15] text-ivory transition-colors group-hover:text-gold-text">
+                <h2 className="display-tight mt-3 font-serif text-xl font-semibold leading-[1.2] text-ivory transition-colors group-hover:text-gold-text">
                   {post.title}
                 </h2>
                 {post.date && (

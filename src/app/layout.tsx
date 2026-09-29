@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DisclaimerGate } from "@/components/DisclaimerGate";
+import { MotionRoot } from "@/components/MotionRoot";
 import { siteUrl } from "@/lib/site-url";
 
 const fraunces = Fraunces({
@@ -65,6 +66,7 @@ export default function RootLayout({
       className={`${fraunces.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink text-charcoal">
+        <MotionRoot />
         <DisclaimerGate />
         <Header />
         <main className="flex-1">{children}</main>

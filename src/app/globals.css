@@ -7,25 +7,18 @@
  * A dark ground: the ink of a bound volume, the dark wood of a courtroom, the
  * High Court after the lamps come on. Ivory type on it; a real metallic gold
  * for rules, numerals, labels and links; oxblood for the one primary action.
- * Modern in scale and asymmetry, classical in material, royal in ground.
  *
  * Token NAMES keep their ROLES from every earlier pass — page bg, card bg,
  * primary text, secondary text, metal accent, primary CTA, chrome — so no
- * component needed renaming. Only the VALUES invert.
+ * component needed renaming when the values inverted.
  *
  * Two surfaces: --ink is the page ground and --paper the lifted panel, 1.08:1
  * apart; the step is carried by the hairline, not by a colour jump. Borders
- * split as before: --line is decorative; --line-strong is reserved for form
- * controls, where the border alone identifies the field and must hold 3:1
- * against the panel it sits on (it measures 3.8:1).
- *
- * All text pairs verified for WCAG AA on both surfaces.
+ * split: --line is decorative; --line-strong is reserved for form controls,
+ * where the border alone identifies the field and must hold 3:1 against the
+ * panel it sits on (it measures 3.8:1). All text pairs verified for WCAG AA.
  */
 :root {
-  /* Gilt at three depths. --gold-primary is the metal itself: rules, numerals,
-     hover; --gold-deep is the FILL for solid controls, carrying dark text at
-     6.4:1; --gold-text is for labels and links; --gold-bright is the leaf
-     highlight, used sparingly. */
   --gold-primary: #C9A961;
   --gold-deep: #B8984F;
   --gold-text: #C9A961;
@@ -47,14 +40,16 @@
   /* Darker than WhatsApp's brand green so white button text clears AA. */
   --whatsapp-green: #1B7A43;
 
-  /* Chrome — header, footer band and the disclaimer backdrop. A hair deeper
-     than the page so the bookends read as such. */
   --deep: #0B0D0F;
   --deep-text: #EFE9DC;
   --deep-line: #262C30;
 
   --background: var(--ink);
   --foreground: var(--ivory);
+
+  /* One easing for every piece of motion on the site: a fast start that
+     settles slowly, the way a heavy door closes. */
+  --ease-settle: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @theme inline {
@@ -82,6 +77,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --ease-settle: var(--ease-settle);
+
   /* Headings: Fraunces, a high-contrast transitional display serif, with its
      optical-size axis live so hairlines sharpen as the type grows.
      Body: Source Serif 4, a separate, more legible text serif. */
@@ -108,9 +105,9 @@ body {
 
 /*
  * Film grain. A fine fractal-noise field over the whole page at very low
- * opacity. On a dark ground it reads as the tooth of a photographic print
- * rather than a flat digital fill. Fixed so it does not swim while scrolling;
- * pointer-events:none so it never intercepts a click. Inline SVG, one tile.
+ * opacity; on a dark ground it reads as the tooth of a photographic print.
+ * Fixed so it does not swim while scrolling; pointer-events:none so it never
+ * intercepts a click. Inline SVG, one tile, no request.
  */
 body::before {
   content: "";
@@ -123,8 +120,12 @@ body::before {
   background-repeat: repeat;
 }
 
-/* The gilt edge: a hairline of gold along the very top of every page, above
-   the chrome, the way a bound volume is gilded along its head. */
+/*
+ * The gilt edge along the head of every page, as on a bound volume — and a
+ * light moving slowly along it. A pale highlight sweeps the length of the
+ * edge and back every nine seconds, the way gold leaf catches a lamp when the
+ * viewer moves. Under reduced motion it holds still.
+ */
 body::after {
   content: "";
   position: fixed;
@@ -136,22 +137,85 @@ body::after {
   pointer-events: none;
   background: linear-gradient(
     to right,
-    var(--gold-deep),
-    var(--gold-bright) 50%,
+    var(--gold-deep) 0%,
+    var(--gold-bright) 42%,
+    #FFF4D2 50%,
+    var(--gold-bright) 58%,
     var(--gold-deep) 100%
   );
+  background-size: 220% 100%;
+  animation: gilt-sweep 9s ease-in-out infinite;
 }
 
-/* Hero entrance: each line rises into place, staggered. Disabled wholesale by
-   the reduced-motion block at the foot of this file. */
+@keyframes gilt-sweep {
+  0%, 100% { background-position: 100% 0; }
+  50%      { background-position: 0% 0; }
+}
+
+/* Hero entrance: each line rises into place, staggered. */
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* The seal turns once every two and a half minutes — too slow to watch, fast
+   enough that it is never quite where it was. A ceremonial object, not a
+   spinner. */
+@keyframes seal-turn {
+  to { transform: rotate(360deg); }
+}
+
+/* The bloom behind the hero seal drifts on a slow figure, so the light source
+   never reads as fixed. */
+@keyframes ambient-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33%      { transform: translate3d(-26px, 18px, 0) scale(1.08); }
+  66%      { transform: translate3d(16px, -22px, 0) scale(0.96); }
+}
+
+/* Each route enters on a short lift-and-fade. Mounted by app/template.tsx,
+   which React remounts on every navigation. */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-enter {
+    animation: page-enter 0.6s var(--ease-settle) both;
   }
-  to {
+
+  /*
+   * Scroll reveal. Anything marked data-reveal is held lowered and transparent
+   * until it enters the viewport; MotionRoot adds .is-in. The hidden state is
+   * gated twice: inside this media query, so under reduced motion nothing is
+   * ever hidden; and behind html.js, which MotionRoot sets only once it is
+   * running — and in the same tick it marks whatever is already on screen as
+   * .is-in, so the two cancel before the next paint and a first load never
+   * blinks. No script, no bundle, or a failed hydration all leave every
+   * element simply visible. The transition lives on .is-in alone: hiding is
+   * instant and off-screen, only the arrival is animated.
+   */
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  .js [data-reveal].is-in {
     opacity: 1;
     transform: none;
+    transition:
+      opacity 0.9s var(--ease-settle),
+      transform 0.9s var(--ease-settle);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  /* data-reveal="img" also settles its images from a slight enlargement. */
+  .js [data-reveal="img"] img {
+    transform: scale(1.045);
+  }
+  .js [data-reveal="img"].is-in img {
+    transform: none;
+    transition: transform 1.5s var(--ease-settle);
+    transition-delay: var(--reveal-delay, 0ms);
   }
 }
 
@@ -164,10 +228,10 @@ body::after {
     font-weight: 600;
   }
 
-  /* Large display headings: negative tracking. Fraunces is drawn loose for
-     text sizes, so it needs tightening once it is set large. */
+  /* Display headings: negative tracking. Fraunces is drawn loose for text
+     sizes and needs tightening once set large. */
   .display-tight {
-    letter-spacing: -0.028em;
+    letter-spacing: -0.024em;
   }
 
   /* The classical section rule — a heavy line over a hairline. */
@@ -191,25 +255,50 @@ body::after {
   }
 
   /* Team portraits are shot in different places, light and seasons. A shared
-     cast pulls them into one set. Slightly darkened so the photographs sit
-     into the dark ground instead of floating in front of it. */
+     cast pulls them into one set, darkened slightly so they sit into the
+     ground instead of floating in front of it. */
   .portrait-tone {
     filter: saturate(0.72) contrast(1.08) brightness(0.94) sepia(0.14);
   }
 
-  .rise {
-    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  }
+  .rise   { animation: rise 0.8s var(--ease-settle) both; }
   .rise-1 { animation-delay: 0.05s; }
   .rise-2 { animation-delay: 0.16s; }
   .rise-3 { animation-delay: 0.28s; }
   .rise-4 { animation-delay: 0.4s; }
   .rise-5 { animation-delay: 0.58s; }
 
-  /* Soft gold bloom behind the seal in the hero. */
+  .seal-turn     { animation: seal-turn 150s linear infinite; }
+  .ambient-drift { animation: ambient-drift 18s ease-in-out infinite; }
+
+  /* Soft gold bloom behind the seal. */
   .gilt-glow {
     filter: drop-shadow(0 0 22px rgba(201, 169, 97, 0.32))
       drop-shadow(0 0 2px rgba(228, 202, 130, 0.35));
+  }
+
+  /* Navigation: a gold hairline draws in from the left on hover and stays
+     under the current page; on leaving it withdraws to the right, so the
+     line always travels in the reading direction. */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    height: 1px;
+    background: var(--gold-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-settle);
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 

@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SealDivider } from "@/components/SealDivider";
@@ -80,15 +81,15 @@ export default function PublicationsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(rapeLawArticleJsonLd()) }}
       />
       <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7" data-reveal style={{ "--reveal-delay": "120ms" } as CSSProperties}>
           <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
-          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
             Publications
           </h1>
         </div>
-        <p className="max-w-[44ch] text-lg leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
+        <p className="max-w-[44ch] text-base leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
           A journal article and a draft statute by Eshan Kumar Gupta,
           Advocate, Hon&rsquo;ble High Court of Judicature at Allahabad,
           Lucknow Bench.
@@ -96,7 +97,7 @@ export default function PublicationsPage() {
       </div>
 
       {/* Bibliography: each work as a citation, linking to its entry below. */}
-      <ol className="mt-12 border-t border-line">
+      <ol className="mt-12 border-t border-line" data-reveal>
         {works.map((w) => (
           <li key={w.id} className="border-b border-line">
             <a
@@ -107,7 +108,7 @@ export default function PublicationsPage() {
                 {w.kind} &middot; {w.year}
               </span>
               <span className="md:col-span-9">
-                <span className="display-tight block font-serif text-xl font-semibold text-ivory transition-colors group-hover:text-gold-text md:text-2xl">
+                <span className="display-tight block font-serif text-lg font-semibold text-ivory transition-colors group-hover:text-gold-text md:text-xl">
                   {w.title}
                 </span>
                 <span className="mt-1 block text-sm text-muted">{w.citation}</span>
@@ -128,7 +129,7 @@ export default function PublicationsPage() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* The first page as published, laid on the ground like a sheet on
               a desk. IJFMR publishes under CC BY-SA 4.0, credited beneath. */}
-          <figure className="lg:col-span-5">
+          <figure className="lg:col-span-5" data-reveal="img">
             <a
               href={IJFMR_PDF}
               target="_blank"
@@ -160,18 +161,18 @@ export default function PublicationsPage() {
             </figcaption>
           </figure>
 
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" data-reveal style={{ "--reveal-delay": "120ms" } as CSSProperties}>
             <p className="label-caps text-xs text-gold-text">Journal article &middot; 2026</p>
-            <h2 className="display-tight mt-4 font-serif text-[clamp(2.25rem,4.4vw,3.75rem)] font-semibold leading-[1.02] text-ivory">
+            <h2 className="display-tight mt-4 font-serif text-[clamp(1.75rem,3.1vw,2.6rem)] font-semibold leading-[1.02] text-ivory">
               Rape Law in Transition
             </h2>
-            <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted">
+            <p className="mt-4 max-w-[58ch] text-base leading-relaxed text-muted">
               Section 376 of the Indian Penal Code, sections 63, 64 and 69 of
               the Bharatiya Nyaya Sanhita, and the trial of sexual offences
               from complaint to appeal.
             </p>
 
-            <p className="drop-cap mt-10 text-lg leading-[1.75] text-charcoal md:text-xl">
+            <p className="drop-cap mt-10 text-base leading-[1.75] text-charcoal md:text-lg">
               On 1 July 2024 the Indian Penal Code, the Code of Criminal
               Procedure and the Indian Evidence Act gave way to the Bharatiya
               Nyaya Sanhita, the Bharatiya Nagarik Suraksha Sanhita and the
@@ -182,7 +183,7 @@ export default function PublicationsPage() {
               sexual intercourse by deceitful means, including a promise to
               marry made with no intention of keeping it.
             </p>
-            <p className="mt-6 text-lg leading-[1.75] text-charcoal md:text-xl">
+            <p className="mt-6 text-base leading-[1.75] text-charcoal md:text-lg">
               The essay follows a case from beginning to end. It starts with
               the question that must be answered before any other, namely which
               law governs. It then examines the elements of the offence, the
@@ -247,8 +248,8 @@ export default function PublicationsPage() {
           </div>
         </div>
 
-        <div className="mt-16">
-          <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
+        <div className="mt-16" data-reveal>
+          <h3 className="display-tight font-serif text-2xl font-semibold text-ivory md:text-3xl">
             Contents
           </h3>
           <ol className="mt-8 grid gap-x-10 gap-y-3 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -273,7 +274,7 @@ export default function PublicationsPage() {
       <p className="label-caps text-xs text-gold-text">Draft statute &middot; 2026</p>
 
       {/* The volume itself, before any description of it. */}
-      <figure className="mt-6">
+      <figure className="mt-6" data-reveal="img">
         <Image
           src="/images/publications/ai-code-cover.jpg"
           alt="The Artificial Intelligence Code, 2026, bound in black boards with gilt lettering, on a desk beside a volume of the Supreme Court Cases reports."
@@ -287,9 +288,9 @@ export default function PublicationsPage() {
         </figcaption>
       </figure>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16" data-reveal>
         <div className="lg:col-span-4">
-          <h2 className="display-tight font-serif text-3xl font-semibold leading-[1.05] text-ivory md:text-4xl">
+          <h2 className="display-tight font-serif text-2xl font-semibold leading-[1.05] text-ivory md:text-3xl">
             The Artificial Intelligence Code, 2026
           </h2>
           <dl className="mt-8 space-y-4 border-t border-line pt-6 text-sm">
@@ -309,7 +310,7 @@ export default function PublicationsPage() {
         </div>
 
         <div className="lg:col-span-7 lg:col-start-6">
-          <p className="drop-cap text-lg leading-[1.75] text-charcoal md:text-xl">
+          <p className="drop-cap text-base leading-[1.75] text-charcoal md:text-lg">
             India has no statute treating artificial intelligence as an
             independent subject of law. The Information Technology Act, 2000
             recognises electronic records; the Digital Personal Data Protection
@@ -319,7 +320,7 @@ export default function PublicationsPage() {
             liability along the chain of persons who design, train, deploy, and
             profit from an AI system.
           </p>
-          <p className="mt-6 text-lg leading-[1.75] text-charcoal md:text-xl">
+          <p className="mt-6 text-base leading-[1.75] text-charcoal md:text-lg">
             The Artificial Intelligence Code, 2026 is a draft statute addressed
             to that gap, authored by Eshan Kumar Gupta, Advocate, Hon&rsquo;ble
             High Court of Judicature at Allahabad, Lucknow Bench. It runs to 60
@@ -331,7 +332,7 @@ export default function PublicationsPage() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-6 sm:grid-cols-2">
+      <div className="mt-16 grid gap-6 sm:grid-cols-2" data-reveal="img">
         <figure>
           <Image
             src="/images/publications/ai-code-title-page.jpg"
@@ -364,8 +365,8 @@ export default function PublicationsPage() {
         <SealDivider className="max-w-[30rem]" />
       </div>
 
-      <div className="mt-12">
-        <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <div className="mt-12" data-reveal>
+        <h3 className="display-tight font-serif text-2xl font-semibold text-ivory md:text-3xl">
           Structure
         </h3>
         <dl className="mt-8 grid gap-x-10 gap-y-6 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -387,11 +388,11 @@ export default function PublicationsPage() {
         <SealDivider className="max-w-[30rem]" />
       </div>
 
-      <div className="mt-12 max-w-[72ch]">
-        <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
+      <div className="mt-12 max-w-[72ch]" data-reveal>
+        <h3 className="display-tight font-serif text-2xl font-semibold text-ivory md:text-3xl">
           Status
         </h3>
-        <p className="mt-6 text-lg leading-[1.7] text-charcoal">
+        <p className="mt-6 text-base leading-[1.7] text-charcoal">
           This is an independent legislative proposal, unaffiliated with any
           Government, Ministry, or constitutional authority. It has been
           offered for academic and professional consultation, and comments

@@ -14,7 +14,7 @@ export default function InternshipsPage() {
       <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+      <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
         Internships
       </h1>
       <p className="mt-4 text-base leading-relaxed text-charcoal">

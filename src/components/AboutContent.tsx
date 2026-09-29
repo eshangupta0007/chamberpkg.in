@@ -32,7 +32,7 @@ export function AboutContent() {
                 <LanguageToggle lang={lang} onChange={setLang} />
               </div>
             </div>
-            <h1 className="display-tight mt-5 font-serif text-[clamp(2.5rem,5.2vw,4.75rem)] font-semibold leading-[0.98] text-ivory">
+            <h1 className="display-tight mt-5 font-serif text-[clamp(1.9rem,3.6vw,3.2rem)] font-semibold leading-[0.98] text-ivory">
               {isHi ? hiAbout.heading : "About the Chamber"}
             </h1>
             <SealDivider className="mt-10 max-w-[14rem]" />
@@ -51,12 +51,12 @@ export function AboutContent() {
           {/* Drop cap on the Latin text only — a Devanagari initial carries
               matras above and below the line and does not set as a drop cap. */}
           <p
-            className={`${isHi ? "" : "drop-cap "}text-lg leading-[1.75] text-charcoal md:text-xl`}
+            className={`${isHi ? "" : "drop-cap "}text-base leading-[1.75] text-charcoal md:text-lg`}
           >
             {isHi ? hiAbout.legacyParagraph : legacyParagraph}
           </p>
 
-          <figure className="mt-12">
+          <figure className="mt-12" data-reveal="img">
             <Image
               src="/images/allahabad-high-court.jpg"
               alt="The Allahabad High Court building"

@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: Props) {
       <p className="label-caps text-xs text-gold-text">
         {post.category}
       </p>
-      <h1 className="display-tight mt-4 font-serif text-[clamp(2.25rem,5vw,4rem)] font-semibold leading-[1.05] text-ivory">
+      <h1 className="display-tight mt-4 font-serif text-[clamp(1.75rem,3.3vw,2.75rem)] font-semibold leading-[1.05] text-ivory">
         {post.title}
       </h1>
       <p className="mt-5 text-sm text-muted">
@@ -71,14 +71,14 @@ export default async function BlogPostPage({ params }: Props) {
         {post.readingTimeMinutes} min read
       </p>
 
-      <div className="drop-cap-first prose prose-invert prose-lg mt-12 max-w-none prose-headings:font-serif prose-headings:tracking-tight prose-headings:text-ivory prose-p:text-charcoal prose-li:text-charcoal prose-strong:text-ivory prose-em:text-charcoal prose-a:text-gold-text prose-a:decoration-gold-primary/40 prose-blockquote:border-l-gold-primary prose-blockquote:text-charcoal prose-hr:border-line prose-code:text-ivory prose-th:text-ivory prose-td:text-charcoal">
+      <div className="drop-cap-first prose prose-invert mt-12 max-w-none prose-headings:font-serif prose-headings:tracking-tight prose-headings:text-ivory prose-p:text-charcoal prose-li:text-charcoal prose-strong:text-ivory prose-em:text-charcoal prose-a:text-gold-text prose-a:decoration-gold-primary/40 prose-blockquote:border-l-gold-primary prose-blockquote:text-charcoal prose-hr:border-line prose-code:text-ivory prose-th:text-ivory prose-td:text-charcoal">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
       </div>
 
       <div className="mt-10">
         <SealDivider className="max-w-[20rem]" />
       </div>
-      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm" data-reveal>
         <span className="label-caps text-muted">Related:</span>
         {relatedArea && (
           <Link

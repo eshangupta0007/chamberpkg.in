@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import { PhotoPlaceholder } from "@/components/PhotoPlaceholder";
 import { SealDivider } from "@/components/SealDivider";
@@ -23,11 +24,11 @@ export default function TeamPage() {
           <p className="label-caps text-xs text-gold-text">
             Chamber of Praveen Kumar Gupta
           </p>
-          <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+          <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
             Team
           </h1>
         </div>
-        <p className="max-w-[48ch] text-lg leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
+        <p className="max-w-[48ch] text-base leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
           The Chamber&rsquo;s practice is carried by the advocates and
           associates below, under the direction of the Proprietor.
         </p>
@@ -36,9 +37,9 @@ export default function TeamPage() {
       <SealDivider className="mt-12" />
 
       <div className="mt-14 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-        {team.map((member) => (
-          <article key={member.slug} id={member.slug} className="scroll-mt-28">
-            <div className="overflow-hidden border border-line bg-paper">
+        {team.map((member, i) => (
+          <article key={member.slug} id={member.slug} className="scroll-mt-28" data-reveal="img" style={{ "--reveal-delay": `${Math.min(i, 6) * 55}ms` } as CSSProperties}>
+            <div className="overflow-hidden border border-line bg-paper transition-[border-color] duration-500 hover:border-gold-primary/60">
               {member.photo ? (
                 <Image
                   src={member.photo}
@@ -47,12 +48,13 @@ export default function TeamPage() {
                   height={750}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="portrait-tone aspect-[4/5] w-full object-cover"
+                  priority={i === 0}
                 />
               ) : (
                 <PhotoPlaceholder className="aspect-[4/5] w-full" />
               )}
             </div>
-            <h2 className="display-tight mt-5 font-serif text-2xl font-semibold text-ivory">
+            <h2 className="display-tight mt-5 font-serif text-xl font-semibold text-ivory">
               {member.name}
             </h2>
             <p className="label-caps mt-1 text-xs text-gold-text">{member.title}</p>

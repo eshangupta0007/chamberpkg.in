@@ -14,7 +14,7 @@ export default function WhereWePracticePage() {
       <p className="label-caps text-xs text-gold-text">
         Chamber of Praveen Kumar Gupta
       </p>
-      <h1 className="display-tight mt-3 font-serif text-[clamp(2.75rem,6vw,5.5rem)] font-semibold leading-[0.95] text-ivory">
+      <h1 className="display-tight mt-3 font-serif text-[clamp(2.1rem,4.2vw,3.6rem)] font-semibold leading-[0.95] text-ivory">
         Where We Practice
       </h1>
       <p className="mt-4 max-w-[70ch] text-base leading-relaxed text-charcoal">
@@ -26,7 +26,7 @@ export default function WhereWePracticePage() {
         <SealDivider className="max-w-[480px]" />
       </div>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="display-tight font-serif text-xl font-semibold text-ivory">
           Courts &amp; Jurisdiction
         </h2>
@@ -46,7 +46,7 @@ export default function WhereWePracticePage() {
         <SealDivider className="max-w-[480px]" />
       </div>
 
-      <section className="mt-10">
+      <section className="mt-10" data-reveal>
         <h2 className="display-tight font-serif text-xl font-semibold text-ivory">
           Chamber Addresses
         </h2>
