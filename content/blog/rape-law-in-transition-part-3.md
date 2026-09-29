@@ -75,7 +75,7 @@ It is submitted that the relationship may be examined to establish its nature, i
 - [Part 1: Which Law Governs](/blog/rape-law-in-transition-part-1)
 - [Part 2: The Anatomy of the Offence](/blog/rape-law-in-transition-part-2)
 - **Part 3: Consent and Will** (this part)
-- Part 4: The False Promise of Marriage (publishes 30 September)
+- [Part 4: The False Promise of Marriage](/blog/rape-law-in-transition-part-4)
 - Part 5: Investigation and Delay (publishes 1 October)
 - Part 6: Medical and DNA Evidence (publishes 2 October)
 - Part 7: Electronic Evidence and Bail (publishes 3 October)
