@@ -2,7 +2,7 @@
 title: "Rape Law in Transition, Part 6: Medical and DNA Evidence"
 excerpt: "Medical evidence corroborates; it rarely decides. A DNA match shows whose genetic material was found, not how it came to be there. This part covers the absence of injury, delayed and refused examinations, the prohibited two-finger test, the examination of the accused, and the chain of custody that must now be proved link by link."
 category: "Law & Policy"
-date: "2026-09-30"
+date: "2026-09-29"
 relatedPracticeArea: "criminal-law"
 ---
 

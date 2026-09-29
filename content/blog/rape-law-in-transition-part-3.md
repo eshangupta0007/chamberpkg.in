@@ -2,7 +2,7 @@
 title: "Rape Law in Transition, Part 3: Consent and Will"
 excerpt: "'Against her will' and 'without her consent' ask different questions. This part traces the distinction through Chhoteylal and Mango Ram, the limits Explanation 2 places on implied consent, the narrow reach of the presumption in section 120 of the Sakshya Adhiniyam, and the bar on evidence of sexual history."
 category: "Law & Policy"
-date: "2026-09-30"
+date: "2026-09-28"
 relatedPracticeArea: "criminal-law"
 ---
 

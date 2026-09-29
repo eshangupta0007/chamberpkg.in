@@ -2,7 +2,7 @@
 title: "Rape Law in Transition, Part 2: The Anatomy of the Offence"
 excerpt: "Rape requires proof of one of four sexual acts, done in one of seven circumstances, by an identified man. This part sets out the definition carried from section 375 into section 63, the marital exception now before the Supreme Court, the scheme of punishments old and new, and why proof of age is so often the whole of the case."
 category: "Law & Policy"
-date: "2026-09-30"
+date: "2026-09-27"
 relatedPracticeArea: "criminal-law"
 ---
 

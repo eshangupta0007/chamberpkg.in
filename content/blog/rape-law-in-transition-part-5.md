@@ -2,7 +2,7 @@
 title: "Rape Law in Transition, Part 5: Investigation and Delay"
 excerpt: "Most rape trials are decided by what the investigating officer did in the first seventy-two hours. This part covers the complaint, the victim's statements to the police and the magistrate, the medical examination, the forensic chain now governed by the Supreme Court's directions in Kattavellai, and how delay in lodging the first information is explained and attacked."
 category: "Law & Policy"
-date: "2026-09-30"
+date: "2026-09-29"
 relatedPracticeArea: "criminal-law"
 ---
 

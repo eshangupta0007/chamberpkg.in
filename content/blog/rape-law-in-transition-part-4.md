@@ -2,7 +2,7 @@
 title: "Rape Law in Transition, Part 4: The False Promise of Marriage"
 excerpt: "Under the Penal Code a promise of marriage turned intercourse into rape only if it was false when made and was the reason the woman agreed. The Nyaya Sanhita moved that conduct into section 69, a lighter offence with a different procedure. This part follows the Supreme Court from Uday to Kunal Rameshbhai Kalyani, the quashing line, and the questions still open."
 category: "Law & Policy"
-date: "2026-09-30"
+date: "2026-09-28"
 relatedPracticeArea: "criminal-law"
 ---
 
