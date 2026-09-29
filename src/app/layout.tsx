@@ -63,6 +63,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      // Lets Next suspend the smooth scrolling (set in globals.css for the
+      // in-page § and publication anchors) during route transitions, so a
+      // navigation from far down a page does not visibly scroll to the top
+      // before the next page lifts in.
+      data-scroll-behavior="smooth"
       className={`${fraunces.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink text-charcoal">
