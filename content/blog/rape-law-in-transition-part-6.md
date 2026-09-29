@@ -107,7 +107,7 @@ Each link in the chain must be proved through its own witness and its own docume
 - **Part 6: Medical and DNA Evidence** (this part)
 - [Part 7: Electronic Evidence and Bail](/blog/rape-law-in-transition-part-7)
 - [Part 8: Charge, Quashing and the Trial](/blog/rape-law-in-transition-part-8)
-- Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
+- [Part 9: Final Arguments, Sentence and Appeal](/blog/rape-law-in-transition-part-9)
 
 ---
 

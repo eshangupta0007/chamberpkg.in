@@ -100,7 +100,7 @@ It is submitted that delay in reporting must be kept distinct from delay in medi
 - [Part 6: Medical and DNA Evidence](/blog/rape-law-in-transition-part-6)
 - [Part 7: Electronic Evidence and Bail](/blog/rape-law-in-transition-part-7)
 - [Part 8: Charge, Quashing and the Trial](/blog/rape-law-in-transition-part-8)
-- Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
+- [Part 9: Final Arguments, Sentence and Appeal](/blog/rape-law-in-transition-part-9)
 
 ---
 
