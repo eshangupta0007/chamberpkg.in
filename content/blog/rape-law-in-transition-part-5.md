@@ -97,7 +97,7 @@ It is submitted that delay in reporting must be kept distinct from delay in medi
 - [Part 3: Consent and Will](/blog/rape-law-in-transition-part-3)
 - [Part 4: The False Promise of Marriage](/blog/rape-law-in-transition-part-4)
 - **Part 5: Investigation and Delay** (this part)
-- Part 6: Medical and DNA Evidence (publishes 2 October)
+- [Part 6: Medical and DNA Evidence](/blog/rape-law-in-transition-part-6)
 - Part 7: Electronic Evidence and Bail (publishes 3 October)
 - Part 8: Charge, Quashing and the Trial (publishes 4 October)
 - Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)

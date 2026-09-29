@@ -85,7 +85,7 @@ The table sets the offences of the Penal Code beside their counterparts in the N
 - [Part 3: Consent and Will](/blog/rape-law-in-transition-part-3)
 - [Part 4: The False Promise of Marriage](/blog/rape-law-in-transition-part-4)
 - [Part 5: Investigation and Delay](/blog/rape-law-in-transition-part-5)
-- Part 6: Medical and DNA Evidence (publishes 2 October)
+- [Part 6: Medical and DNA Evidence](/blog/rape-law-in-transition-part-6)
 - Part 7: Electronic Evidence and Bail (publishes 3 October)
 - Part 8: Charge, Quashing and the Trial (publishes 4 October)
 - Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
