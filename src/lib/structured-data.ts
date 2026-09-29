@@ -136,3 +136,52 @@ export function contactPageJsonLd() {
     },
   };
 }
+
+/** The journal article "Rape Law in Transition" (IJFMR, 2026). */
+export function rapeLawArticleJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    headline: "Rape Law in Transition",
+    name: "Rape Law in Transition",
+    about:
+      "Section 376 of the Indian Penal Code, sections 63, 64 and 69 of the Bharatiya Nyaya Sanhita, and the trial of sexual offences from complaint to appeal.",
+    author: {
+      "@type": "Person",
+      name: "Eshan Kumar Gupta",
+      jobTitle: "Advocate",
+    },
+    datePublished: "2026-09-29",
+    inLanguage: "en-IN",
+    keywords: [
+      "Rape law",
+      "Bharatiya Nyaya Sanhita",
+      "Bharatiya Nagarik Suraksha Sanhita",
+      "Bharatiya Sakshya Adhiniyam",
+      "Indian Penal Code",
+      "POCSO",
+      "False promise of marriage",
+    ],
+    url: "https://www.ijfmr.com/research-paper.php?id=88715",
+    license: "https://creativecommons.org/licenses/by-sa/4.0/",
+    encoding: {
+      "@type": "MediaObject",
+      contentUrl: "https://www.ijfmr.com/papers/2026/5/88715.pdf",
+      encodingFormat: "application/pdf",
+    },
+    isPartOf: {
+      "@type": "PublicationIssue",
+      issueNumber: "5",
+      isPartOf: {
+        "@type": "PublicationVolume",
+        volumeNumber: "8",
+        isPartOf: {
+          "@type": "Periodical",
+          name: "International Journal for Multidisciplinary Research",
+          alternateName: "IJFMR",
+          issn: "2582-2160",
+        },
+      },
+    },
+  };
+}

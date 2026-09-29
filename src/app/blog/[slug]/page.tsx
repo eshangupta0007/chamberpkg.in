@@ -88,8 +88,14 @@ export default async function BlogPostPage({ params }: Props) {
             {relatedArea.title}
           </Link>
         )}
+        {/* The serial parts of Rape Law in Transition link to the article's
+            own entry, where the journal version of record is cited. */}
         <Link
-          href="/publications"
+          href={
+            slug.startsWith("rape-law-in-transition")
+              ? "/publications#rape-law-in-transition"
+              : "/publications"
+          }
           className="text-gold-text underline hover:text-gold-primary"
         >
           Publications

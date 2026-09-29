@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SealDivider } from "@/components/SealDivider";
-import { publicationJsonLd } from "@/lib/structured-data";
+import { publicationJsonLd, rapeLawArticleJsonLd } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata(
   "Publications",
-  "The Artificial Intelligence (Regulation of Use and Prevention of Misuse) Act, 2026 — a draft legislative proposal by Eshan Kumar Gupta, Advocate.",
+  "Published writing by Eshan Kumar Gupta, Advocate: Rape Law in Transition (International Journal for Multidisciplinary Research, 2026), and The Artificial Intelligence Code, 2026, a draft legislative proposal.",
   "/publications",
 );
 
@@ -24,12 +24,60 @@ const chapters = [
   { name: "Miscellaneous", note: "Research exemption, a reviewable national-security carve-out, good-faith protection, and a mandatory tripartite review every three years." },
 ] as const;
 
+// Section headings of the article, verbatim from the published text.
+const articleSections = [
+  "Introduction",
+  "The Temporal Question: Which Law Governs",
+  "The Anatomy of the Offence",
+  "Consent and Will",
+  "The False Promise of Marriage: Section 376 with Section 90 IPC, and Section 69 BNS",
+  "Investigation",
+  "Delay in Lodging the First Information",
+  "Medical Evidence",
+  "DNA Evidence",
+  "Electronic Evidence: Photographs, Videos and Chats",
+  "Bail and Anticipatory Bail",
+  "Charge, Discharge and Quashing",
+  "The Trial",
+  "Final Arguments",
+  "Sentence, Compensation and Appeal",
+  "Conclusion",
+] as const;
+
+const roman = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI"];
+
+const IJFMR_PAGE = "https://www.ijfmr.com/research-paper.php?id=88715";
+const IJFMR_PDF = "https://www.ijfmr.com/papers/2026/5/88715.pdf";
+
+// The two works, most recent first, for the bibliography at the head of the page.
+const works = [
+  {
+    id: "rape-law-in-transition",
+    kind: "Journal article",
+    year: "2026",
+    title: "Rape Law in Transition",
+    citation:
+      "International Journal for Multidisciplinary Research, Vol. 8, Issue 5 (September–October 2026)",
+  },
+  {
+    id: "ai-code",
+    kind: "Draft statute",
+    year: "2026",
+    title: "The Artificial Intelligence Code, 2026",
+    citation: "Author\u2019s Edition · Naman Prakashan",
+  },
+] as const;
+
 export default function PublicationsPage() {
   return (
     <div className="mx-auto max-w-[90rem] px-6 py-16 md:px-10 lg:px-14 lg:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(publicationJsonLd()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(rapeLawArticleJsonLd()) }}
       />
       <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
         <div className="lg:col-span-7">
@@ -41,13 +89,190 @@ export default function PublicationsPage() {
           </h1>
         </div>
         <p className="max-w-[44ch] text-lg leading-relaxed text-charcoal lg:col-span-5 lg:pb-3">
-          The Artificial Intelligence (Regulation of Use and Prevention of
-          Misuse) Act, 2026 — a draft legislative proposal
+          A journal article and a draft statute by Eshan Kumar Gupta,
+          Advocate, Hon&rsquo;ble High Court of Judicature at Allahabad,
+          Lucknow Bench.
         </p>
       </div>
 
+      {/* Bibliography: each work as a citation, linking to its entry below. */}
+      <ol className="mt-12 border-t border-line">
+        {works.map((w) => (
+          <li key={w.id} className="border-b border-line">
+            <a
+              href={`#${w.id}`}
+              className="group grid gap-x-8 gap-y-1 py-6 transition-colors hover:bg-paper md:-mx-4 md:grid-cols-12 md:items-baseline md:px-4"
+            >
+              <span className="label-caps text-xs text-gold-text md:col-span-2">
+                {w.kind} &middot; {w.year}
+              </span>
+              <span className="md:col-span-9">
+                <span className="display-tight block font-serif text-xl font-semibold text-ivory transition-colors group-hover:text-gold-text md:text-2xl">
+                  {w.title}
+                </span>
+                <span className="mt-1 block text-sm text-muted">{w.citation}</span>
+              </span>
+              <span
+                aria-hidden="true"
+                className="hidden text-gold-primary/60 transition-all group-hover:translate-x-1 group-hover:text-gold-primary md:col-span-1 md:block md:text-right"
+              >
+                &darr;
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+
+      {/* ---------- Rape Law in Transition ---------- */}
+      <section id="rape-law-in-transition" className="mt-20 scroll-mt-28">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          {/* The first page as published, laid on the ground like a sheet on
+              a desk. IJFMR publishes under CC BY-SA 4.0, credited beneath. */}
+          <figure className="lg:col-span-5">
+            <a
+              href={IJFMR_PDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block max-w-[30rem]"
+            >
+              <Image
+                src="/images/publications/rape-law-in-transition-p1.jpg"
+                alt="The first page of Rape Law in Transition as published in the International Journal for Multidisciplinary Research, showing the title, the author's name and the abstract."
+                width={1241}
+                height={1754}
+                sizes="(max-width: 1024px) 90vw, 480px"
+                className="w-full border border-line shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1"
+              />
+            </a>
+            <figcaption className="mt-3 text-xs leading-relaxed text-muted">
+              First page, as published. &copy; the author; published by IJFMR
+              under{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gold-text"
+              >
+                CC BY-SA 4.0
+              </a>
+              .
+            </figcaption>
+          </figure>
+
+          <div className="lg:col-span-7">
+            <p className="label-caps text-xs text-gold-text">Journal article &middot; 2026</p>
+            <h2 className="display-tight mt-4 font-serif text-[clamp(2.25rem,4.4vw,3.75rem)] font-semibold leading-[1.02] text-ivory">
+              Rape Law in Transition
+            </h2>
+            <p className="mt-4 max-w-[58ch] text-lg leading-relaxed text-muted">
+              Section 376 of the Indian Penal Code, sections 63, 64 and 69 of
+              the Bharatiya Nyaya Sanhita, and the trial of sexual offences
+              from complaint to appeal.
+            </p>
+
+            <p className="drop-cap mt-10 text-lg leading-[1.75] text-charcoal md:text-xl">
+              On 1 July 2024 the Indian Penal Code, the Code of Criminal
+              Procedure and the Indian Evidence Act gave way to the Bharatiya
+              Nyaya Sanhita, the Bharatiya Nagarik Suraksha Sanhita and the
+              Bharatiya Sakshya Adhiniyam. The definition of rape survived
+              almost intact as section 63 of the new Sanhita, and its
+              punishment as section 64. But the new law did one thing of real
+              consequence. In section 69 it created a separate offence of
+              sexual intercourse by deceitful means, including a promise to
+              marry made with no intention of keeping it.
+            </p>
+            <p className="mt-6 text-lg leading-[1.75] text-charcoal md:text-xl">
+              The essay follows a case from beginning to end. It starts with
+              the question that must be answered before any other, namely which
+              law governs. It then examines the elements of the offence, the
+              concept of consent, and the false promise of marriage under both
+              regimes. It turns next to investigation, to the recurring contests
+              over delay, medical evidence and DNA, and to electronic evidence.
+              It closes with bail, charge and quashing, the conduct of the
+              trial, final arguments, and sentence and appeal.
+            </p>
+
+            <dl className="mt-10 grid gap-x-10 gap-y-4 border-t border-line pt-6 text-sm sm:grid-cols-2">
+              <div className="sm:col-span-2">
+                <dt className="label-caps text-xs text-gold-text">Journal</dt>
+                <dd className="mt-1 text-charcoal">
+                  International Journal for Multidisciplinary Research (IJFMR)
+                </dd>
+              </div>
+              <div>
+                <dt className="label-caps text-xs text-gold-text">Published in</dt>
+                <dd className="mt-1 text-charcoal">
+                  Vol. 8, Issue 5, September&ndash;October 2026
+                </dd>
+              </div>
+              <div>
+                <dt className="label-caps text-xs text-gold-text">Published on</dt>
+                <dd className="mt-1 text-charcoal">29 September 2026</dd>
+              </div>
+              <div>
+                <dt className="label-caps text-xs text-gold-text">E-ISSN</dt>
+                <dd className="mt-1 text-charcoal tabular-nums">2582-2160</dd>
+              </div>
+              <div>
+                <dt className="label-caps text-xs text-gold-text">Paper ID</dt>
+                <dd className="mt-1 text-charcoal tabular-nums">IJFMR260588715</dd>
+              </div>
+            </dl>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href={IJFMR_PAGE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label-caps border border-line-strong px-5 py-3 text-sm text-ivory transition-colors hover:border-gold-primary hover:text-gold-text"
+              >
+                Read at IJFMR &rarr;
+              </a>
+              <a
+                href={IJFMR_PDF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="label-caps border border-line-strong px-5 py-3 text-sm text-ivory transition-colors hover:border-gold-primary hover:text-gold-text"
+              >
+                PDF &rarr;
+              </a>
+              <Link
+                href="/blog/rape-law-in-transition-part-1"
+                className="label-caps border border-line-strong px-5 py-3 text-sm text-ivory transition-colors hover:border-gold-primary hover:text-gold-text"
+              >
+                Serialised on this site, in nine parts &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h3 className="display-tight font-serif text-3xl font-semibold text-ivory md:text-4xl">
+            Contents
+          </h3>
+          <ol className="mt-8 grid gap-x-10 gap-y-3 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
+            {articleSections.map((heading, i) => (
+              <li key={heading} className="flex items-baseline gap-3 text-base text-charcoal">
+                <span className="w-9 shrink-0 font-serif text-sm text-gold-primary">
+                  {roman[i]}.
+                </span>
+                {heading}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <div className="mt-24">
+        <SealDivider className="max-w-[30rem]" />
+      </div>
+
+      {/* ---------- The Artificial Intelligence Code, 2026 ---------- */}
+      <section id="ai-code" className="mt-20 scroll-mt-28">
+      <p className="label-caps text-xs text-gold-text">Draft statute &middot; 2026</p>
+
       {/* The volume itself, before any description of it. */}
-      <figure className="mt-12">
+      <figure className="mt-6">
         <Image
           src="/images/publications/ai-code-cover.jpg"
           alt="The Artificial Intelligence Code, 2026, bound in black boards with gilt lettering, on a desk beside a volume of the Supreme Court Cases reports."
@@ -55,7 +280,6 @@ export default function PublicationsPage() {
           height={1349}
           sizes="(max-width: 1440px) 100vw, 1350px"
           className="w-full border border-line object-cover"
-          priority
         />
         <figcaption className="label-caps mt-3 text-xs text-muted">
           Author&rsquo;s Edition, 2026 &middot; Naman Prakashan
@@ -181,6 +405,7 @@ export default function PublicationsPage() {
           .
         </p>
       </div>
+      </section>
     </div>
   );
 }
