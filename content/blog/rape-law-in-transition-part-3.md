@@ -79,7 +79,7 @@ It is submitted that the relationship may be examined to establish its nature, i
 - [Part 5: Investigation and Delay](/blog/rape-law-in-transition-part-5)
 - [Part 6: Medical and DNA Evidence](/blog/rape-law-in-transition-part-6)
 - [Part 7: Electronic Evidence and Bail](/blog/rape-law-in-transition-part-7)
-- Part 8: Charge, Quashing and the Trial (publishes 4 October)
+- [Part 8: Charge, Quashing and the Trial](/blog/rape-law-in-transition-part-8)
 - Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
 
 ---
