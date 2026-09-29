@@ -142,6 +142,7 @@ export default function PublicationsPage() {
                 height={1754}
                 sizes="(max-width: 1024px) 90vw, 480px"
                 className="w-full border border-line shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-1"
+                priority
               />
             </a>
             <figcaption className="mt-3 text-xs leading-relaxed text-muted">
