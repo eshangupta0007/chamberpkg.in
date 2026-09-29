@@ -82,7 +82,7 @@ The table sets the offences of the Penal Code beside their counterparts in the N
 
 - [Part 1: Which Law Governs](/blog/rape-law-in-transition-part-1)
 - **Part 2: The Anatomy of the Offence** (this part)
-- Part 3: Consent and Will (publishes 29 September)
+- [Part 3: Consent and Will](/blog/rape-law-in-transition-part-3)
 - Part 4: The False Promise of Marriage (publishes 30 September)
 - Part 5: Investigation and Delay (publishes 1 October)
 - Part 6: Medical and DNA Evidence (publishes 2 October)

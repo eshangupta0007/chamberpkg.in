@@ -62,7 +62,7 @@ One point of numbering causes persistent confusion. The clauses of section 376(2
 
 - **Part 1: Which Law Governs** (this part)
 - [Part 2: The Anatomy of the Offence](/blog/rape-law-in-transition-part-2)
-- Part 3: Consent and Will (publishes 29 September)
+- [Part 3: Consent and Will](/blog/rape-law-in-transition-part-3)
 - Part 4: The False Promise of Marriage (publishes 30 September)
 - Part 5: Investigation and Delay (publishes 1 October)
 - Part 6: Medical and DNA Evidence (publishes 2 October)
