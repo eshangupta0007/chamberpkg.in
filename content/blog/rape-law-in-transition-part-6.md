@@ -105,7 +105,7 @@ Each link in the chain must be proved through its own witness and its own docume
 - [Part 4: The False Promise of Marriage](/blog/rape-law-in-transition-part-4)
 - [Part 5: Investigation and Delay](/blog/rape-law-in-transition-part-5)
 - **Part 6: Medical and DNA Evidence** (this part)
-- Part 7: Electronic Evidence and Bail (publishes 3 October)
+- [Part 7: Electronic Evidence and Bail](/blog/rape-law-in-transition-part-7)
 - Part 8: Charge, Quashing and the Trial (publishes 4 October)
 - Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
 

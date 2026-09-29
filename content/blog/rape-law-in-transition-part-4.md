@@ -147,7 +147,7 @@ For conduct on or after 1 July 2024, the choice between section 64 and section 6
 - **Part 4: The False Promise of Marriage** (this part)
 - [Part 5: Investigation and Delay](/blog/rape-law-in-transition-part-5)
 - [Part 6: Medical and DNA Evidence](/blog/rape-law-in-transition-part-6)
-- Part 7: Electronic Evidence and Bail (publishes 3 October)
+- [Part 7: Electronic Evidence and Bail](/blog/rape-law-in-transition-part-7)
 - Part 8: Charge, Quashing and the Trial (publishes 4 October)
 - Part 9: Final Arguments, Sentence and Appeal (publishes 5 October)
 
