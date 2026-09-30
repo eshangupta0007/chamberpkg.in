@@ -2,7 +2,8 @@ export type TeamMember = {
   slug: string;
   name: string;
   title: string;
-  practiceNote: string;
+  /** A factual line about the member's work. Omitted until one is supplied. */
+  practiceNote?: string;
   courts?: string[];
   /**
    * Portrait path. Filenames carry a short content hash: replacing a photo
@@ -44,5 +45,20 @@ export const team: TeamMember[] = [
     title: "Associate",
     practiceNote: "Client counselling and case coordination.",
     photo: "/images/team/hamza-dilshad.1914ecb9.png",
+  },
+  {
+    slug: "akib-khan",
+    name: "Akib Khan",
+    title: "Associate",
+  },
+  {
+    slug: "shashank-srivastava",
+    name: "Shashank Srivastava",
+    title: "Associate",
+  },
+  {
+    slug: "shreya-pandya",
+    name: "Shreya Pandya",
+    title: "Intern",
   },
 ];

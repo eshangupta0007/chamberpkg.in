@@ -58,9 +58,11 @@ export default function TeamPage() {
               {member.name}
             </h2>
             <p className="label-caps mt-1 text-xs text-gold-text">{member.title}</p>
-            <p className="mt-4 text-base leading-relaxed text-charcoal">
-              {member.practiceNote}
-            </p>
+            {member.practiceNote && (
+              <p className="mt-4 text-base leading-relaxed text-charcoal">
+                {member.practiceNote}
+              </p>
+            )}
             {member.courts && (
               <ul className="mt-4 space-y-1 border-t border-line pt-4 text-sm text-muted">
                 {member.courts.map((court) => (
@@ -70,6 +72,22 @@ export default function TeamPage() {
             )}
           </article>
         ))}
+      </div>
+
+      {/* Those who have been part of the Chamber before the present members:
+          one statement, set like the legacy line on the home page. */}
+      <div className="mt-24">
+        <SealDivider className="max-w-[30rem]" />
+      </div>
+      <div className="mt-12 grid gap-8 lg:grid-cols-12" data-reveal>
+        <p className="label-caps text-xs text-gold-text lg:col-span-3">
+          With gratitude
+        </p>
+        <p className="display-tight font-serif text-xl font-semibold leading-[1.3] text-ivory md:text-[1.6rem] md:leading-[1.28] lg:col-span-8 lg:col-start-5">
+          The Chamber records its gratitude to every advocate, associate and
+          intern who has been part of it since 1991, and on whose work its
+          practice continues to stand.
+        </p>
       </div>
     </div>
   );
