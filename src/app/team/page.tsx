@@ -36,7 +36,7 @@ export default function TeamPage() {
 
       <SealDivider className="mt-12" />
 
-      <div className="mt-14 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-14 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
         {team.map((member, i) => (
           <article key={member.slug} id={member.slug} className="scroll-mt-28" data-reveal="img" style={{ "--reveal-delay": `${Math.min(i, 6) * 55}ms` } as CSSProperties}>
             <div className="overflow-hidden border border-line bg-paper transition-[border-color] duration-500 hover:border-gold-primary/60">
@@ -46,7 +46,7 @@ export default function TeamPage() {
                   alt={member.name}
                   width={600}
                   height={750}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="portrait-tone aspect-[4/5] w-full object-cover"
                   priority={i === 0}
                 />

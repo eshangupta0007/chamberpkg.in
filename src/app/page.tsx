@@ -247,7 +247,7 @@ export default function Home() {
               {isHi ? "सभी सदस्य →" : "All members →"}
             </Link>
           </div>
-          <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member, i) => (
               <Link
                 key={member.slug}
@@ -263,7 +263,7 @@ export default function Home() {
                       alt={member.name}
                       width={600}
                       height={750}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="portrait-tone aspect-[4/5] w-full object-cover transition-transform duration-700 ease-[var(--ease-settle)] group-hover:scale-[1.03]"
                     />
                   ) : (

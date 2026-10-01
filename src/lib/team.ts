@@ -66,6 +66,11 @@ export const team: TeamMember[] = [
     practiceNote: "2+ years of practice.",
   },
   {
+    slug: "sumit-pandey",
+    name: "Sumit Pandey",
+    title: "Associate",
+  },
+  {
     slug: "shreya-pandya",
     name: "Shreya Pandya",
     title: "Intern",
