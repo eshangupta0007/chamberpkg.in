@@ -12,6 +12,7 @@ export function attorneyJsonLd() {
     email,
     telephone: phones.map((p) => `+91${p.number}`),
     foundingDate: "1991",
+    founder: { "@type": "Person", name: "Praveen Kumar Gupta" },
     address: addresses.map((addr) => ({
       "@type": "PostalAddress",
       name: addr.label,

@@ -15,6 +15,13 @@ export type TeamMember = {
 
 export const team: TeamMember[] = [
   {
+    slug: "praveen-kumar-gupta",
+    name: "Praveen Kumar Gupta",
+    title: "Founder",
+    practiceNote: "Established the Chamber in 1991.",
+    photo: "/images/team/praveen-kumar-gupta.384ee142.webp",
+  },
+  {
     slug: "eshan-kumar-gupta",
     name: "Eshan Kumar Gupta",
     title: "Proprietor",
@@ -50,11 +57,13 @@ export const team: TeamMember[] = [
     slug: "akib-khan",
     name: "Akib Khan",
     title: "Associate",
+    practiceNote: "2+ years of practice.",
   },
   {
     slug: "shashank-srivastava",
     name: "Shashank Srivastava",
     title: "Associate",
+    practiceNote: "2+ years of practice.",
   },
   {
     slug: "shreya-pandya",
