@@ -4,7 +4,7 @@ import { NavLinks } from "./NavLinks";
 import { siteName } from "@/lib/site-data";
 
 const navLink =
-  "nav-link label-caps text-[0.8rem] text-deep-text/75 transition-colors hover:text-gold-on-dark aria-[current=page]:text-gold-on-dark";
+  "nav-link label-caps whitespace-nowrap text-[0.8rem] text-deep-text/75 transition-colors hover:text-gold-on-dark aria-[current=page]:text-gold-on-dark";
 
 export function Header() {
   return (
@@ -26,11 +26,17 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        {/* Eight labels plus the wordmark need about 1175px. Measured free
+            space beside them: 5px at 1180, 25px at 1200, 105px at 1280 — and
+            at 1160 and below the labels wrapped and the header grew from 77
+            to 91px. The full nav therefore starts at xl (1280px), keeping
+            real margin against a slow font load; the Menu button serves every
+            narrower width, iPad landscape included. */}
+        <nav className="hidden items-center gap-7 xl:flex">
           <NavLinks linkClassName={navLink} />
         </nav>
 
-        <details className="relative lg:hidden">
+        <details className="relative xl:hidden">
           <summary className="label-caps cursor-pointer list-none border border-deep-line px-3 py-1.5 text-sm text-deep-text">
             Menu
           </summary>
