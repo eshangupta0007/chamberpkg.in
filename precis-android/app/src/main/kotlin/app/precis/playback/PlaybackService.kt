@@ -12,6 +12,7 @@ import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.app.ServiceCompat
 import androidx.media.app.NotificationCompat.MediaStyle
 import app.precis.MainActivity
 import app.precis.PrecisApp
@@ -59,7 +60,7 @@ class PlaybackService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         // Must reach startForeground quickly after startForegroundService().
         val first = player.state.value
-        startForeground(NOTIF_ID, build(first), ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK)
+        ServiceCompat.startForeground(this, NOTIF_ID, build(first), MEDIA_PLAYBACK)
 
         when (intent?.action) {
             ACTION_TOGGLE -> player.toggle()
@@ -73,7 +74,7 @@ class PlaybackService : Service() {
             scope.launch {
                 player.state.collect { st ->
                     if (st.summary == null) {
-                        stopForeground(STOP_FOREGROUND_REMOVE)
+                        ServiceCompat.stopForeground(this@PlaybackService, ServiceCompat.STOP_FOREGROUND_REMOVE)
                         stopSelf()
                     } else {
                         publish(st)
@@ -107,7 +108,7 @@ class PlaybackService : Service() {
                 .build(),
         )
         // Re-posting through startForeground updates the notification without a separate notify permission.
-        startForeground(NOTIF_ID, build(st), ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK)
+        ServiceCompat.startForeground(this, NOTIF_ID, build(st), MEDIA_PLAYBACK)
     }
 
     private fun action(icon: Int, title: String, action: String, code: Int) =
@@ -156,6 +157,10 @@ class PlaybackService : Service() {
     companion object {
         private const val CHANNEL = "playback"
         private const val NOTIF_ID = 1
+
+        // Constant is inlined at compile time; ServiceCompat ignores the type below API 29.
+        @android.annotation.SuppressLint("InlinedApi")
+        private const val MEDIA_PLAYBACK = ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
         const val ACTION_TOGGLE = "app.precis.action.TOGGLE"
         const val ACTION_NEXT = "app.precis.action.NEXT"
         const val ACTION_PREV = "app.precis.action.PREV"

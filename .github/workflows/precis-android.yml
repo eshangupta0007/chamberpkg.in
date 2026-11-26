@@ -21,8 +21,10 @@ jobs:
           java-version: "17"
       - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
-      - name: Unit tests (core logic + Claude client)
-        run: ./gradlew :core:test --no-daemon
+      - name: Unit tests (core logic, Claude client, player state machine, screens)
+        run: ./gradlew :core:test :app:testDebugUnitTest --no-daemon
+      - name: Lint
+        run: ./gradlew :app:lintDebug --no-daemon
       - name: Build debug APK
         run: ./gradlew :app:assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4

@@ -27,7 +27,12 @@ cd precis-android
 ./gradlew :app:assembleDebug    # app/build/outputs/apk/debug/app-debug.apk
 ```
 
-CI (`.github/workflows/precis-android.yml`) runs both and uploads the debug APK as an artifact.
+```bash
+./gradlew :app:testDebugUnitTest   # player state machine + screens, under Robolectric
+./gradlew :app:lintDebug
+```
+
+CI (`.github/workflows/precis-android.yml`) runs all of the above and uploads the debug APK as an artifact.
 Open the `precis-android` folder in Android Studio to run it on a device or emulator.
 
 ## Layout
@@ -38,6 +43,25 @@ Open the `precis-android` folder in Android Studio to run it on a device or emul
 | `app` | Compose UI, `PlayerController` (TTS state machine), `PlaybackService` (foreground service + MediaSession), encrypted storage |
 
 Model: `claude-opus-5-5` (`SummaryClient.DEFAULT_MODEL`).
+
+## What has and hasn't been verified
+
+Verified (Gradle, JDK 21, Android SDK 36, no device):
+- `core`: 23 unit tests, including the real Anthropic Java SDK against a local server that speaks the Messages
+  streaming format (request shape, streaming, refusal, truncation, 401, 500, unreachable).
+- `app`: compiles, lints clean (no errors), builds a debug APK; manifest declares the `mediaPlayback` foreground service.
+- `PlayerController`: 13 tests (advance, pause, stale callbacks, resume, paragraph skip, finish, progress resume,
+  speed change, stop, engine failure) against Robolectric's shadow `TextToSpeech`.
+- Screens: 4 Compose smoke tests (discover, search-as-typed, book + missing-key flow, empty library).
+
+**Not verified, because there is no emulator or device here:** actual speech output and voice quality, the
+lock-screen/notification controls and foreground-service behaviour on real Android versions, saving the key to
+the Android Keystore (Robolectric has no Keystore), and a live call to the Anthropic API with a real key.
+Run it on a phone before relying on it.
+
+Dependency note: AndroidX is pinned to Compose BOM 2026.05.01 and slightly older lifecycle/core releases because
+the newest ones require AGP 9.1+ and compileSdk 37. `EncryptedSharedPreferences` is deprecated by Google but still
+works; replace it with a direct Keystore-backed AES-GCM store if that matters to you.
 
 ## Limits
 
