@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="precis_bg">#FF12100E</color>
+    <color name="ic_launcher_background">#FFF4A21C</color>
+    <style name="Theme.Precis" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/precis_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>
